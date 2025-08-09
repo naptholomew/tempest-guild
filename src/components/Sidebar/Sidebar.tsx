@@ -10,18 +10,29 @@ const LINKS = [
   { to: '/crafting', label: 'Crafting Recipes', icon: Hammer },
 ]
 
-export default function Sidebar() {
-  const [collapsed, setCollapsed] = useState<boolean>(false)
+// Helper: detect "mobile" using same breakpoint as Tailwind's md (<768px)
+function isMobileViewport() {
+  if (typeof window === 'undefined' || typeof window.matchMedia === 'undefined') return false
+  return window.matchMedia('(max-width: 767px)').matches
+}
 
-  // Load persisted state
-  useEffect(() => {
-    const raw = localStorage.getItem('tempest.sidebar.collapsed')
-    if (raw) setCollapsed(raw === '1')
-  }, [])
+export default function Sidebar() {
+  // Initial state:
+  // - If there's a saved preference, use it.
+  // - Otherwise, default to collapsed on mobile, expanded on desktop.
+  const [collapsed, setCollapsed] = useState<boolean>(() => {
+    if (typeof window === 'undefined') return false
+    const raw = window.localStorage.getItem('tempest.sidebar.collapsed')
+    if (raw === '1') return true
+    if (raw === '0') return false
+    return isMobileViewport() // default on first load
+  })
 
   // Persist on change
   useEffect(() => {
-    localStorage.setItem('tempest.sidebar.collapsed', collapsed ? '1' : '0')
+    try {
+      window.localStorage.setItem('tempest.sidebar.collapsed', collapsed ? '1' : '0')
+    } catch {}
   }, [collapsed])
 
   return (
@@ -42,22 +53,21 @@ export default function Sidebar() {
         </button>
         {!collapsed && (
           <div className="flex-1 text-center font-extrabold tracking-wide text-lg">
-            
+            {/* (intentionally blank — you removed the <Tempest> title) */}
           </div>
         )}
       </div>
 
-{/* Banner (hidden when collapsed) */}
-{!collapsed && (
-  <div className="px-3 py-4">
-    <img
-      src="/banner.png"
-      alt="Tempest Guild banner"
-      className="rounded-2xl border border-skin-base w-full"
-    />
-  </div>
-)}
-
+      {/* Banner (hidden when collapsed) */}
+      {!collapsed && (
+        <div className="px-3 py-4">
+          <img
+            src="/banner.png"
+            alt="Tempest Guild banner"
+            className="rounded-2xl border border-skin-base w-full"
+          />
+        </div>
+      )}
 
       <nav className="px-2 pt-2">
         <ul className="space-y-1">

@@ -253,7 +253,10 @@
     "id": 25130,
     "name": "Brilliant Mana Oil",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters",
+      "Griefbutt"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -266,7 +269,10 @@
     "id": 25129,
     "name": "Brilliant Wizard Oil",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters",
+      "Griefbutt"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -528,7 +534,9 @@
     "id": 27837,
     "name": "Enchant 2H Weapon - Agility",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -748,7 +756,9 @@
     "id": 25083,
     "name": "Enchant Cloak - Stealth",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -762,7 +772,9 @@
     "id": 25084,
     "name": "Enchant Cloak - Subtlety",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -838,7 +850,9 @@
     "id": 25079,
     "name": "Enchant Gloves - Healing Power",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -868,7 +882,9 @@
     "id": 25073,
     "name": "Enchant Gloves - Shadow Power",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -929,7 +945,9 @@
     "id": 20034,
     "name": "Enchant Weapon - Crusader",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -960,7 +978,9 @@
     "id": 22750,
     "name": "Enchant Weapon - Healing Power",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -988,7 +1008,9 @@
     "id": 23803,
     "name": "Enchant Weapon - Mighty Spirit",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -1033,6 +1055,7 @@
     "profession": "Alchemy",
     "crafters": [
       "Dibs",
+      "Melevolence",
       "Shedbol"
     ],
     "whType": "item",
@@ -1051,6 +1074,7 @@
     "profession": "Alchemy",
     "crafters": [
       "Dibs",
+      "Melevolence",
       "Shedbol"
     ],
     "whType": "item",
@@ -1067,6 +1091,7 @@
     "name": "Flask of Petrification",
     "profession": "Alchemy",
     "crafters": [
+      "Melevolence",
       "Shedbol"
     ],
     "whType": "item",
@@ -1084,6 +1109,8 @@
     "profession": "Alchemy",
     "crafters": [
       "Cynthea",
+      "Melevolence",
+      "Noblehart",
       "Shedbol"
     ],
     "whType": "item",
@@ -1279,6 +1306,7 @@
     "name": "Greater Arcane Elixir",
     "profession": "Alchemy",
     "crafters": [
+      "Melevolence",
       "Shedbol"
     ],
     "whType": "item",
@@ -1296,6 +1324,8 @@
     "profession": "Alchemy",
     "crafters": [
       "Cynthea",
+      "Melevolence",
+      "Noblehart",
       "Shedbol"
     ],
     "whType": "item",
@@ -1314,6 +1344,7 @@
     "profession": "Alchemy",
     "crafters": [
       "Melevolence",
+      "Noblehart",
       "Shedbol"
     ],
     "whType": "item",
@@ -1330,7 +1361,10 @@
     "id": 13456,
     "name": "Greater Frost Protection Potion",
     "profession": "Alchemy",
-    "crafters": [],
+    "crafters": [
+      "Melevolence",
+      "Noblehart"
+    ],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -1346,7 +1380,9 @@
     "name": "Greater Nature Protection Potion",
     "profession": "Alchemy",
     "crafters": [
-      "Holypeach"
+      "Holypeach",
+      "Melevolence",
+      "Noblehart"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1364,6 +1400,8 @@
     "profession": "Alchemy",
     "crafters": [
       "Cynthea",
+      "Melevolence",
+      "Noblehart",
       "Shedbol"
     ],
     "whType": "item",
@@ -1457,6 +1495,7 @@
     "profession": "Alchemy",
     "crafters": [
       "Cynthea",
+      "Melevolence",
       "Shedbol"
     ],
     "whType": "item",
@@ -1518,7 +1557,11 @@
     "id": 20007,
     "name": "Mageblood Potion",
     "profession": "Alchemy",
-    "crafters": [],
+    "crafters": [
+      "Cynthea",
+      "Melevolence",
+      "Shedbol"
+    ],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -1536,6 +1579,7 @@
     "profession": "Alchemy",
     "crafters": [
       "Cynthea",
+      "Melevolence",
       "Shedbol"
     ],
     "whType": "item",
@@ -1554,7 +1598,8 @@
     "name": "Major Rejuvenation Potion",
     "profession": "Alchemy",
     "crafters": [
-      "Holypeach"
+      "Holypeach",
+      "Shedbol"
     ],
     "whType": "item",
     "flavortext": "",
