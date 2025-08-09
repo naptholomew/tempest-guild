@@ -2,12 +2,12 @@ export default function About() {
   return (
     <section className="space-y-6">
       <header>
-        <h1 className="text-2xl font-bold text-brand-accent">About Tempest</h1>
-        <p className="text-skin-muted mt-1">World of Warcraft Classic guild • storm-forged since 2004*</p>
+        <h1 className="text-2xl font-bold text-brand-accent">⚡Welcome to Tempest</h1>
+        <p className="text-skin-muted mt-1">A World of Warcraft Classic Guild on Dreamscythe.</p>
       </header>
 
       <div className="rounded-2xl border border-skin-base p-4 bg-skin-elev">
-        <h2 className="font-semibold mb-3">Milestones</h2>
+        <h2 className="font-semibold mb-3">Guild Milestones</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm">
             <thead className="text-skin-muted">
