@@ -4,6 +4,13 @@ import { getWowheadUrl } from '../lib/wowhead'
 
 type WowheadType = 'item' | 'spell'
 
+interface Mat {
+  id: number
+  name: string
+  qty: number
+  whType?: WowheadType
+}
+
 interface Recipe {
   id: number
   name: string
@@ -12,6 +19,7 @@ interface Recipe {
   mats: string
   whType?: WowheadType
   flavortext?: string
+  matsDetailed?: Mat[]
 }
 
 export default function Crafting() {
@@ -53,7 +61,7 @@ export default function Crafting() {
       <header className="pb-2 border-b border-skin-base">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">Crafting Recipes</h1>
         <p className="text-skin-muted mt-2 text-sm">
-          Hover recipe names for Wowhead tooltips. Use search and filters to narrow results.
+          Hover recipe names and materials for Wowhead tooltips. Use search and filters to narrow results.
         </p>
       </header>
 
@@ -111,7 +119,28 @@ export default function Crafting() {
                 </td>
                 <td className="py-3 pr-4 align-middle text-sm">{r.profession}</td>
                 <td className="py-3 pr-4 align-middle text-sm">{r.crafters.join(', ')}</td>
-                <td className="py-3 pr-5 align-middle text-xs text-skin-muted">{r.mats}</td>
+                <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
+                  {r.matsDetailed && r.matsDetailed.length > 0 ? (
+                    <div className="flex flex-wrap gap-x-3 gap-y-1">
+                      {r.matsDetailed.map((m, i) => (
+                        <span key={`${m.whType ?? 'item'}-${m.id}-${i}`}>
+                          <a
+                            href={getWowheadUrl(m.id, m.whType ?? 'item')}
+                            data-wh-icon="true"
+                            data-wh-rename-link="false"
+                            data-wh-rename-duplicate="false"
+                            className="hover:underline"
+                          >
+                            {m.name}
+                          </a>
+                          <span> ×{m.qty}</span>
+                        </span>
+                      ))}
+                    </div>
+                  ) : (
+                    r.mats
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

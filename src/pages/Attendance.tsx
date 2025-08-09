@@ -37,10 +37,10 @@ export default function Attendance() {
   }
 
   return (
-    <section className="space-y-6">
-      <header>
-        <h1 className="text-2xl font-bold text-brand-accent">Attendance</h1>
-        <p className="text-skin-muted mt-1">Historical raid attendance by player (sample data).</p>
+    <section className="space-y-8">
+      <header className="pb-2 border-b border-skin-base">
+        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">Attendance</h1>
+        <p className="text-skin-muted mt-2 text-sm">Historical raid attendance by player (sample data).</p>
       </header>
 
       <div className="flex items-center gap-3">
@@ -48,19 +48,19 @@ export default function Attendance() {
           value={query}
           onChange={e => setQuery(e.target.value)}
           placeholder="Search by name or class..."
-          className="w-full max-w-sm rounded-xl bg-black/30 border border-skin-base px-3 py-2 outline-none focus:ring-2 ring-brand-accent"
+          className="w-full max-w-sm rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
         />
       </div>
 
-      <div className="rounded-2xl border border-skin-base bg-skin-elev overflow-x-auto">
-        <table className="min-w-full text-sm">
+      <div className="rounded-3xl border border-skin-base bg-skin-elev overflow-x-auto p-2">
+        <table className="min-w-full text-[15px]">
           <thead className="text-skin-muted sticky top-0 bg-skin-elev/95 backdrop-blur">
             <tr className="text-left">
-              <th className="py-2 pl-4 pr-4">Player</th>
-              <th className="py-2 pr-4">Class</th>
-              <th className="py-2 pr-4">Raids</th>
-              <th className="py-2 pr-4">% Present</th>
-              <th className="py-2 pr-4">Recent (3)</th>
+              <th className="py-3 pl-5 pr-4">Player</th>
+              <th className="py-3 pr-4">Class</th>
+              <th className="py-3 pr-4">Raids</th>
+              <th className="py-3 pr-4">% Present</th>
+              <th className="py-3 pr-5">Recent (3)</th>
             </tr>
           </thead>
           <tbody>
@@ -68,11 +68,11 @@ export default function Attendance() {
               const recent = [...p.entries].slice(-3)
               return (
                 <tr key={p.id} className="border-t border-skin-base">
-                  <td className="py-2 pl-4 pr-4 font-medium">{p.name}</td>
-                  <td className="py-2 pr-4">{p.className}</td>
-                  <td className="py-2 pr-4">{p.entries.length}</td>
-                  <td className="py-2 pr-4">{attendancePct(p)}%</td>
-                  <td className="py-2 pr-4">
+                  <td className="py-3 pl-5 pr-4 font-medium text-sm">{p.name}</td>
+                  <td className="py-3 pr-4 text-sm">{p.className}</td>
+                  <td className="py-3 pr-4 text-sm">{p.entries.length}</td>
+                  <td className="py-3 pr-4 text-sm">{attendancePct(p)}%</td>
+                  <td className="py-3 pr-5">
                     <div className="flex gap-1">
                       {recent.map((e, i) => (
                         <span key={i} className={e.present ? 'text-green-400' : 'text-red-400'}>
