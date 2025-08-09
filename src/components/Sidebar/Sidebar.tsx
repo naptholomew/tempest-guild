@@ -42,7 +42,7 @@ export default function Sidebar() {
         </button>
         {!collapsed && (
           <div className="flex-1 text-center font-extrabold tracking-wide text-lg">
-            &lt;Tempest&gt;
+            
           </div>
         )}
       </div>
