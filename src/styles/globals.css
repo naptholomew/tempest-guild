@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-skin-base text-skin-base;
+}
+
+/* Subtle stormy backdrop (very light) */
+.bg-storm {
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(0,39,76,0.25), transparent 60%),
+              radial-gradient(800px 400px at 120% -10%, rgba(255,203,5,0.07), transparent 60%);
+}

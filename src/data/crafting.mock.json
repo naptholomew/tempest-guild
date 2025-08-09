@@ -1,0 +1,23 @@
+[
+  {
+    "id": 19019,
+    "name": "Thunderfury, Blessed Blade of the Windseeker",
+    "profession": "Blacksmithing",
+    "minSkill": 300,
+    "crafters": [
+      "Naps",
+      "Owlboy"
+    ],
+    "mats": "Binding x2, Elementium, Arcanite"
+  },
+  {
+    "id": 13503,
+    "name": "Alchemist Stone",
+    "profession": "Alchemy",
+    "minSkill": 300,
+    "crafters": [
+      "Naps"
+    ],
+    "mats": "Essence of Earth, Essence of Water"
+  }
+]

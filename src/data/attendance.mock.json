@@ -1,0 +1,40 @@
+[
+  {
+    "id": "p1",
+    "name": "Naps",
+    "className": "Mage",
+    "entries": [
+      {
+        "date": "2025-08-01",
+        "raidName": "MC",
+        "present": true,
+        "role": "Ranged"
+      },
+      {
+        "date": "2025-08-03",
+        "raidName": "Ony",
+        "present": false,
+        "role": "Ranged"
+      }
+    ]
+  },
+  {
+    "id": "p2",
+    "name": "Owlboy",
+    "className": "Druid",
+    "entries": [
+      {
+        "date": "2025-08-01",
+        "raidName": "MC",
+        "present": true,
+        "role": "Healer"
+      },
+      {
+        "date": "2025-08-03",
+        "raidName": "Ony",
+        "present": true,
+        "role": "Healer"
+      }
+    ]
+  }
+]
