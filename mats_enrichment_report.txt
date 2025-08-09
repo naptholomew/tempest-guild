@@ -1,0 +1,27 @@
+Recipes updated with matsDetailed: 89
+
+Unknown material names (add to mapping to resolve):
+
+- Arcanite Dragonling: Mithril Mechanical Dragonling
+- Biznicks 247x128 Accurascope: Essence of Earth
+- Cenarion Herb Bag: Morrowgrain
+- Elemental Sharpening Stone: Dense Stone
+- Enchant Bracer - Healing Power: Nexus Crystal
+- Enchant Chest - Greater Stats: Nexus Crystal
+- Enchant Cloak - Dodge: Nexus Crystal
+- Enchant Cloak - Stealth: Nexus Crystal
+- Enchant Cloak - Subtlety: Nexus Crystal
+- Enchant Gloves - Fire Power: Nexus Crystal
+- Enchant Gloves - Frost Power: Nexus Crystal
+- Enchant Gloves - Healing Power: Nexus Crystal
+- Enchant Gloves - Shadow Power: Nexus Crystal
+- Enchant Gloves - Superior Agility: Nexus Crystal
+- Enchant Weapon - Spell Power: Golden Pearl
+- Flash Bomb: Blue Pearl
+- Force Reactive Disk: Essence of Earth
+- Free Action Potion: Stranglekelp
+- Iron Counterweight: Heavy Grinding Stone, Iron Bar
+- Living Action Potion: Heart of the Wild
+- Mithril Spurs: Mithril Bar, Solid Grinding Stone
+- Steel Weapon Chain: Coarse Grinding Stone, Steel Bar
+- Thorium Shield Spike: Dense Grinding Stone

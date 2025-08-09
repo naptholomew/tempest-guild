@@ -9,6 +9,8 @@ import RaidPolicy from './pages/RaidPolicy'
 import Attendance from './pages/Attendance'
 import Crafting from './pages/Crafting'
 
+
+
 const router = createBrowserRouter([
   {
     path: '/',

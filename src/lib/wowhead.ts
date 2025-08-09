@@ -1,4 +1,5 @@
-export function getWowheadItemUrl(id: number) {
-  // Use classic domain for Classic Era tooltips.
-  return `https://www.wowhead.com/classic/item=${id}`
+export type WowheadType = 'item' | 'spell';
+
+export function getWowheadUrl(id: number, type: WowheadType = 'item') {
+  return `https://www.wowhead.com/classic/${type}=${id}`;
 }

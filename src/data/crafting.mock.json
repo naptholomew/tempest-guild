@@ -1,23 +1,3148 @@
 [
   {
-    "id": 19019,
-    "name": "Thunderfury, Blessed Blade of the Windseeker",
-    "profession": "Blacksmithing",
-    "minSkill": 300,
+    "id": 13453,
+    "name": "Elixir of Brute Force",
+    "profession": "Alchemy",
     "crafters": [
-      "Naps",
-      "Owlboy"
+      "Shedbol"
     ],
-    "mats": "Binding x2, Elementium, Arcanite"
+    "mats": "Gromsblood x2; Plaguebloom x2; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 8846,
+        "name": "Gromsblood",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 13466,
+        "name": "Plaguebloom",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
   },
   {
-    "id": 13503,
-    "name": "Alchemist Stone",
+    "id": 21546,
+    "name": "Elixir of Greater Firepower",
     "profession": "Alchemy",
-    "minSkill": 300,
+    "crafters": [],
+    "mats": "Fire Oil x3; Firebloom x3; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 6371,
+        "name": "Fire Oil",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 4625,
+        "name": "Firebloom",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 9264,
+    "name": "Elixir of Shadow Power",
+    "profession": "Alchemy",
     "crafters": [
-      "Naps"
+      "Cynthea",
+      "Shedbol"
     ],
-    "mats": "Essence of Earth, Essence of Water"
+    "mats": "Ghost Mushroom x3; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 8845,
+        "name": "Ghost Mushroom",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13452,
+    "name": "Elixir of the Mongoose",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea",
+      "Melevolence"
+    ],
+    "mats": "Mountain Silversage x2; Plaguebloom x2; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13465,
+        "name": "Mountain Silversage",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 13466,
+        "name": "Plaguebloom",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13513,
+    "name": "Flask of Chromatic Resistance",
+    "profession": "Alchemy",
+    "crafters": [
+      "Dibs",
+      "Shedbol"
+    ],
+    "mats": "Icecap x30; Mountain Silversage x10; Black Lotus x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13467,
+        "name": "Icecap",
+        "qty": 30,
+        "whType": "item"
+      },
+      {
+        "id": 13465,
+        "name": "Mountain Silversage",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 13468,
+        "name": "Black Lotus",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13511,
+    "name": "Flask of Distilled Wisdom",
+    "profession": "Alchemy",
+    "crafters": [
+      "Dibs",
+      "Shedbol"
+    ],
+    "mats": "Dreamfoil x30; Icecap x10; Black Lotus x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 30,
+        "whType": "item"
+      },
+      {
+        "id": 13467,
+        "name": "Icecap",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 13468,
+        "name": "Black Lotus",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13506,
+    "name": "Flask of Petrification",
+    "profession": "Alchemy",
+    "crafters": [
+      "Shedbol"
+    ],
+    "mats": "Stonescale Oil x30; Mountain Silversage x10; Black Lotus x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13423,
+        "name": "Stonescale Oil",
+        "qty": 30,
+        "whType": "item"
+      },
+      {
+        "id": 13465,
+        "name": "Mountain Silversage",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 13468,
+        "name": "Black Lotus",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13512,
+    "name": "Flask of Supreme Power",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea",
+      "Shedbol"
+    ],
+    "mats": "Dreamfoil x30; Mountain Silversage x10; Black Lotus x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 30,
+        "whType": "item"
+      },
+      {
+        "id": 13465,
+        "name": "Mountain Silversage",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 13468,
+        "name": "Black Lotus",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13510,
+    "name": "Flask of the Titans",
+    "profession": "Alchemy",
+    "crafters": [
+      "Dibs",
+      "Melevolence"
+    ],
+    "mats": "Gromsblood x30; Stonescale Oil x10; Black Lotus x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 8846,
+        "name": "Gromsblood",
+        "qty": 30,
+        "whType": "item"
+      },
+      {
+        "id": 13423,
+        "name": "Stonescale Oil",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 13468,
+        "name": "Black Lotus",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 5634,
+    "name": "Free Action Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea",
+      "Shedbol"
+    ],
+    "mats": "Blackmouth Oil x2; Stranglekelp x1; Leaded Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 6370,
+        "name": "Blackmouth Oil",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 3372,
+        "name": "Leaded Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 9088,
+    "name": "Gift of Arthas",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea"
+    ],
+    "mats": "Arthas' Tears x1; Blindweed x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 8836,
+        "name": "Arthas' Tears",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 8839,
+        "name": "Blindweed",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13454,
+    "name": "Greater Arcane Elixir",
+    "profession": "Alchemy",
+    "crafters": [
+      "Shedbol"
+    ],
+    "mats": "Dreamfoil x3; Mountain Silversage x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 13465,
+        "name": "Mountain Silversage",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13461,
+    "name": "Greater Arcane Protection Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea",
+      "Shedbol"
+    ],
+    "mats": "Dream Dust x1; Dreamfoil x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11176,
+        "name": "Dream Dust",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13457,
+    "name": "Greater Fire Protection Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Melevolence",
+      "Shedbol"
+    ],
+    "mats": "Elemental Fire x1; Dreamfoil x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 7068,
+        "name": "Elemental Fire",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13456,
+    "name": "Greater Frost Protection Potion",
+    "profession": "Alchemy",
+    "crafters": [],
+    "mats": "Elemental Water x1; Dreamfoil x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 7070,
+        "name": "Elemental Water",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13458,
+    "name": "Greater Nature Protection Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Holypeach"
+    ],
+    "mats": "Elemental Earth x1; Dreamfoil x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 7067,
+        "name": "Elemental Earth",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13459,
+    "name": "Greater Shadow Protection Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea",
+      "Shedbol"
+    ],
+    "mats": "Shadow Oil x1; Dreamfoil x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 3824,
+        "name": "Shadow Oil",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 3387,
+    "name": "Limited Invulnerability Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea",
+      "Shedbol"
+    ],
+    "mats": "Blindweed x2; Ghost Mushroom x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 8839,
+        "name": "Blindweed",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 8845,
+        "name": "Ghost Mushroom",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20008,
+    "name": "Living Action Potion",
+    "profession": "Alchemy",
+    "crafters": [],
+    "mats": "Icecap x2; Mountain Silversage x2; Heart of the Wild x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13467,
+        "name": "Icecap",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 13465,
+        "name": "Mountain Silversage",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20007,
+    "name": "Mageblood Potion",
+    "profession": "Alchemy",
+    "crafters": [],
+    "mats": "Dreamfoil x1; Plaguebloom x1; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 13466,
+        "name": "Plaguebloom",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13444,
+    "name": "Major Mana Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea",
+      "Shedbol"
+    ],
+    "mats": "Dreamfoil x3; Icecap x2; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 13467,
+        "name": "Icecap",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18253,
+    "name": "Major Rejuvenation Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Holypeach"
+    ],
+    "mats": "Dreamfoil x10; Golden Sansam x10; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 13464,
+        "name": "Golden Sansam",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13442,
+    "name": "Mighty Rage Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea",
+      "Melevolence"
+    ],
+    "mats": "Gromsblood x3; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 8846,
+        "name": "Gromsblood",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13462,
+    "name": "Purification Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Cynthea"
+    ],
+    "mats": "Dreamfoil x4; Icecap x2; Crystal Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 13463,
+        "name": "Dreamfoil",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 13467,
+        "name": "Icecap",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 3371,
+        "name": "Crystal Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 9030,
+    "name": "Restorative Potion",
+    "profession": "Alchemy",
+    "crafters": [
+      "Jeager"
+    ],
+    "mats": "Kingsblood x1; Liferoot x1; Leaded Vial x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 3356,
+        "name": "Kingsblood",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3357,
+        "name": "Liferoot",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 3372,
+        "name": "Leaded Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22194,
+    "name": "Black Grasp of the Destroyer",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 20039,
+    "name": "Dark Iron Boots",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 17014,
+    "name": "Dark Iron Bracers",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 19164,
+    "name": "Dark Iron Gauntlets",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 19148,
+    "name": "Dark Iron Helm",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 18262,
+    "name": "Elemental Sharpening Stone",
+    "profession": "Blacksmithing",
+    "crafters": [
+      "Brokensword"
+    ],
+    "mats": "Elemental Earth x2; Dense Stone x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 7067,
+        "name": "Elemental Earth",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 6043,
+    "name": "Iron Counterweight",
+    "profession": "Blacksmithing",
+    "crafters": [
+      "Brokensword"
+    ],
+    "mats": "Iron Bar x4; Heavy Grinding Stone x1",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 12640,
+    "name": "Lionheart Helm",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 7969,
+    "name": "Mithril Spurs",
+    "profession": "Blacksmithing",
+    "crafters": [
+      "Brokensword"
+    ],
+    "mats": "Mithril Bar x4; Solid Grinding Stone x3",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 19169,
+    "name": "Nightfall",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 6041,
+    "name": "Steel Weapon Chain",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "Steel Bar x2; Coarse Grinding Stone x1",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 17193,
+    "name": "Sulfuron Hammer",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 12645,
+    "name": "Thorium Shield Spike",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "Thorium Bar x6; Dense Grinding Stone x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 12359,
+        "name": "Thorium Bar",
+        "qty": 6,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22385,
+    "name": "Titanic Leggings",
+    "profession": "Blacksmithing",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 25130,
+    "name": "Brilliant Mana Oil",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Large Brilliant Shard x2; Purple Lotus x3; Imbued Vial x1",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 8831,
+        "name": "Purple Lotus",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 18256,
+        "name": "Imbued Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25129,
+    "name": "Brilliant Wizard Oil",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Large Brilliant Shard x2; Firebloom x3; Imbued Vial x1",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 4625,
+        "name": "Firebloom",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 18256,
+        "name": "Imbued Vial",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 27837,
+    "name": "Enchant 2H Weapon - Agility",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Large Brilliant Shard x10; Greater Eternal Essence x6; Illusion Dust x14; Essence of Air x4",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 16204,
+        "name": "Illusion Dust",
+        "qty": 14,
+        "whType": "item"
+      },
+      {
+        "id": 7082,
+        "name": "Essence of Air",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20036,
+    "name": "Enchant 2H Weapon - Major Intellect",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "mats": "Greater Eternal Essence x12; Large Brilliant Shard x2",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 12,
+        "whType": "item"
+      },
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20035,
+    "name": "Enchant 2H Weapon - Major Spirit",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "mats": "Greater Eternal Essence x12; Large Brilliant Shard x2",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 12,
+        "whType": "item"
+      },
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20030,
+    "name": "Enchant 2H Weapon - Superior Impact",
+    "profession": "Enchanting",
+    "crafters": [
+      "Heartsbane",
+      "Taters"
+    ],
+    "mats": "Large Brilliant Shard x4; Illusion Dust x10",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 16204,
+        "name": "Illusion Dust",
+        "qty": 10,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20023,
+    "name": "Enchant Boots - Greater Agility",
+    "profession": "Enchanting",
+    "crafters": [
+      "Heartsbane",
+      "Taters"
+    ],
+    "mats": "Greater Eternal Essence x8",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 8,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20008,
+    "name": "Enchant Bracer - Greater Intellect",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Lesser Eternal Essence x3",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 16202,
+        "name": "Lesser Eternal Essence",
+        "qty": 3,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 23802,
+    "name": "Enchant Bracer - Healing Power",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x6; Large Brilliant Shard x10; Essence of Water x8",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 8,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20009,
+    "name": "Enchant Bracer - Superior Spirit",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "mats": "Lesser Eternal Essence x3; Dream Dust x10",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 16202,
+        "name": "Lesser Eternal Essence",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 11176,
+        "name": "Dream Dust",
+        "qty": 10,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20011,
+    "name": "Enchant Bracer - Superior Stamina",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "mats": "Large Brilliant Shard x4; Illusion Dust x10",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 16204,
+        "name": "Illusion Dust",
+        "qty": 10,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20010,
+    "name": "Enchant Bracer - Superior Strength",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "mats": "Greater Eternal Essence x6; Illusion Dust x6",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 16204,
+        "name": "Illusion Dust",
+        "qty": 6,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20025,
+    "name": "Enchant Chest - Greater Stats",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "mats": "Nexus Crystal x2; Large Brilliant Shard x4; Illusion Dust x6",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 16204,
+        "name": "Illusion Dust",
+        "qty": 6,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25086,
+    "name": "Enchant Cloak - Dodge",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x3; Large Brilliant Shard x8; Guardian Stone x8",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 12809,
+        "name": "Guardian Stone",
+        "qty": 8,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20014,
+    "name": "Enchant Cloak - Greater Resistance",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Lesser Eternal Essence x2; Heart of Fire x1; Core of Earth x1; Globe of Water x1; Breath of Wind x1; Ichor of Undeath x1",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 16202,
+        "name": "Lesser Eternal Essence",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 7077,
+        "name": "Heart of Fire",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 7076,
+        "name": "Core of Earth",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 7079,
+        "name": "Globe of Water",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 7081,
+        "name": "Breath of Wind",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 7972,
+        "name": "Ichor of Undeath",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13882,
+    "name": "Enchant Cloak - Lesser Agility",
+    "profession": "Enchanting",
+    "crafters": [
+      "Heartsbane",
+      "Taters"
+    ],
+    "mats": "Lesser Nether Essence x2",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11174,
+        "name": "Lesser Nether Essence",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25083,
+    "name": "Enchant Cloak - Stealth",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x3; Large Brilliant Shard x8; Black Lotus x2",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 13468,
+        "name": "Black Lotus",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25084,
+    "name": "Enchant Cloak - Subtlety",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x4; Large Brilliant Shard x6; Black Diamond x2",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 11754,
+        "name": "Black Diamond",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13868,
+    "name": "Enchant Gloves - Advanced Herbalism",
+    "profession": "Enchanting",
+    "crafters": [
+      "Heartsbane",
+      "Taters"
+    ],
+    "mats": "Vision Dust x3; Purple Lotus x3",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11137,
+        "name": "Vision Dust",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 8831,
+        "name": "Purple Lotus",
+        "qty": 3,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13841,
+    "name": "Enchant Gloves - Advanced Mining",
+    "profession": "Enchanting",
+    "crafters": [
+      "Heartsbane",
+      "Taters"
+    ],
+    "mats": "Vision Dust x5",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11137,
+        "name": "Vision Dust",
+        "qty": 5,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25078,
+    "name": "Enchant Gloves - Fire Power",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x2; Large Brilliant Shard x10; Essence of Fire x4",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 7078,
+        "name": "Essence of Fire",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25074,
+    "name": "Enchant Gloves - Frost Power",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x2; Large Brilliant Shard x10; Essence of Water x4",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25079,
+    "name": "Enchant Gloves - Healing Power",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x3; Large Brilliant Shard x8; Righteous Orb x1",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 12811,
+        "name": "Righteous Orb",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13947,
+    "name": "Enchant Gloves - Riding Skill",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "mats": "Large Radiant Shard x2; Dream Dust x3",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11178,
+        "name": "Large Radiant Shard",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 11176,
+        "name": "Dream Dust",
+        "qty": 3,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25073,
+    "name": "Enchant Gloves - Shadow Power",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x2; Large Brilliant Shard x10; Essence of Undeath x6",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 12808,
+        "name": "Essence of Undeath",
+        "qty": 6,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 11166,
+    "name": "Enchant Gloves - Skinning",
+    "profession": "Enchanting",
+    "crafters": [
+      "Heartsbane",
+      "Taters"
+    ],
+    "mats": "Vision Dust x3; Green Whelp Scale x3",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11137,
+        "name": "Vision Dust",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 7392,
+        "name": "Green Whelp Scale",
+        "qty": 3,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 25080,
+    "name": "Enchant Gloves - Superior Agility",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Nexus Crystal x3; Large Brilliant Shard x8; Essence of Air x4",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 7082,
+        "name": "Essence of Air",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 23800,
+    "name": "Enchant Weapon - Agility",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "mats": "Large Brilliant Shard x6; Greater Eternal Essence x6; Illusion Dust x4; Essence of Air x2",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 16204,
+        "name": "Illusion Dust",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 7082,
+        "name": "Essence of Air",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 20034,
+    "name": "Enchant Weapon - Crusader",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Large Brilliant Shard x4; Righteous Orb x2",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 12811,
+        "name": "Righteous Orb",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 13898,
+    "name": "Enchant Weapon - Fiery Weapon",
+    "profession": "Enchanting",
+    "crafters": [
+      "Heartsbane",
+      "Taters"
+    ],
+    "mats": "Small Radiant Shard x4; Essence of Fire x1",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11177,
+        "name": "Small Radiant Shard",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 7078,
+        "name": "Essence of Fire",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22750,
+    "name": "Enchant Weapon - Healing Power",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Large Brilliant Shard x4; Greater Eternal Essence x8; Living Essence x6; Essence of Water x6; Righteous Orb x1",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 12803,
+        "name": "Living Essence",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 12811,
+        "name": "Righteous Orb",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 23804,
+    "name": "Enchant Weapon - Mighty Intellect",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Large Brilliant Shard x15; Greater Eternal Essence x12; Illusion Dust x20",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 15,
+        "whType": "item"
+      },
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 12,
+        "whType": "item"
+      },
+      {
+        "id": 16204,
+        "name": "Illusion Dust",
+        "qty": 20,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 23803,
+    "name": "Enchant Weapon - Mighty Spirit",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Large Brilliant Shard x10; Greater Eternal Essence x8; Illusion Dust x15",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 16204,
+        "name": "Illusion Dust",
+        "qty": 15,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22749,
+    "name": "Enchant Weapon - Spell Power",
+    "profession": "Enchanting",
+    "crafters": [],
+    "mats": "Large Brilliant Shard x4; Greater Eternal Essence x12; Essence of Fire x4; Essence of Water x4; Essence of Air x4; Golden Pearl x2",
+    "whType": "spell",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14344,
+        "name": "Large Brilliant Shard",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 16203,
+        "name": "Greater Eternal Essence",
+        "qty": 12,
+        "whType": "item"
+      },
+      {
+        "id": 7078,
+        "name": "Essence of Fire",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 7082,
+        "name": "Essence of Air",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 16005,
+    "name": "Arcane Bomb",
+    "profession": "Engineering",
+    "crafters": [
+      "Draxxar"
+    ],
+    "mats": "Thorium Bar x3; Delicate Arcanite Converter x1; Runecloth x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 12359,
+        "name": "Thorium Bar",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 16006,
+        "name": "Delicate Arcanite Converter",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 14047,
+        "name": "Runecloth",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 16022,
+    "name": "Arcanite Dragonling",
+    "profession": "Engineering",
+    "crafters": [],
+    "mats": "Delicate Arcanite Converter x4; Mithril Mechanical Dragonling x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 16006,
+        "name": "Delicate Arcanite Converter",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18283,
+    "name": "Biznicks 247x128 Accurascope",
+    "profession": "Engineering",
+    "crafters": [],
+    "mats": "Dark Iron Bar x6; Lava Core x2; Essence of Earth x2; Delicate Arcanite Converter x4; Thorium Tube x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11371,
+        "name": "Dark Iron Bar",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 17011,
+        "name": "Lava Core",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 16006,
+        "name": "Delicate Arcanite Converter",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 16000,
+        "name": "Thorium Tube",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18282,
+    "name": "Core Marksman Rifle",
+    "profession": "Engineering",
+    "crafters": [],
+    "mats": "Fiery Core x4; Lava Core x2; Arcanite Bar x6; Delicate Arcanite Converter x2; Thorium Tube x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 17010,
+        "name": "Fiery Core",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 17011,
+        "name": "Lava Core",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 12360,
+        "name": "Arcanite Bar",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 16006,
+        "name": "Delicate Arcanite Converter",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 16000,
+        "name": "Thorium Tube",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 16040,
+    "name": "Dark Iron Bomb",
+    "profession": "Engineering",
+    "crafters": [
+      "Draxxar"
+    ],
+    "mats": "Dark Iron Bar x1; Dense Blasting Powder x3; Runecloth x3; Thorium Widget x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 11371,
+        "name": "Dark Iron Bar",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 15992,
+        "name": "Dense Blasting Powder",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 14047,
+        "name": "Runecloth",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 15994,
+        "name": "Thorium Widget",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 4852,
+    "name": "Flash Bomb",
+    "profession": "Engineering",
+    "crafters": [],
+    "mats": "Blue Pearl x1; Heavy Blasting Powder x1; Silk Cloth x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 4377,
+        "name": "Heavy Blasting Powder",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 4306,
+        "name": "Silk Cloth",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18168,
+    "name": "Force Reactive Disk",
+    "profession": "Engineering",
+    "crafters": [
+      "Craashh",
+      "Draxxar"
+    ],
+    "mats": "Arcanite Bar x6; Essence of Air x8; Essence of Earth x8; Living Essence x12; Delicate Arcanite Converter x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 12360,
+        "name": "Arcanite Bar",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 7082,
+        "name": "Essence of Air",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 12803,
+        "name": "Living Essence",
+        "qty": 12,
+        "whType": "item"
+      },
+      {
+        "id": 16006,
+        "name": "Delicate Arcanite Converter",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18637,
+    "name": "Goblin Jumper Cables XL",
+    "profession": "Engineering",
+    "crafters": [
+      "Draxxar"
+    ],
+    "mats": "Thorium Widget x2; Truesilver Transformer x2; Fused Wiring x2; Ironweb Spider Silk x2; Star Ruby x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 15994,
+        "name": "Thorium Widget",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 18631,
+        "name": "Truesilver Transformer",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 7191,
+        "name": "Fused Wiring",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 7910,
+        "name": "Star Ruby",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 7189,
+    "name": "Goblin Rocket Boots",
+    "profession": "Engineering",
+    "crafters": [
+      "Draxxar"
+    ],
+    "mats": "Black Mageweave Boots x1; Mithril Tube x2; Heavy Leather x4; Goblin Rocket Fuel x2; Unstable Trigger x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 10026,
+        "name": "Black Mageweave Boots",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 10559,
+        "name": "Mithril Tube",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 4234,
+        "name": "Heavy Leather",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 9061,
+        "name": "Goblin Rocket Fuel",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 10560,
+        "name": "Unstable Trigger",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 10646,
+    "name": "Goblin Sapper Charge",
+    "profession": "Engineering",
+    "crafters": [
+      "Draxxar"
+    ],
+    "mats": "Mageweave Cloth x1; Solid Blasting Powder x3; Unstable Trigger x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 4338,
+        "name": "Mageweave Cloth",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 10505,
+        "name": "Solid Blasting Powder",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 10560,
+        "name": "Unstable Trigger",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18634,
+    "name": "Gyrofreeze Ice Reflector",
+    "profession": "Engineering",
+    "crafters": [
+      "Draxxar"
+    ],
+    "mats": "Blue Sapphire x2; Essence of Fire x4; Frost Oil x2; Icecap x4; Thorium Widget x6; Truesilver Transformer x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 12361,
+        "name": "Blue Sapphire",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 7078,
+        "name": "Essence of Fire",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 3829,
+        "name": "Frost Oil",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 13467,
+        "name": "Icecap",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 15994,
+        "name": "Thorium Widget",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 18631,
+        "name": "Truesilver Transformer",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18638,
+    "name": "Hyper-Radiant Flame Reflector",
+    "profession": "Engineering",
+    "crafters": [
+      "Slimgrady"
+    ],
+    "mats": "Azerothian Diamond x2; Star Ruby x4; Dark Iron Bar x4; Essence of Water x6; Truesilver Transformer x3",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 12800,
+        "name": "Azerothian Diamond",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 7910,
+        "name": "Star Ruby",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 11371,
+        "name": "Dark Iron Bar",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 18631,
+        "name": "Truesilver Transformer",
+        "qty": 3,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 10548,
+    "name": "Sniper Scope",
+    "profession": "Engineering",
+    "crafters": [],
+    "mats": "Mithril Tube x1; Star Ruby x1; Truesilver Bar x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 10559,
+        "name": "Mithril Tube",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 7910,
+        "name": "Star Ruby",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 6037,
+        "name": "Truesilver Bar",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 15997,
+    "name": "Thorium Shells",
+    "profession": "Engineering",
+    "crafters": [
+      "Draxxar"
+    ],
+    "mats": "Thorium Bar x2; Dense Blasting Powder x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 12359,
+        "name": "Thorium Bar",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 15992,
+        "name": "Dense Blasting Powder",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18639,
+    "name": "Ultra-Flash Shadow Reflector",
+    "profession": "Engineering",
+    "crafters": [
+      "Draxxar"
+    ],
+    "mats": "Azerothian Diamond x2; Large Opal x2; Dark Iron Bar x8; Essence of Undeath x4; Living Essence x6; Truesilver Transformer x4",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 12800,
+        "name": "Azerothian Diamond",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 12799,
+        "name": "Large Opal",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 11371,
+        "name": "Dark Iron Bar",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 12808,
+        "name": "Essence of Undeath",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 12803,
+        "name": "Living Essence",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 18631,
+        "name": "Truesilver Transformer",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 16984,
+    "name": "Black Dragonscale Boots",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 16983,
+    "name": "Black Dragonscale Breastplate",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Seluna"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15052,
+    "name": "Black Dragonscale Leggings",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15051,
+    "name": "Black Dragonscale Shoulders",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Seluna"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15048,
+    "name": "Blue Dragonscale Breastplate",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Seluna"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 20295,
+    "name": "Blue Dragonscale Leggings",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Seluna"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15049,
+    "name": "Blue Dragonscale Shoulders",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 22761,
+    "name": "Bramblewood Belt",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 22760,
+    "name": "Bramblewood Boots",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 22759,
+    "name": "Bramblewood Helm",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 16987,
+    "name": "Corehound Belt",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15063,
+    "name": "Devilsaur Gauntlets",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Beefbutt"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15062,
+    "name": "Devilsaur Leggings",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Beefbutt"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 18510,
+    "name": "Hide of the Wild",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Beefbutt"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 16980,
+    "name": "Lava Belt",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Beefbutt"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15059,
+    "name": "Living Breastplate",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 16988,
+    "name": "Molten Belt",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 16982,
+    "name": "Molten Helm",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15138,
+    "name": "Onyxia Scale Cloak",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Beefbutt"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 19687,
+    "name": "Primal Batskin Bracers",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 19685,
+    "name": "Primal Batskin Gloves",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 19688,
+    "name": "Primal Batskin Jerkin",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15050,
+    "name": "Red Dragonscale Breastplate",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Seluna"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 20476,
+    "name": "Sandstalker Bracers",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 20478,
+    "name": "Sandstalker Breastplate",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 20477,
+    "name": "Sandstalker Gauntlets",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15056,
+    "name": "Stormshroud Armor",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 21278,
+    "name": "Stormshroud Gloves",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15057,
+    "name": "Stormshroud Pants",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15058,
+    "name": "Stormshroud Shoulders",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15053,
+    "name": "Volcanic Breastplate",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Riot"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15054,
+    "name": "Volcanic Leggings",
+    "profession": "Leatherworking",
+    "crafters": [
+      "Riot"
+    ],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 15055,
+    "name": "Volcanic Shoulders",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "mats": "",
+    "whType": "item",
+    "flavortext": ""
+  },
+  {
+    "id": 19684,
+    "name": "Bloodvine Boots",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Mooncloth x2; Bloodvine x2; Powerful Mojo x2; Ironweb Spider Silk x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14342,
+        "name": "Mooncloth",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 19726,
+        "name": "Bloodvine",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 12804,
+        "name": "Powerful Mojo",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 19683,
+    "name": "Bloodvine Leggings",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Mooncloth x4; Bloodvine x4; Powerful Mojo x4; Ironweb Spider Silk x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14342,
+        "name": "Mooncloth",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 19726,
+        "name": "Bloodvine",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 12804,
+        "name": "Powerful Mojo",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 19682,
+    "name": "Bloodvine Vest",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Mooncloth x3; Bloodvine x3; Powerful Mojo x3; Ironweb Spider Silk x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14342,
+        "name": "Mooncloth",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 19726,
+        "name": "Bloodvine",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 12804,
+        "name": "Powerful Mojo",
+        "qty": 3,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22251,
+    "name": "Cenarion Herb Bag",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Bolt of Runecloth x5; Purple Lotus x10; Morrowgrain x8; Rune Thread x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 5,
+        "whType": "item"
+      },
+      {
+        "id": 8831,
+        "name": "Purple Lotus",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 14341,
+        "name": "Rune Thread",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 18486,
+    "name": "Cindercloth Cloak",
+    "profession": "Tailoring",
+    "crafters": [
+      "Cynthea"
+    ],
+    "mats": "Bolt of Runecloth x5; Essence of Fire x1; Rune Thread x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 5,
+        "whType": "item"
+      },
+      {
+        "id": 7078,
+        "name": "Essence of Fire",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 14341,
+        "name": "Rune Thread",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 21342,
+    "name": "Core Felcloth Bag",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Felcloth x20; Core Leather x16; Bloodvine x8; Essence of Fire x4; Ironweb Spider Silk x4",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14256,
+        "name": "Felcloth",
+        "qty": 20,
+        "whType": "item"
+      },
+      {
+        "id": 17012,
+        "name": "Core Leather",
+        "qty": 16,
+        "whType": "item"
+      },
+      {
+        "id": 19726,
+        "name": "Bloodvine",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 7078,
+        "name": "Essence of Fire",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22658,
+    "name": "Glacial Cloak",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Frozen Rune x5; Bolt of Runecloth x4; Ironweb Spider Silk x4; Essence of Water x2",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 22682,
+        "name": "Frozen Rune",
+        "qty": 5,
+        "whType": "item"
+      },
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 2,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22654,
+    "name": "Glacial Gloves",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Frozen Rune x5; Bolt of Runecloth x4; Essence of Water x4; Ironweb Spider Silk x4",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 22682,
+        "name": "Frozen Rune",
+        "qty": 5,
+        "whType": "item"
+      },
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22652,
+    "name": "Glacial Vest",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Frozen Rune x8; Bolt of Runecloth x8; Essence of Water x6; Ironweb Spider Silk x4",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 22682,
+        "name": "Frozen Rune",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 8,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 6,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 22655,
+    "name": "Glacial Wrists",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Frozen Rune x4; Bolt of Runecloth x2; Essence of Water x2; Ironweb Spider Silk x4",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 22682,
+        "name": "Frozen Rune",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 14227,
+        "name": "Ironweb Spider Silk",
+        "qty": 4,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 14155,
+    "name": "Mooncloth Bag",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Bolt of Runecloth x4; Mooncloth x1; Rune Thread x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 14342,
+        "name": "Mooncloth",
+        "qty": 1,
+        "whType": "item"
+      },
+      {
+        "id": 14341,
+        "name": "Rune Thread",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 14136,
+    "name": "Robe of Winter Night",
+    "profession": "Tailoring",
+    "crafters": [],
+    "mats": "Bolt of Runecloth x10; Felcloth x12; Essence of Undeath x4; Essence of Water x4; Rune Thread x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 10,
+        "whType": "item"
+      },
+      {
+        "id": 14256,
+        "name": "Felcloth",
+        "qty": 12,
+        "whType": "item"
+      },
+      {
+        "id": 12808,
+        "name": "Essence of Undeath",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 7080,
+        "name": "Essence of Water",
+        "qty": 4,
+        "whType": "item"
+      },
+      {
+        "id": 14341,
+        "name": "Rune Thread",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
+  },
+  {
+    "id": 14046,
+    "name": "Runecloth Bag",
+    "profession": "Tailoring",
+    "crafters": [
+      "Cynthea",
+      "Morri"
+    ],
+    "mats": "Bolt of Runecloth x5; Rugged Leather x2; Rune Thread x1",
+    "whType": "item",
+    "flavortext": "",
+    "matsDetailed": [
+      {
+        "id": 14048,
+        "name": "Bolt of Runecloth",
+        "qty": 5,
+        "whType": "item"
+      },
+      {
+        "id": 8170,
+        "name": "Rugged Leather",
+        "qty": 2,
+        "whType": "item"
+      },
+      {
+        "id": 14341,
+        "name": "Rune Thread",
+        "qty": 1,
+        "whType": "item"
+      }
+    ]
   }
 ]

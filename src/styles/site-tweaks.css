@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global roomy content wrapper */
+@layer components {
+  .site-wrap {
+    @apply mx-auto max-w-7xl px-6 sm:px-8 lg:px-10;
+  }
+  .site-stack {
+    @apply space-y-8 sm:space-y-10;
+  }
+  .site-card {
+    @apply rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8;
+  }
+}
