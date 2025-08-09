@@ -67,19 +67,19 @@ export default function Crafting() {
             value={q}
             onChange={e => setQ(e.target.value)}
             placeholder="Search recipes or tags..."
-            className="text-base sm:text-[15px] rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
+            className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
           />
           <select
             value={prof}
             onChange={e => setProf(e.target.value)}
-            className="text-base sm:text-[15px] rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
+            className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
           >
             {professions.map(p => <option key={p}>{p}</option>)}
           </select>
           <select
             value={crafter}
             onChange={e => setCrafter(e.target.value)}
-            className="text-base sm:text-[15px] rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
+            className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
           >
             {crafters.map(c => <option key={c}>{c}</option>)}
           </select>
@@ -88,7 +88,7 @@ export default function Crafting() {
         {/* Table */}
         <div className="overflow-x-auto rounded-2xl border border-skin-base">
           <table className="min-w-full text-[15px]">
-            {/* Column widths: Recipe 35%, Prof 20%, Crafters 25%, Tags 20% */}
+            {/* Column widths: Recipe 45%, Prof 15%, Crafters 25%, Tags 15% */}
             <colgroup>
               <col className="w-[35%]" />
               <col className="w-[20%]" />
