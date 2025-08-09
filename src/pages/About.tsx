@@ -13,8 +13,8 @@ export default function About() {
             <thead className="text-skin-muted">
               <tr className="text-left">
                 <th className="py-2 pr-4">Date</th>
-                <th className="py-2 pr-4">Event</th>
-                <th className="py-2">Notes</th>
+                <th className="py-2 pr-4">What happened?!</th>
+                <th className="py-2">Extra</th>
               </tr>
             </thead>
             <tbody>
