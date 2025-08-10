@@ -627,7 +627,9 @@
     "id": 20008,
     "name": "Enchant Bracer - Greater Intellect",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+	"Taters"
+	],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -641,7 +643,9 @@
     "id": 23802,
     "name": "Enchant Bracer - Healing Power",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+	"taters"
+	],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -732,7 +736,9 @@
     "id": 20014,
     "name": "Enchant Cloak - Greater Resistance",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+	"taters"
+	],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -1031,7 +1037,9 @@
     "id": 22749,
     "name": "Enchant Weapon - Spell Power",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+	"Taters"
+		],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -2003,7 +2011,8 @@
     "name": "Thorium Shells",
     "profession": "Engineering",
     "crafters": [
-      "Draxxar"
+      "Draxxar",
+	  "Taters"
     ],
     "whType": "item",
     "flavortext": "",
