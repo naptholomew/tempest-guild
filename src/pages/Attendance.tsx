@@ -103,22 +103,19 @@ export default function Attendance() {
     html: "",
   });
 
-  const handleEnter = (e: React.MouseEvent, name: string) => {
+  // Build tooltip content for a player
+  const makeTipHTML = (name: string) => {
     const present = new Set(perPlayerDates[name] || []);
     const missing = nights.filter((d) => !present.has(d));
     const presentList = [...present].sort().join(", ") || "—";
     const missingList = missing.join(", ") || "—";
-    const html = `
+    return `
       <div class="text-xs">
         <div class="font-semibold mb-1">${name}</div>
         <div class="mb-1"><span class="font-semibold text-green-400">Present:</span> ${presentList}</div>
         <div><span class="font-semibold text-red-400">Missed:</span> ${missingList}</div>
       </div>`;
-    setTip({ show: true, x: e.clientX + 12, y: e.clientY + 12, html });
   };
-  const handleMove = (e: React.MouseEvent) =>
-    setTip((t) => ({ ...t, x: e.clientX + 12, y: e.clientY + 12 }));
-  const handleLeave = () => setTip({ show: false, x: 0, y: 0, html: "" });
 
   return (
     <section className="space-y-8">
@@ -198,8 +195,22 @@ export default function Attendance() {
           {filteredSorted.map((r) => {
             const pct = Math.max(0, Math.min(100, r.pct ?? 0));
             const barColor = colorForPct(pct);
+
+            // Handlers on the entire row
+            const onEnter = (e: React.MouseEvent) =>
+              setTip({ show: true, x: e.clientX + 12, y: e.clientY + 12, html: makeTipHTML(r.name) });
+            const onMove = (e: React.MouseEvent) =>
+              setTip((t) => ({ ...t, x: e.clientX + 12, y: e.clientY + 12 }));
+            const onLeave = () => setTip({ show: false, x: 0, y: 0, html: "" });
+
             return (
-              <li key={r.name} className="group">
+              <li
+                key={r.name}
+                className="group relative"
+                onMouseEnter={onEnter}
+                onMouseMove={onMove}
+                onMouseLeave={onLeave}
+              >
                 <div className="flex items-baseline justify-between mb-1">
                   <div className="text-skin-base/95 font-medium">{r.name}</div>
                   <div
@@ -213,9 +224,6 @@ export default function Attendance() {
 
                 <div
                   className="w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden transition transform group-hover:scale-[1.01] group-hover:ring-2 group-hover:ring-white/20"
-                  onMouseEnter={(e) => handleEnter(e, r.name)}
-                  onMouseMove={handleMove}
-                  onMouseLeave={handleLeave}
                 >
                   <div
                     className={`h-full ${barColor} transition-[width] duration-700 ease-out`}
