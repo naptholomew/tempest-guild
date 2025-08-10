@@ -92,7 +92,7 @@ export default function About() {
           <tbody>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
-              <td className="py-3 pr-4 align-middle">Temple of Ahn'Qiraj De-Bugged</td>
+              <td className="py-3 pr-4 align-middle">Temple of Ahn'Qiraj Fumigated</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Week one! 5 Pulls on C'thun.</td>
             </tr>
             <tr className="border-t border-skin-base">
@@ -102,7 +102,7 @@ export default function About() {
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-03-24</td>
-              <td className="py-3 pr-4 align-middle">Blackwing Lair Cleaned Out</td>
+              <td className="py-3 pr-4 align-middle">Blackwing Lair Declawed</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was way harder than Nef.</td>
             </tr>
             <tr className="border-t border-skin-base">
