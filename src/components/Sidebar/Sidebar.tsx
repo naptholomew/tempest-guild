@@ -33,18 +33,14 @@ function isMobileViewport() {
 }
 
 export default function Sidebar() {
-  // Initial state:
-  // - If there's a saved preference, use it.
-  // - Otherwise, default to collapsed on mobile, expanded on desktop.
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false
     const raw = window.localStorage.getItem('tempest.sidebar.collapsed')
     if (raw === '1') return true
     if (raw === '0') return false
-    return isMobileViewport() // default on first load
+    return isMobileViewport()
   })
 
-  // Persist on change
   useEffect(() => {
     try {
       window.localStorage.setItem('tempest.sidebar.collapsed', collapsed ? '1' : '0')
@@ -69,7 +65,7 @@ export default function Sidebar() {
         </button>
         {!collapsed && (
           <div className="flex-1 text-center font-extrabold tracking-wide text-lg">
-            {/* (intentionally blank — you removed the <Tempest> title) */}
+            {/* (intentionally blank — title removed) */}
           </div>
         )}
       </div>
@@ -107,14 +103,19 @@ export default function Sidebar() {
             </li>
           ))}
 
-          {/* Decorative, inset divider below Crafting Recipes */}
+          {/* Decorative, inset divider below Crafting Recipes (inset only when expanded) */}
           <li aria-hidden="true">
-            <hr className="my-3 mx-3 border-t-2 border-dashed border-skin-base/50" />
+            <hr
+              className={clsx(
+                'my-3 border-t-2 border-dashed border-skin-base/50',
+                !collapsed && 'mx-3'
+              )}
+            />
           </li>
 
-          {/* Nested extra links (slightly indented & smaller font) */}
+          {/* Nested extra links (indent only when expanded; smaller font) */}
           {EXTRA_LINKS.map(({ to, label, icon: Icon }, idx) => (
-            <li key={to} className={clsx('ml-2', idx === 0 && 'mt-1')}>
+            <li key={to} className={clsx(!collapsed && 'ml-2', idx === 0 && 'mt-1')}>
               <a
                 href={to}
                 target="_blank"
