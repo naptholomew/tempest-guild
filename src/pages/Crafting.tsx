@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import useWowheadTooltips from '../hooks/useWowheadTooltips'
 import { getWowheadUrl } from '../lib/wowhead'
 
@@ -20,12 +20,15 @@ export default function Crafting() {
   const [prof, setProf] = useState('All')
   const [crafter, setCrafter] = useState('All')
   const [recipes, setRecipes] = useState<Recipe[]>([])
+  const searchRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
+    // Swap this import for your real data file when ready
     import('../data/crafting.mock.json').then(mod => setRecipes(mod.default as Recipe[]))
   }, [])
 
   useEffect(() => {
+    // Refresh Wowhead tooltips after table updates
     // @ts-ignore
     if (window.$WowheadPower) window.$WowheadPower.refreshLinks?.()
   }, [recipes])
@@ -34,21 +37,40 @@ export default function Crafting() {
     () => ['All', ...Array.from(new Set(recipes.map(r => r.profession)))],
     [recipes]
   )
+
   const crafters = useMemo(
     () => ['All', ...Array.from(new Set(recipes.flatMap(r => r.crafters)))],
     [recipes]
   )
 
+  // Filter: search now includes crafters (in addition to recipe name + tags)
   const filtered = useMemo(() => {
     const needle = q.toLowerCase().trim()
     return recipes.filter(r => {
       const inName = !needle || r.name.toLowerCase().includes(needle)
       const inTags = !needle || (r.tags ?? []).some(t => t.toLowerCase().includes(needle))
+      const inCrafters = !needle || r.crafters.some(c => c.toLowerCase().includes(needle))
       const matchesProf = prof === 'All' || r.profession === prof
       const matchesCrafter = crafter === 'All' || r.crafters.includes(crafter)
-      return (inName || inTags) && matchesProf && matchesCrafter
+      return (inName || inTags || inCrafters) && matchesProf && matchesCrafter
     })
   }, [recipes, q, prof, crafter])
+
+  // Click handler for crafter/tag chips: set search term AND clear narrowing dropdowns
+  const handleChipClick = (term: string) => {
+    setProf('All')
+    setCrafter('All')
+    setQ(term)
+
+    // focus search and put cursor at end
+    requestAnimationFrame(() => {
+      const el = searchRef.current
+      if (el) {
+        el.focus()
+        el.setSelectionRange(el.value.length, el.value.length)
+      }
+    })
+  }
 
   return (
     <section className="space-y-8">
@@ -59,36 +81,41 @@ export default function Crafting() {
         </p>
       </header>
 
-      {/* Wrap filters + table in one card for consistent bg */}
       <div className="rounded-3xl border border-skin-base bg-skin-elev p-3 sm:p-4 space-y-3">
         {/* Filters */}
         <div className="flex flex-wrap gap-3 items-center">
           <input
+            ref={searchRef}
             value={q}
             onChange={e => setQ(e.target.value)}
-            placeholder="Search recipes or tags..."
+            placeholder="Search recipes, crafters, or tags..."
             className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
           />
+
           <select
             value={prof}
             onChange={e => setProf(e.target.value)}
             className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
           >
-            {professions.map(p => <option key={p}>{p}</option>)}
+            {professions.map(p => (
+              <option key={p}>{p}</option>
+            ))}
           </select>
+
           <select
             value={crafter}
             onChange={e => setCrafter(e.target.value)}
             className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
           >
-            {crafters.map(c => <option key={c}>{c}</option>)}
+            {crafters.map(c => (
+              <option key={c}>{c}</option>
+            ))}
           </select>
         </div>
 
         {/* Table */}
         <div className="overflow-x-auto rounded-2xl border border-skin-base">
           <table className="min-w-full text-[15px]">
-            {/* Column widths: Recipe 45%, Prof 15%, Crafters 25%, Tags 15% */}
             <colgroup>
               <col className="w-[35%]" />
               <col className="w-[20%]" />
@@ -134,23 +161,37 @@ export default function Crafting() {
                     {r.profession}
                   </td>
 
-                  {/* Crafters */}
-                  <td className="py-3 pr-4 align-middle text-sm text-skin-base">
-                    {r.crafters.join(', ')}
+                  {/* Crafters as pill bubbles (no commas), clickable */}
+                  <td className="py-3 pr-4 align-middle text-xs">
+                    <div className="flex flex-wrap gap-1.5">
+                      {r.crafters.map((c, i) => (
+                        <button
+                          key={`${c}-${i}`}
+                          type="button"
+                          onClick={() => handleChipClick(c)}
+                          title={`Search for ${c}`}
+                          className="px-2 py-0.5 rounded-full bg-white/10 text-skin-base border border-white/10 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60"
+                        >
+                          {c}
+                        </button>
+                      ))}
+                    </div>
                   </td>
 
-                  {/* Tags */}
+                  {/* Tags as pill bubbles, clickable */}
                   <td className="py-3 pr-5 align-middle text-xs">
                     <div className="flex flex-wrap gap-1.5">
                       {(r.tags ?? []).length ? (
                         (r.tags ?? []).map((t, i) => (
-                          <span
-                            key={i}
-                            className="px-2 py-0.5 rounded-full bg-white/10 text-skin-base border border-white/10"
-                            title={t}
+                          <button
+                            key={`${t}-${i}`}
+                            type="button"
+                            onClick={() => handleChipClick(t)}
+                            title={`Search for ${t}`}
+                            className="px-2 py-0.5 rounded-full bg-white/10 text-skin-base border border-white/10 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60"
                           >
                             {t}
-                          </span>
+                          </button>
                         ))
                       ) : (
                         <span className="text-skin-muted">—</span>
