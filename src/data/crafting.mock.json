@@ -644,8 +644,8 @@
     "name": "Enchant Bracer - Healing Power",
     "profession": "Enchanting",
     "crafters": [
-	"Taters"
-	],
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
