@@ -39,7 +39,7 @@ export default function Attendance() {
   return (
     <section className="space-y-8">
       <header className="pb-2 border-b border-skin-base">
-        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">Attendance</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Raid Attendance</h1>
         <p className="text-skin-muted mt-2 text-sm">Historical raid attendance by player (sample data).</p>
       </header>
 

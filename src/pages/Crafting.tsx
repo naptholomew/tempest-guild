@@ -75,7 +75,7 @@ export default function Crafting() {
   return (
     <section className="space-y-8">
       <header className="pb-2 border-b border-skin-base">
-        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">Crafting Recipes</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Crafting Recipes</h1>
         <p className="text-skin-muted mt-2 text-sm">
           Hover recipe names for Wowhead tooltips. Use search and filters to narrow results.
         </p>
