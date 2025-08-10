@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { Menu, ScrollText, Gavel, Users, Hammer } from 'lucide-react'
+import { Menu, ScrollText, Gavel, Users, Hammer, CalendarDays, ListChecks, ListTodo } from 'lucide-react'
 import clsx from 'clsx'
 
 const LINKS = [
@@ -10,25 +10,27 @@ const LINKS = [
   { to: '/crafting', label: 'Crafting Recipes', icon: Hammer },
 ]
 
-// Helper: detect "mobile" using same breakpoint as Tailwind's md (<768px)
+// External links below divider
+const EXTRA_LINKS = [
+  { to: 'https://fresh.warcraftlogs.com/guild/calendar/775047', label: 'WCL Calendar', icon: CalendarDays },
+  { to: 'https://thatsmybis.com/22393/tempest/loot/temple-of-ahnqiraj', label: 'AQ40 Gear List', icon: ListChecks },
+  { to: 'https://thatsmybis.com/22393/tempest/loot/naxxramas', label: 'NAXX Gear List', icon: ListTodo },
+]
+
 function isMobileViewport() {
   if (typeof window === 'undefined' || typeof window.matchMedia === 'undefined') return false
   return window.matchMedia('(max-width: 767px)').matches
 }
 
 export default function Sidebar() {
-  // Initial state:
-  // - If there's a saved preference, use it.
-  // - Otherwise, default to collapsed on mobile, expanded on desktop.
   const [collapsed, setCollapsed] = useState<boolean>(() => {
     if (typeof window === 'undefined') return false
     const raw = window.localStorage.getItem('tempest.sidebar.collapsed')
     if (raw === '1') return true
     if (raw === '0') return false
-    return isMobileViewport() // default on first load
+    return isMobileViewport()
   })
 
-  // Persist on change
   useEffect(() => {
     try {
       window.localStorage.setItem('tempest.sidebar.collapsed', collapsed ? '1' : '0')
@@ -52,13 +54,10 @@ export default function Sidebar() {
           <Menu className="h-5 w-5" />
         </button>
         {!collapsed && (
-          <div className="flex-1 text-center font-extrabold tracking-wide text-lg">
-            {/* (intentionally blank — you removed the <Tempest> title) */}
-          </div>
+          <div className="flex-1 text-center font-extrabold tracking-wide text-lg"></div>
         )}
       </div>
 
-      {/* Banner (hidden when collapsed) */}
       {!collapsed && (
         <div className="px-3 py-4">
           <img
@@ -86,8 +85,30 @@ export default function Sidebar() {
                 title={collapsed ? label : undefined}
               >
                 <Icon className="h-5 w-5 shrink-0" />
-                {!collapsed && <span className="text-sm">{label}</span>}
+                {!collapsed && <span className="text-base">{label}</span>}
               </NavLink>
+            </li>
+          ))}
+
+          {/* Divider below Crafting Recipes */}
+          <li>
+            <hr className="my-2 border-t border-skin-base/60" />
+          </li>
+
+          {/* Extra Links */}
+          {EXTRA_LINKS.map(({ to, label, icon: Icon }) => (
+            <li key={to}>
+              <a
+                href={to}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 rounded-xl px-3 py-2 transition outline-none hover:bg-black/20 focus-visible:ring-2 ring-brand-accent text-skin-base"
+                aria-label={label}
+                title={collapsed ? label : undefined}
+              >
+                <Icon className="h-5 w-5 shrink-0" />
+                {!collapsed && <span className="text-base">{label}</span>}
+              </a>
             </li>
           ))}
         </ul>
