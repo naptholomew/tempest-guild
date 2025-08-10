@@ -109,7 +109,7 @@ export default function Attendance() {
       <header className="pb-2 border-b border-skin-base">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">Attendance</h1>
         <p className="text-skin-muted mt-2 text-sm">
-          Last 6 weeks {dateRange ? `(${dateRange})` : ""}. 75% = Ideal · 50% = Meets.
+          Last 6 weeks {dateRange ? `(${dateRange})` : ""}. 50% = Meets Attendance.
         </p>
       </header>
 
