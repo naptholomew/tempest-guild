@@ -1,13 +1,20 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 type Row = { name: string; attended: number; possible: number; pct?: number; lastSeen?: string };
-type Payload = { nights: string[]; rows: Row[]; perPlayerDates?: Record<string, string[]> };
+type Payload = { nights: string[]; rows: Row[]; perPlayerDates?: Record<string, string[]>; _cachedAt?: string };
 
 type SortKey = "pct" | "name" | "attended" | "lastSeen";
 
-const API =
-  (import.meta as any).env?.VITE_ATTEND_BACKEND ||
+const API_LATEST =
+  (import.meta as any).env?.VITE_ATTEND_BACKEND_LATEST ||
+  "https://tempest-attendance.onrender.com/api/attendance/latest";
+
+const API_REFRESH =
+  (import.meta as any).env?.VITE_ATTEND_BACKEND_REFRESH ||
   "https://tempest-attendance.onrender.com/api/attendance/refresh";
+
+function saveCache(p: Payload) { try { localStorage.setItem("att_payload", JSON.stringify(p)); } catch {} }
+function readCache(): Payload | null { try { return JSON.parse(localStorage.getItem("att_payload") || "null"); } catch { return null; } }
 
 export default function Attendance() {
   const [nights, setNights] = useState<string[]>([]);
@@ -26,34 +33,51 @@ export default function Attendance() {
   useEffect(() => localStorage.setItem("att_only50", only50 ? "1" : "0"), [only50]);
   useEffect(() => localStorage.setItem("att_sortKey", sortKey), [sortKey]);
 
-  async function load() {
-    setLoading(true);
-    setMsg(null);
+  // Load latest cached payload from server (fast) with localStorage fallback
+  async function loadLatest() {
     try {
-      const res = await fetch(API, { cache: "no-store" });
+      const res = await fetch(API_LATEST, { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const json = (await res.json()) as Payload;
-
       const normalized = (json.rows || []).map((r) => ({
         ...r,
         pct: r.pct ?? (r.possible ? Math.round((r.attended / r.possible) * 100) : 0),
       }));
-
       setNights(json.nights || []);
       setRows(normalized);
       setPerPlayerDates(json.perPlayerDates || {});
-      setMsg("Attendance refreshed successfully!");
+      setMsg(json._cachedAt ? `Cached ${new Date(json._cachedAt).toLocaleString()}` : "Loaded cached data");
+      saveCache({ ...json, rows: normalized });
     } catch (e) {
-      console.error(e);
-      setMsg("Error loading attendance data.");
+      setMsg("No cached data. Click Refresh to fetch.");
+      const cached = readCache();
+      if (cached?.rows?.length) {
+        setNights(cached.nights || []);
+        setRows(cached.rows || []);
+        setPerPlayerDates(cached.perPlayerDates || {});
+      }
+    }
+  }
+
+  // Manual refresh: recompute on server, then pull latest
+  async function onRefresh() {
+    setLoading(true);
+    setMsg(null);
+    try {
+      const res = await fetch(API_REFRESH, { cache: "no-store" });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      await res.json(); // server already wrote /latest
+      setMsg("Attendance refreshed successfully!");
+      await loadLatest();
+    } catch (e) {
+      setMsg("Error refreshing attendance.");
     } finally {
       setLoading(false);
     }
   }
 
-  useEffect(() => {
-    load();
-  }, []);
+  // Initial load: only fetch /latest (no recompute)
+  useEffect(() => { loadLatest(); }, []);
 
   const dateRange = useMemo(() => {
     if (!nights.length) return "";
@@ -165,7 +189,7 @@ export default function Attendance() {
           <div className="flex items-center gap-3">
             <div className="text-skin-base/80 text-sm">{msg}</div>
             <button
-              onClick={load}
+              onClick={onRefresh}
               disabled={loading}
               className="px-4 py-2 rounded-lg bg-brand-accent text-white disabled:opacity-50"
             >
@@ -242,8 +266,8 @@ export default function Attendance() {
             );
           })}
 
-          {!filteredSorted.length && !loading && (
-            <li className="text-sm text-skin-muted">No matching players.</li>
+          {!filteredSorted.length && (
+            <li className="text-sm text-skin-muted">No matching players. Click Refresh if this looks wrong.</li>
           )}
         </ul>
       </div>
