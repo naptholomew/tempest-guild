@@ -1,20 +1,16 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 type Row = { name: string; attended: number; possible: number; pct?: number; lastSeen?: string };
-type Payload = { nights: string[]; rows: Row[]; perPlayerDates?: Record<string, string[]>; _cachedAt?: string };
+type Payload = { nights: string[]; rows: Row[]; perPlayerDates?: Record<string, string[]> };
 
 type SortKey = "pct" | "name" | "attended" | "lastSeen";
 
-const API_LATEST =
-  (import.meta as any).env?.VITE_ATTEND_BACKEND_LATEST ||
-  "https://tempest-attendance.onrender.com/api/attendance/latest";
-
-const API_REFRESH =
-  (import.meta as any).env?.VITE_ATTEND_BACKEND_REFRESH ||
+const API =
+  (import.meta as any).env?.VITE_ATTEND_BACKEND ||
   "https://tempest-attendance.onrender.com/api/attendance/refresh";
+const HEALTH = API.replace(/\/api\/attendance\/refresh$/, "/api/health");
 
-function saveCache(p: Payload) { try { localStorage.setItem("att_payload", JSON.stringify(p)); } catch {} }
-function readCache(): Payload | null { try { return JSON.parse(localStorage.getItem("att_payload") || "null"); } catch { return null; } }
+const CACHE_KEY = "att_cache_v1";
 
 export default function Attendance() {
   const [nights, setNights] = useState<string[]>([]);
@@ -22,6 +18,8 @@ export default function Attendance() {
   const [perPlayerDates, setPerPlayerDates] = useState<Record<string, string[]>>({});
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
+  const [updatedAt, setUpdatedAt] = useState<string | null>(null);
+  const [health, setHealth] = useState<string>("checking…");
 
   // Controls
   const [query, setQuery] = useState("");
@@ -33,51 +31,106 @@ export default function Attendance() {
   useEffect(() => localStorage.setItem("att_only50", only50 ? "1" : "0"), [only50]);
   useEffect(() => localStorage.setItem("att_sortKey", sortKey), [sortKey]);
 
-  // Load latest cached payload from server (fast) with localStorage fallback
-  async function loadLatest() {
+  // Health check (so you can see if backend is reachable)
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(HEALTH, { cache: "no-store" });
+        const txt = await res.text().catch(() => "");
+        if (!cancelled) setHealth(res.ok ? "ok" : `error ${res.status} ${txt || ""}`.trim());
+      } catch (e: any) {
+        if (!cancelled) setHealth(`network error: ${e?.message || e}`);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [HEALTH]);
+
+  // Load from cache on mount; if no cache, try one refresh
+  useEffect(() => {
+    let hadCache = false;
     try {
-      const res = await fetch(API_LATEST, { cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const json = (await res.json()) as Payload;
+      const raw = localStorage.getItem(CACHE_KEY);
+      if (raw) {
+        const cache = JSON.parse(raw) as {
+          nights: string[];
+          rows: Row[];
+          perPlayerDates: Record<string, string[]>;
+          updatedAt: string;
+          api?: string;
+        };
+        if (cache && Array.isArray(cache.nights) && Array.isArray(cache.rows)) {
+          setNights(cache.nights);
+          setRows(cache.rows);
+          setPerPlayerDates(cache.perPlayerDates || {});
+          setUpdatedAt(cache.updatedAt || null);
+          setMsg("Loaded from cache");
+          hadCache = true;
+        }
+      }
+    } catch {
+      // ignore cache errors
+    }
+    if (!hadCache) {
+      // Try one automatic refresh if nothing cached
+      refresh(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Manual refresh (or first-load refresh)
+  async function refresh(isAuto = false) {
+    setLoading(true);
+    setMsg(isAuto ? "Loading…" : null);
+    try {
+      const res = await fetch(API, { cache: "no-store" });
+      const text = await res.text(); // read once
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`);
+      const json = JSON.parse(text) as Payload;
+
       const normalized = (json.rows || []).map((r) => ({
         ...r,
         pct: r.pct ?? (r.possible ? Math.round((r.attended / r.possible) * 100) : 0),
       }));
+
+      const now = new Date().toISOString();
+
       setNights(json.nights || []);
       setRows(normalized);
       setPerPlayerDates(json.perPlayerDates || {});
-      setMsg(json._cachedAt ? `Cached ${new Date(json._cachedAt).toLocaleString()}` : "Loaded cached data");
-      saveCache({ ...json, rows: normalized });
-    } catch (e) {
-      setMsg("No cached data. Click Refresh to fetch.");
-      const cached = readCache();
-      if (cached?.rows?.length) {
-        setNights(cached.nights || []);
-        setRows(cached.rows || []);
-        setPerPlayerDates(cached.perPlayerDates || {});
-      }
-    }
-  }
-
-  // Manual refresh: recompute on server, then pull latest
-  async function onRefresh() {
-    setLoading(true);
-    setMsg(null);
-    try {
-      const res = await fetch(API_REFRESH, { cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      await res.json(); // server already wrote /latest
+      setUpdatedAt(now);
       setMsg("Attendance refreshed successfully!");
-      await loadLatest();
-    } catch (e) {
-      setMsg("Error refreshing attendance.");
+
+      // write cache
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({
+          nights: json.nights || [],
+          rows: normalized,
+          perPlayerDates: json.perPlayerDates || {},
+          updatedAt: now,
+          api: API,
+        })
+      );
+    } catch (e: any) {
+      console.error(e);
+      setMsg(`Error loading attendance data. ${e?.message || ""}`.trim());
     } finally {
       setLoading(false);
     }
   }
 
-  // Initial load: only fetch /latest (no recompute)
-  useEffect(() => { loadLatest(); }, []);
+  function clearCache() {
+    localStorage.removeItem(CACHE_KEY);
+    setMsg("Cache cleared.");
+    setUpdatedAt(null);
+    setRows([]);
+    setNights([]);
+    setPerPlayerDates({});
+  }
 
   const dateRange = useMemo(() => {
     if (!nights.length) return "";
@@ -145,7 +198,7 @@ export default function Attendance() {
     <section className="space-y-8">
       {/* Header */}
       <header className="pb-2 border-b border-skin-base">
-        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Attendance</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">Attendance</h1>
         <p className="text-skin-muted mt-2 text-sm">
           Last 6 weeks {dateRange ? `(${dateRange})` : ""}. 75% = Ideal · 50% = Meets.
         </p>
@@ -186,15 +239,31 @@ export default function Attendance() {
             </label>
           </div>
 
-          <div className="flex items-center gap-3">
-            <div className="text-skin-base/80 text-sm">{msg}</div>
-            <button
-              onClick={onRefresh}
-              disabled={loading}
-              className="px-4 py-2 rounded-lg bg-brand-accent text-white disabled:opacity-50"
-            >
-              {loading ? "Working…" : "Refresh Attendance"}
-            </button>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+            <div className="text-skin-base/80 text-xs sm:text-sm">
+              {msg}
+              {updatedAt && (
+                <span className="text-skin-muted"> · Updated {new Date(updatedAt).toLocaleString()}</span>
+              )}
+              <span className="text-skin-muted"> · Backend: {API}</span>
+              <span className="text-skin-muted"> · Health: {health}</span>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={() => refresh(false)}
+                disabled={loading}
+                className="px-4 py-2 rounded-lg bg-brand-accent text-white disabled:opacity-50"
+              >
+                {loading ? "Working…" : "Refresh Attendance"}
+              </button>
+              <button
+                onClick={clearCache}
+                className="px-3 py-2 rounded-lg border border-skin-base text-skin-base/80"
+                title="Remove cached data"
+              >
+                Clear Cache
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -246,9 +315,7 @@ export default function Attendance() {
                   </div>
                 </div>
 
-                <div
-                  className="w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden transition transform group-hover:scale-[1.01] group-hover:ring-2 group-hover:ring-white/20"
-                >
+                <div className="w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden transition transform group-hover:scale-[1.01] group-hover:ring-2 group-hover:ring-white/20">
                   <div
                     className={`h-full ${barColor} transition-[width] duration-700 ease-out`}
                     style={{ width: `${pct}%` }}
@@ -267,7 +334,9 @@ export default function Attendance() {
           })}
 
           {!filteredSorted.length && (
-            <li className="text-sm text-skin-muted">No matching players. Click Refresh if this looks wrong.</li>
+            <li className="text-sm text-skin-muted">
+              {rows.length ? "No matching players." : "No cached data yet — hit Refresh Attendance."}
+            </li>
           )}
         </ul>
       </div>
