@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 
 type Row = { name: string; attended: number; possible: number; pct?: number; lastSeen?: string };
-type Payload = { nights: string[]; rows: Row[] };
+type Payload = { nights: string[]; rows: Row[]; perPlayerDates?: Record<string, string[]> };
 
 type SortKey = "pct" | "name" | "attended" | "lastSeen";
 
@@ -12,31 +12,20 @@ const API =
 export default function Attendance() {
   const [nights, setNights] = useState<string[]>([]);
   const [rows, setRows] = useState<Row[]>([]);
+  const [perPlayerDates, setPerPlayerDates] = useState<Record<string, string[]>>({});
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
 
   // Controls
   const [query, setQuery] = useState("");
-  const [only50, setOnly50] = useState<boolean>(() => {
-    const saved = localStorage.getItem("att_only50");
-    return saved === "1";
-  });
-  const [sortKey, setSortKey] = useState<SortKey>(() => {
-    const saved = localStorage.getItem("att_sortKey") as SortKey | null;
-    return saved || "pct";
-  });
+  const [only50, setOnly50] = useState<boolean>(() => localStorage.getItem("att_only50") === "1");
+  const [sortKey, setSortKey] = useState<SortKey>(() => (localStorage.getItem("att_sortKey") as SortKey) || "pct");
 
-  useEffect(() => {
-    localStorage.setItem("att_only50", only50 ? "1" : "0");
-  }, [only50]);
-
-  useEffect(() => {
-    localStorage.setItem("att_sortKey", sortKey);
-  }, [sortKey]);
+  useEffect(() => localStorage.setItem("att_only50", only50 ? "1" : "0"), [only50]);
+  useEffect(() => localStorage.setItem("att_sortKey", sortKey), [sortKey]);
 
   async function load() {
-    setLoading(true);
-    setMsg(null);
+    setLoading(true); setMsg(null);
     try {
       const res = await fetch(API, { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -49,6 +38,7 @@ export default function Attendance() {
 
       setNights(json.nights || []);
       setRows(normalized);
+      setPerPlayerDates(json.perPlayerDates || {});
       setMsg("Attendance refreshed successfully!");
     } catch (e) {
       console.error(e);
@@ -58,9 +48,7 @@ export default function Attendance() {
     }
   }
 
-  useEffect(() => {
-    load();
-  }, []);
+  useEffect(() => { load(); }, []);
 
   const dateRange = useMemo(() => {
     if (!nights.length) return "";
@@ -68,7 +56,6 @@ export default function Attendance() {
     return `${s[0]} → ${s[s.length - 1]}`;
   }, [nights]);
 
-  // Filters + Sorting
   const filteredSorted = useMemo(() => {
     const q = query.trim().toLowerCase();
 
@@ -80,141 +67,80 @@ export default function Attendance() {
 
     const cmp = (a: Row, b: Row) => {
       switch (sortKey) {
-        case "pct":
-          return (b.pct ?? 0) - (a.pct ?? 0) || b.attended - a.attended || a.name.localeCompare(b.name);
-        case "name":
-          return a.name.localeCompare(b.name);
-        case "attended":
-          return b.attended - a.attended || (b.pct ?? 0) - (a.pct ?? 0) || a.name.localeCompare(b.name);
+        case "pct": return (b.pct ?? 0) - (a.pct ?? 0) || b.attended - a.attended || a.name.localeCompare(b.name);
+        case "name": return a.name.localeCompare(b.name);
+        case "attended": return b.attended - a.attended || (b.pct ?? 0) - (a.pct ?? 0) || a.name.localeCompare(b.name);
         case "lastSeen":
-          // Later date first; undefined at the end
           if (!a.lastSeen && !b.lastSeen) return 0;
           if (!a.lastSeen) return 1;
           if (!b.lastSeen) return -1;
           return b.lastSeen.localeCompare(a.lastSeen) || (b.pct ?? 0) - (a.pct ?? 0);
-        default:
-          return 0;
+        default: return 0;
       }
     };
-
     return filtered.sort(cmp);
   }, [rows, query, only50, sortKey]);
 
-  const colorForPct = (pct: number) =>
-    pct >= 75 ? "bg-green-500" : pct >= 50 ? "bg-yellow-500" : "bg-red-500";
+  const colorForPct = (pct: number) => (pct >= 75 ? "bg-green-500" : pct >= 50 ? "bg-yellow-500" : "bg-red-500");
+
+  // Tooltip state
+  const [tip, setTip] = useState<{ show: boolean; x: number; y: number; html: string }>({
+    show: false, x: 0, y: 0, html: "",
+  });
+
+  const handleEnter = (e: React.MouseEvent, name: string) => {
+    const present = new Set(perPlayerDates[name] || []);
+    const missing = nights.filter((d) => !present.has(d));
+    const html = `
+      <div class="text-xs">
+        <div class="font-semibold mb-1">${name}</div>
+        <div class="mb-1"><span class="font-semibold text-green-400">Present:</span> ${[...present].sort().join(", ") || "—"}</div>
+        <div><span class="font-semibold text-red-400">Missed:</span> ${missing.join(", ") || "—"}</div>
+      </div>`;
+    setTip({ show: true, x: e.clientX + 12, y: e.clientY + 12, html });
+  };
+  const handleMove = (e: React.MouseEvent) => setTip((t) => ({ ...t, x: e.clientX + 12, y: e.clientY + 12 }));
+  const handleLeave = () => setTip({ show: false, x: 0, y: 0, html: "" });
 
   return (
     <section className="space-y-8">
-      {/* Header (like About) */}
+      {/* Header */}
       <header className="pb-2 border-b border-skin-base">
-        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Attendance</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">Attendance</h1>
         <p className="text-skin-muted mt-2 text-sm">
-          Last 6 weeks {dateRange ? `(${dateRange})` : ""}. 50% = Meets Attendance.
+          Last 6 weeks {dateRange ? `(${dateRange})` : ""}. 75% = Ideal · 50% = Meets.
         </p>
       </header>
 
-      {/* Controls */}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex gap-2 items-center">
-          <input
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search player…"
-            className="px-3 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 w-64"
-          />
-
-          <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
+      {/* Controls (sticky for readability) */}
+      <div className="sticky top-0 z-10 bg-skin-page/70 backdrop-blur supports-[backdrop-filter]:bg-skin-page/60 py-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex gap-2 items-center">
             <input
-              type="checkbox"
-              checked={only50}
-              onChange={(e) => setOnly50(e.target.checked)}
-              className="h-4 w-4"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search player…"
+              className="px-3 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 w-64"
             />
-            Show only 50%+
-          </label>
+            <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
+              <input type="checkbox" checked={only50} onChange={(e) => setOnly50(e.target.checked)} className="h-4 w-4" />
+              Show only 50%+
+            </label>
+            <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
+              <span>Sort</span>
+              <select
+                value={sortKey}
+                onChange={(e) => setSortKey(e.target.value as SortKey)}
+                className="px-2 py-1 rounded-md border border-skin-base bg-skin-elev text-skin-base/90"
+              >
+                <option value="pct">Top %</option>
+                <option value="name">Name A→Z</option>
+                <option value="attended">Attended (desc)</option>
+                <option value="lastSeen">Last Seen (newest)</option>
+              </select>
+            </label>
+          </div>
 
-          <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
-            <span>Sort</span>
-            <select
-              value={sortKey}
-              onChange={(e) => setSortKey(e.target.value as SortKey)}
-              className="px-2 py-1 rounded-md border border-skin-base bg-skin-elev text-skin-base/90"
-            >
-              <option value="pct">Top %</option>
-              <option value="name">Name A→Z</option>
-              <option value="attended">Attended (desc)</option>
-              <option value="lastSeen">Last Seen (newest)</option>
-            </select>
-          </label>
-        </div>
-
-        <div className="flex items-center gap-3">
-          <div className="text-skin-base/80 text-sm">{msg}</div>
-          <button
-            onClick={load}
-            disabled={loading}
-            className="px-4 py-2 rounded-lg bg-brand-accent text-white disabled:opacity-50"
-          >
-            {loading ? "Working…" : "Refresh Attendance"}
-          </button>
-        </div>
-      </div>
-
-      {/* Card with bars */}
-      <div className="rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8">
-        {/* Legend */}
-        <div className="flex items-center gap-4 text-xs text-skin-muted mb-5">
-          <span className="inline-flex items-center gap-2">
-            <span className="h-2 w-5 rounded-full bg-green-500" /> 75%+
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <span className="h-2 w-5 rounded-full bg-yellow-500" /> 50–74%
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <span className="h-2 w-5 rounded-full bg-red-500" /> &lt; 50%
-          </span>
-        </div>
-
-        {/* Bars */}
-        <ul className="space-y-3">
-          {filteredSorted.map((r) => {
-            const pct = Math.max(0, Math.min(100, r.pct ?? 0));
-            return (
-              <li key={r.name} className="group">
-                <div className="flex items-baseline justify-between mb-1">
-                  <div className="text-skin-base/95 font-medium">{r.name}</div>
-                  <div
-                    className={`text-xs font-semibold ${
-                      pct >= 75 ? "text-green-400" : pct >= 50 ? "text-yellow-400" : "text-red-400"
-                    }`}
-                  >
-                    {pct}%
-                  </div>
-                </div>
-
-                <div className="w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden">
-                  <div
-                    className={`h-full ${colorForPct(pct)} transition-[width] duration-700 ease-out`}
-                    style={{ width: `${pct}%` }}
-                    aria-label={`${r.name} ${pct}%`}
-                  />
-                </div>
-
-                <div className="mt-1 text-[12px] text-skin-muted flex items-center justify-between">
-                  <span>
-                    {r.attended} / {r.possible} nights
-                  </span>
-                  {r.lastSeen && <span>last seen {r.lastSeen}</span>}
-                </div>
-              </li>
-            );
-          })}
-
-          {!filteredSorted.length && !loading && (
-            <li className="text-sm text-skin-muted">No matching players.</li>
-          )}
-        </ul>
-      </div>
-    </section>
-  );
-}
+          <div className="flex items-center gap-3">
+            <div className="text-skin-base/80 text-sm">{msg}</div>
+            <button onClick={load} disabled={loading} className="px-4 py-2 rounded-lg bg-brand-accent text-white disabled:
