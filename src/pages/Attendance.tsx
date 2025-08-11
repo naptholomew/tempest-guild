@@ -8,7 +8,6 @@ type SortKey = "pct" | "name" | "attended" | "lastSeen";
 const API =
   (import.meta as any).env?.VITE_ATTEND_BACKEND ||
   "https://tempest-attendance.onrender.com/api/attendance/refresh";
-const HEALTH = API.replace(/\/api\/attendance\/refresh$/, "/api/health");
 
 const CACHE_KEY = "att_cache_v1";
 
@@ -19,7 +18,6 @@ export default function Attendance() {
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState<string | null>(null);
   const [updatedAt, setUpdatedAt] = useState<string | null>(null);
-  const [health, setHealth] = useState<string>("checking…");
 
   // Controls
   const [query, setQuery] = useState("");
@@ -31,25 +29,7 @@ export default function Attendance() {
   useEffect(() => localStorage.setItem("att_only50", only50 ? "1" : "0"), [only50]);
   useEffect(() => localStorage.setItem("att_sortKey", sortKey), [sortKey]);
 
-  // Health check (so you can see if backend is reachable)
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const res = await fetch(HEALTH, { cache: "no-store" });
-        const txt = await res.text().catch(() => "");
-        if (!cancelled) setHealth(res.ok ? "ok" : `error ${res.status} ${txt || ""}`.trim());
-      } catch (e: any) {
-        if (!cancelled) setHealth(`network error: ${e?.message || e}`);
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [HEALTH]);
-
-  // Load from cache on mount; if no cache, try one refresh
+  // Load from cache on mount (no network); if no cache, do one automatic refresh
   useEffect(() => {
     let hadCache = false;
     try {
@@ -60,7 +40,6 @@ export default function Attendance() {
           rows: Row[];
           perPlayerDates: Record<string, string[]>;
           updatedAt: string;
-          api?: string;
         };
         if (cache && Array.isArray(cache.nights) && Array.isArray(cache.rows)) {
           setNights(cache.nights);
@@ -75,19 +54,18 @@ export default function Attendance() {
       // ignore cache errors
     }
     if (!hadCache) {
-      // Try one automatic refresh if nothing cached
       refresh(true);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Manual refresh (or first-load refresh)
+  // Manual (or first-load) refresh
   async function refresh(isAuto = false) {
     setLoading(true);
     setMsg(isAuto ? "Loading…" : null);
     try {
       const res = await fetch(API, { cache: "no-store" });
-      const text = await res.text(); // read once
+      const text = await res.text();
       if (!res.ok) throw new Error(`HTTP ${res.status}: ${text.slice(0, 200)}`);
       const json = JSON.parse(text) as Payload;
 
@@ -112,7 +90,6 @@ export default function Attendance() {
           rows: normalized,
           perPlayerDates: json.perPlayerDates || {},
           updatedAt: now,
-          api: API,
         })
       );
     } catch (e: any) {
@@ -240,19 +217,27 @@ export default function Attendance() {
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+            {/* Message + Updated line */}
             <div className="text-skin-base/80 text-xs sm:text-sm">
-              {msg}
-              {updatedAt && (
-                <span className="text-skin-muted"> · Updated {new Date(updatedAt).toLocaleString()}</span>
+              {msg && (
+                <>
+                  <div>{msg}</div>
+                  {updatedAt && (
+                    <div className="text-skin-muted">
+                      Updated {new Date(updatedAt).toLocaleString()}
+                    </div>
+                  )}
+                </>
               )}
-              <span className="text-skin-muted"> · Backend: {API}</span>
-              <span className="text-skin-muted"> · Health: {health}</span>
             </div>
+
+            {/* Buttons */}
             <div className="flex gap-2">
               <button
                 onClick={() => refresh(false)}
                 disabled={loading}
-                className="px-4 py-2 rounded-lg bg-brand-accent text-white disabled:opacity-50"
+                className={`px-4 py-2 rounded-lg bg-brand-accent text-white relative overflow-hidden
+                  ${loading ? "animate-pulse font-bold text-lg" : ""}`}
               >
                 {loading ? "Working…" : "Refresh Attendance"}
               </button>
