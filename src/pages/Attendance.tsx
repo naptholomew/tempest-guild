@@ -178,70 +178,78 @@ export default function Attendance() {
         </p>
       </header>
 
-      {/* Sticky controls bar — matches Crafting height (py-3 + inputs py-2) */}
-      <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            {/* Left: search */}
-            <div className="flex items-center gap-3">
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search player…"
-                className="w-full sm:w-[22rem] md:w-[26rem] px-4 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 outline-none focus:ring-2 ring-brand-accent"
-              />
+{/* Sticky controls bar — matches Crafting height */}
+<div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm">
+  <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-3">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      {/* Left: search */}
+      <div className="flex items-center gap-3">
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search player…"
+          className="w-full sm:w-[22rem] md:w-[19.5rem] px-4 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 outline-none focus:ring-2 ring-brand-accent"
+        />
 
-              <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
-                <span>Sort</span>
-                <select
-                  value={sortKey}
-                  onChange={(e) => setSortKey(e.target.value as SortKey)}
-                  className="px-2 py-1 rounded-md border border-skin-base bg-skin-elev text-skin-base/90"
-                >
-                  <option value="pct">Top %</option>
-                  <option value="name">Name A→Z</option>
-                  <option value="attended">Attended (desc)</option>
-                  <option value="lastSeen">Last Seen (newest)</option>
-                </select>
-              </label>
-            </div>
+        <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
+          <span>Sort</span>
+          <select
+            value={sortKey}
+            onChange={(e) => setSortKey(e.target.value as SortKey)}
+            className="px-2 py-1 rounded-md border border-skin-base bg-skin-elev text-skin-base/90"
+          >
+            <option value="pct">Top %</option>
+            <option value="name">Name A→Z</option>
+            <option value="attended">Attended (desc)</option>
+            <option value="lastSeen">Last Seen (newest)</option>
+          </select>
+        </label>
+      </div>
 
-            {/* Right: status + buttons */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-              <div className="text-skin-base/80 text-[11px] sm:text-xs leading-tight">
-                {msg && (
-                  <>
-                    <div>{msg}</div>
-                    {updatedAt && (
-                      <div className="text-skin-muted">
-                        Updated {new Date(updatedAt).toLocaleString()}
-                      </div>
-                    )}
-                  </>
-                )}
-              </div>
+      {/* Right: status + buttons */}
+      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+        <div className="text-skin-base/80 text-[11px] sm:text-xs leading-tight">
+          {msg && (
+            <>
+              <div>{msg}</div>
+              {updatedAt && (
+                <div className="text-skin-muted">
+                  Updated{" "}
+                  {new Date(updatedAt).toLocaleString("en-US", {
+                    month: "numeric",
+                    day: "numeric",
+                    year: "2-digit",
+                    hour: "numeric",
+                    minute: "2-digit",
+                  })}
+                </div>
+              )}
+            </>
+          )}
+        </div>
 
-              <div className="flex gap-2">
-                <button
-                  onClick={() => refresh(false)}
-                  disabled={loading}
-                  className={`px-4 py-2 rounded-lg bg-brand-accent text-white relative overflow-hidden
-                    ${loading ? "animate-pulse font-bold text-lg" : ""}`}
-                >
-                  {loading ? "Working…" : "Refresh Attendance"}
-                </button>
-                <button
-                  onClick={clearCache}
-                  className="px-3 py-2 rounded-lg border border-skin-base text-skin-base/80"
-                  title="Remove cached data"
-                >
-                  Clear Cache
-                </button>
-              </div>
-            </div>
-          </div>
+        <div className="flex gap-2">
+          <button
+            onClick={() => refresh(false)}
+            disabled={loading}
+            className={`px-4 py-2 text-sm rounded-lg bg-brand-accent text-white relative overflow-hidden
+              ${loading ? "animate-pulse font-bold text-lg" : ""}`}
+          >
+            {loading ? "Working…" : "Refresh Attendance"}
+          </button>
+          <button
+            onClick={clearCache}
+            className="px-3 py-2 text-sm rounded-lg border border-skin-base text-skin-base/80"
+            title="Remove cached data"
+          >
+            Clear Cache
+          </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Card with bars */}
       <div className="rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8">
