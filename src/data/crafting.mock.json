@@ -124,8 +124,8 @@
     "name": "Bloodvine Boots",
     "profession": "Tailoring",
     "crafters": [
-	"Morri"
-	],
+      "Morri"
+    ],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -141,8 +141,8 @@
     "name": "Bloodvine Leggings",
     "profession": "Tailoring",
     "crafters": [
-	"Morri"
-	],
+      "Morri"
+    ],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -158,8 +158,8 @@
     "name": "Bloodvine Vest",
     "profession": "Tailoring",
     "crafters": [
-	"Morri"
-	],
+      "Morri"
+    ],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -475,7 +475,8 @@
     "name": "Elixir of Brute Force",
     "profession": "Alchemy",
     "crafters": [
-      "Shedbol"
+      "Shedbol",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -489,7 +490,9 @@
     "id": 21546,
     "name": "Elixir of Greater Firepower",
     "profession": "Alchemy",
-    "crafters": [],
+    "crafters": [
+      "Cynthea"
+    ],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -628,8 +631,8 @@
     "name": "Enchant Bracer - Greater Intellect",
     "profession": "Enchanting",
     "crafters": [
-	"Taters"
-	],
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -737,8 +740,8 @@
     "name": "Enchant Cloak - Greater Resistance",
     "profession": "Enchanting",
     "crafters": [
-	"taters"
-	],
+      "taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -1038,8 +1041,8 @@
     "name": "Enchant Weapon - Spell Power",
     "profession": "Enchanting",
     "crafters": [
-	"Taters"
-		],
+      "Taters"
+    ],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -1072,7 +1075,8 @@
       "Dibs",
       "Melevolence",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1092,7 +1096,8 @@
       "Dibs",
       "Melevolence",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1110,7 +1115,8 @@
     "crafters": [
       "Melevolence",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1147,7 +1153,9 @@
     "crafters": [
       "Dibs",
       "Melevolence",
-      "Holypeach"
+      "Holypeach",
+      "Cynthea",
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1367,7 +1375,8 @@
       "Melevolence",
       "Noblehart",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1386,7 +1395,8 @@
     "crafters": [
       "Melevolence",
       "Noblehart",
-      "Holypeach"
+      "Holypeach",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1405,7 +1415,8 @@
     "crafters": [
       "Holypeach",
       "Melevolence",
-      "Noblehart"
+      "Noblehart",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1626,7 +1637,8 @@
     "profession": "Alchemy",
     "crafters": [
       "Holypeach",
-      "Shedbol"
+      "Shedbol",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1821,7 +1833,8 @@
     "name": "Restorative Potion",
     "profession": "Alchemy",
     "crafters": [
-      "Jeager"
+      "Jeager",
+      "Cynthea"
     ],
     "whType": "item",
     "flavortext": "",
@@ -2012,7 +2025,7 @@
     "profession": "Engineering",
     "crafters": [
       "Draxxar",
-	  "Taters"
+      "Taters"
     ],
     "whType": "item",
     "flavortext": "",
