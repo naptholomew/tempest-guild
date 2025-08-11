@@ -81,131 +81,41 @@ export default function Crafting() {
         </p>
       </header>
 
-      {/* Sticky controls bar — matches Attendance */}
+      {/* Sticky controls bar — matches Attendance and is evenly spaced with interior padding */}
       <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base py-3">
-        <div className="flex flex-wrap gap-3 items-center">
-          <input
-            ref={searchRef}
-            value={q}
-            onChange={e => setQ(e.target.value)}
-            placeholder="Search recipes, crafters, or tags..."
-            className="rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
-          />
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+          {/* 3 even columns on sm+; stacked on mobile */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-3">
+            <div className="flex justify-center sm:justify-start">
+              <input
+                ref={searchRef}
+                value={q}
+                onChange={e => setQ(e.target.value)}
+                placeholder="Search recipes, crafters, or tags..."
+                className="w-full sm:w-[28rem] md:w-[32rem] rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
+              />
+            </div>
 
-          <select
-            value={prof}
-            onChange={e => setProf(e.target.value)}
-            className="rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
-          >
-            {professions.map(p => (
-              <option key={p}>{p}</option>
-            ))}
-          </select>
+            <div className="flex justify-center">
+              <select
+                value={prof}
+                onChange={e => setProf(e.target.value)}
+                className="w-full sm:w-56 rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
+              >
+                {professions.map(p => (
+                  <option key={p}>{p}</option>
+                ))}
+              </select>
+            </div>
 
-          <select
-            value={crafter}
-            onChange={e => setCrafter(e.target.value)}
-            className="rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
-          >
-            {crafters.map(c => (
-              <option key={c}>{c}</option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      {/* Card with table */}
-      <div className="rounded-3xl border border-skin-base bg-skin-elev p-3 sm:p-4 space-y-3">
-        <div className="overflow-x-auto rounded-2xl border border-skin-base">
-          <table className="min-w-full text-[15px]">
-            <colgroup>
-              <col className="w-[35%]" />
-              <col className="w-[20%]" />
-              <col className="w-[25%]" />
-              <col className="w-[20%]" />
-            </colgroup>
-
-            <thead className="text-skin-muted">
-              <tr className="text-left">
-                <th className="py-3 pl-5 pr-4">Recipe</th>
-                <th className="py-3 pr-4">Profession</th>
-                <th className="py-3 pr-4">Crafter(s)</th>
-                <th className="py-3 pr-5">Tags</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {filtered.map(r => (
-                <tr
-                  key={`${r.whType ?? 'item'}-${r.id}`}
-                  className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors"
-                >
-                  {/* Recipe */}
-                  <td className="py-3 pl-5 pr-4">
-                    <div className="min-h-20 flex flex-col justify-center leading-snug">
-                      <a
-                        href={getWowheadUrl(r.id, r.whType ?? 'item')}
-                        data-wh-icon="true"
-                        data-wh-rename-link="false"
-                        data-wh-rename-duplicate="false"
-                        className="hover:underline text-lg font-semibold text-brand-accent/90 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60 rounded"
-                      >
-                        {r.name}
-                      </a>
-                      {r.flavortext && (
-                        <div className="text-xs text-skin-muted mt-1">{r.flavortext}</div>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* Profession */}
-                  <td className="py-3 pr-4 align-middle text-sm text-skin-muted italic">
-                    {r.profession}
-                  </td>
-
-                  {/* Crafters as pill bubbles (no commas), clickable */}
-                  <td className="py-3 pr-4 align-middle text-xs">
-                    <div className="flex flex-wrap gap-1.5">
-                      {r.crafters.map((c, i) => (
-                        <button
-                          key={`${c}-${i}`}
-                          type="button"
-                          onClick={() => handleChipClick(c)}
-                          title={`Search for ${c}`}
-                          className="px-2 py-0.5 rounded-full bg-white/10 text-skin-base border border-white/10 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60"
-                        >
-                          {c}
-                        </button>
-                      ))}
-                    </div>
-                  </td>
-
-                  {/* Tags as pill bubbles, clickable */}
-                  <td className="py-3 pr-5 align-middle text-xs">
-                    <div className="flex flex-wrap gap-1.5">
-                      {(r.tags ?? []).length ? (
-                        (r.tags ?? []).map((t, i) => (
-                          <button
-                            key={`${t}-${i}`}
-                            type="button"
-                            onClick={() => handleChipClick(t)}
-                            title={`Search for ${t}`}
-                            className="px-2 py-0.5 rounded-full bg-white/10 text-skin-base border border-white/10 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60"
-                          >
-                            {t}
-                          </button>
-                        ))
-                      ) : (
-                        <span className="text-skin-muted">—</span>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  )
-}
+            <div className="flex justify-center sm:justify-end">
+              <select
+                value={crafter}
+                onChange={e => setCrafter(e.target.value)}
+                className="w-full sm:w-56 rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
+              >
+                {crafters.map(c => (
+                  <option key={c}>{c}</option>
+                ))}
+              </select>
+            </div>
