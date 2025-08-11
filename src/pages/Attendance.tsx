@@ -21,12 +21,10 @@ export default function Attendance() {
 
   // Controls
   const [query, setQuery] = useState("");
-  const [only50, setOnly50] = useState<boolean>(() => localStorage.getItem("att_only50") === "1");
   const [sortKey, setSortKey] = useState<SortKey>(
     () => (localStorage.getItem("att_sortKey") as SortKey) || "pct"
   );
 
-  useEffect(() => localStorage.setItem("att_only50", only50 ? "1" : "0"), [only50]);
   useEffect(() => localStorage.setItem("att_sortKey", sortKey), [sortKey]);
 
   // Load from cache on mount (no network); if no cache, do one automatic refresh
@@ -120,7 +118,6 @@ export default function Attendance() {
     const q = query.trim().toLowerCase();
 
     const filtered = rows.filter((r) => {
-      if (only50 && (r.pct ?? 0) < 50) return false;
       if (q && !r.name.toLowerCase().includes(q)) return false;
       return true;
     });
@@ -144,10 +141,10 @@ export default function Attendance() {
     };
 
     return filtered.sort(cmp);
-  }, [rows, query, only50, sortKey]);
+  }, [rows, query, sortKey]);
 
   const colorForPct = (pct: number) =>
-    pct >= 75 ? "bg-green-500" : pct >= 50 ? "bg-yellow-500" : pct >= 0 ? "bg-red-500" : "";
+    pct >= 75 ? "bg-green-500" : pct >= 50 ? "bg-yellow-500" : "bg-red-500";
 
   // Tooltip state
   const [tip, setTip] = useState<{ show: boolean; x: number; y: number; html: string }>({
@@ -181,28 +178,20 @@ export default function Attendance() {
         </p>
       </header>
 
-      {/* Sticky controls bar — same height, now with interior padding to match layout */}
+      {/* Sticky controls bar — matches Crafting height (py-3 + inputs py-2) */}
       <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex gap-2 items-center">
+            {/* Left: search */}
+            <div className="flex items-center gap-3">
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search player…"
-                className="px-3 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 w-72"
+                className="w-full sm:w-[22rem] md:w-[26rem] px-4 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 outline-none focus:ring-2 ring-brand-accent"
               />
-              <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
-                <input
-                  type="checkbox"
-                  checked={only50}
-                  onChange={(e) => setOnly50(e.target.checked)}
-                  className="h-4 w-4"
-                />
-                Show only 50%+
-              </label>
 
-              <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
+              <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
                 <span>Sort</span>
                 <select
                   value={sortKey}
@@ -217,9 +206,9 @@ export default function Attendance() {
               </label>
             </div>
 
+            {/* Right: status + buttons */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-              {/* Message + Updated line */}
-              <div className="text-skin-base/80 text-xs sm:text-sm">
+              <div className="text-skin-base/80 text-[11px] sm:text-xs leading-tight">
                 {msg && (
                   <>
                     <div>{msg}</div>
@@ -232,7 +221,6 @@ export default function Attendance() {
                 )}
               </div>
 
-              {/* Buttons */}
               <div className="flex gap-2">
                 <button
                   onClick={() => refresh(false)}
@@ -276,7 +264,6 @@ export default function Attendance() {
             const pct = Math.max(0, Math.min(100, r.pct ?? 0));
             const barColor = colorForPct(pct);
 
-            // Handlers on the entire row
             const onEnter = (e: React.MouseEvent) =>
               setTip({ show: true, x: e.clientX + 12, y: e.clientY + 12, html: makeTipHTML(r.name) });
             const onMove = (e: React.MouseEvent) =>
