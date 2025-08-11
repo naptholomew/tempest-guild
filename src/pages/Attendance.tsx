@@ -147,7 +147,7 @@ export default function Attendance() {
   }, [rows, query, only50, sortKey]);
 
   const colorForPct = (pct: number) =>
-    pct >= 75 ? "bg-green-500" : pct >= 50 ? "bg-yellow-500" : "bg-red-500";
+    pct >= 75 ? "bg-green-500" : pct >= 50 ? "bg-yellow-500" : pct >= 0 ? "bg-red-500" : "";
 
   // Tooltip state
   const [tip, setTip] = useState<{ show: boolean; x: number; y: number; html: string }>({
@@ -181,74 +181,77 @@ export default function Attendance() {
         </p>
       </header>
 
-      {/* Controls (sticky) */}
-<div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm py-3">
-
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex gap-2 items-center">
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search player…"
-              className="px-3 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 w-64"
-            />
-            <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
+      {/* Sticky controls bar — even spacing + interior padding to match layout */}
+      <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm py-3">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-3">
+            {/* Left: Search + 50% filter */}
+            <div className="flex flex-wrap items-center gap-3 justify-center sm:justify-start">
               <input
-                type="checkbox"
-                checked={only50}
-                onChange={(e) => setOnly50(e.target.checked)}
-                className="h-4 w-4"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search player…"
+                className="w-full sm:w-[22rem] md:w-[26rem] px-3 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 outline-none focus:ring-2 ring-brand-accent"
               />
-              Show only 50%+
-            </label>
-
-            <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
-              <span>Sort</span>
-              <select
-                value={sortKey}
-                onChange={(e) => setSortKey(e.target.value as SortKey)}
-                className="px-2 py-1 rounded-md border border-skin-base bg-skin-elev text-skin-base/90"
-              >
-                <option value="pct">Top %</option>
-                <option value="name">Name A→Z</option>
-                <option value="attended">Attended (desc)</option>
-                <option value="lastSeen">Last Seen (newest)</option>
-              </select>
-            </label>
-          </div>
-
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-            {/* Message + Updated line */}
-            <div className="text-skin-base/80 text-xs sm:text-sm">
-              {msg && (
-                <>
-                  <div>{msg}</div>
-                  {updatedAt && (
-                    <div className="text-skin-muted">
-                      Updated {new Date(updatedAt).toLocaleString()}
-                    </div>
-                  )}
-                </>
-              )}
+              <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
+                <input
+                  type="checkbox"
+                  checked={only50}
+                  onChange={(e) => setOnly50(e.target.checked)}
+                  className="h-4 w-4"
+                />
+                Show only 50%+
+              </label>
             </div>
 
-            {/* Buttons */}
-            <div className="flex gap-2">
-              <button
-                onClick={() => refresh(false)}
-                disabled={loading}
-                className={`px-4 py-2 rounded-lg bg-brand-accent text-white relative overflow-hidden
-                  ${loading ? "animate-pulse font-bold text-lg" : ""}`}
-              >
-                {loading ? "Working…" : "Refresh Attendance"}
-              </button>
-              <button
-                onClick={clearCache}
-                className="px-3 py-2 rounded-lg border border-skin-base text-skin-base/80"
-                title="Remove cached data"
-              >
-                Clear Cache
-              </button>
+            {/* Middle: Sort */}
+            <div className="flex justify-center">
+              <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
+                <span>Sort</span>
+                <select
+                  value={sortKey}
+                  onChange={(e) => setSortKey(e.target.value as SortKey)}
+                  className="px-2 py-1 rounded-md border border-skin-base bg-skin-elev text-skin-base/90"
+                >
+                  <option value="pct">Top %</option>
+                  <option value="name">Name A→Z</option>
+                  <option value="attended">Attended (desc)</option>
+                  <option value="lastSeen">Last Seen (newest)</option>
+                </select>
+              </label>
+            </div>
+
+            {/* Right: status + buttons */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 justify-center sm:justify-end">
+              <div className="text-skin-base/80 text-xs sm:text-sm text-center sm:text-right">
+                {msg && (
+                  <>
+                    <div>{msg}</div>
+                    {updatedAt && (
+                      <div className="text-skin-muted">
+                        Updated {new Date(updatedAt).toLocaleString()}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => refresh(false)}
+                  disabled={loading}
+                  className={`px-4 py-2 rounded-lg bg-brand-accent text-white relative overflow-hidden
+                    ${loading ? "animate-pulse font-bold text-lg" : ""}`}
+                >
+                  {loading ? "Working…" : "Refresh Attendance"}
+                </button>
+                <button
+                  onClick={clearCache}
+                  className="px-3 py-2 rounded-lg border border-skin-base text-skin-base/80"
+                  title="Remove cached data"
+                >
+                  Clear Cache
+                </button>
+              </div>
             </div>
           </div>
         </div>
