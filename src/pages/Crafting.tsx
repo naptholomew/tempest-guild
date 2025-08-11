@@ -14,17 +14,7 @@ interface Recipe {
   tags?: string[]
 }
 
-export default function Crafting() {
-  useWowheadTooltips()
-  const [q, setQ] = useState('')
-  const [prof, setProf] = useState('All')
-  const [crafter, setCrafter] = useState('All')
-  const [recipes, setRecipes] = useState<Recipe[]>([])
-  const searchRef = useRef<HTMLInputElement>(null)
-
-  useEffect(() => {
-    // Swap this import for your real data file when ready
-    import('../data/crafting.mock.json').then(mod => setRecipes(mod.default as Recipe[]))
+...
   }, [])
 
   useEffect(() => {
@@ -39,7 +29,7 @@ export default function Crafting() {
   )
 
   const crafters = useMemo(
-    () => ['All', ...Array.from(new Set(recipes.flatMap(r => r.crafters)))],
+    () => ['All', ...Array.from(new Set(recipes.map(r => r.crafters).flat()))],
     [recipes]
   )
 
@@ -56,164 +46,143 @@ export default function Crafting() {
     })
   }, [recipes, q, prof, crafter])
 
-  // Click handler for crafter/tag chips: set search term AND clear narrowing dropdowns
+  // Click handler for crafter/tag chip
   const handleChipClick = (term: string) => {
-    setProf('All')
-    setCrafter('All')
     setQ(term)
-
-    // focus search and put cursor at end
-    requestAnimationFrame(() => {
-      const el = searchRef.current
-      if (el) {
-        el.focus()
-        el.setSelectionRange(el.value.length, el.value.length)
-      }
-    })
+    setTimeout(() => searchRef.current?.focus(), 0)
   }
 
   return (
-    <section className="space-y-8">
-      <header className="pb-2 border-b border-skin-base">
-        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Crafting Recipes</h1>
-        <p className="text-skin-muted mt-2 text-sm">
-          Hover recipe names for Wowhead tooltips. Use search and filters to narrow results.
-        </p>
-      </header>
-
-      {/* Sticky controls bar — matches Attendance and is evenly spaced with interior padding */}
-      <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base py-3">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-          {/* 3 even columns on sm+; stacked on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-3">
-            <div className="flex justify-center sm:justify-start">
-              <input
-                ref={searchRef}
-                value={q}
-                onChange={e => setQ(e.target.value)}
-                placeholder="Search recipes, crafters, or tags..."
-                className="w-full sm:w-[28rem] md:w-[32rem] rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
-              />
+    <section className="space-y-6">
+      {/* Controls */}
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        {/* Search */}
+        <div className="flex-1">
+          <label htmlFor="search" className="sr-only">Search</label>
+          <div className="relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 grid place-items-center pl-3 pr-2">
+              <span className="i-lucide-search h-5 w-5 opacity-70" />
             </div>
+            <input
+              ref={searchRef}
+                style={{ fontSize: 16 }}
+              id="search"
+              value={q}
+              onChange={e => setQ(e.target.value)}
+              placeholder="Search recipes, tags, or crafters…"
+              className="w-full rounded-xl border border-skin-muted bg-skin-elevated pl-10 pr-3 text-[16px] sm:text-sm leading-tight h-10 sm:h-9 shadow-inner focus:outline-none focus:ring-2 focus:ring-brand-accent"
+            />
+          </div>
+        </div>
 
-            <div className="flex justify-center">
-              <select
-                value={prof}
-                onChange={e => setProf(e.target.value)}
-                className="w-full sm:w-56 rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
-              >
-                {professions.map(p => (
-                  <option key={p}>{p}</option>
-                ))}
-              </select>
-            </div>
+        {/* Profession Filter */}
+        <div>
+          <label htmlFor="prof" className="sr-only">Profession</label>
+          <div className="relative">
+            <select
+                style={{ fontSize: 16 }}
+              value={prof}
+              onChange={e => setProf(e.target.value)}
+              id="prof"
+              className="h-10 sm:h-9 rounded-xl border border-skin-muted bg-skin-elevated px-3 text-[16px] sm:text-sm shadow-inner focus:outline-none focus:ring-2 focus:ring-brand-accent"
+            >
+              {professions.map(p => (
+                <option key={p} value={p}>{p}</option>
+              ))}
+            </select>
+          </div>
+        </div>
 
-            <div className="flex justify-center sm:justify-end">
-              <select
-                value={crafter}
-                onChange={e => setCrafter(e.target.value)}
-                className="w-full sm:w-56 rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
-              >
-                {crafters.map(c => (
-                  <option key={c}>{c}</option>
-                ))}
-              </select>
-            </div>
+        {/* Crafter Filter */}
+        <div>
+          <label htmlFor="crafter" className="sr-only">Crafter</label>
+          <div className="relative">
+            <select
+                style={{ fontSize: 16 }}
+              value={crafter}
+              onChange={e => setCrafter(e.target.value)}
+              id="crafter"
+              className="h-10 sm:h-9 rounded-xl border border-skin-muted bg-skin-elevated px-3 text-[16px] sm:text-sm shadow-inner focus:outline-none focus:ring-2 focus:ring-brand-accent"
+            >
+              {crafters.map(c => (
+                <option key={c} value={c}>{c}</option>
+              ))}
+            </select>
           </div>
         </div>
       </div>
 
-      {/* Card with table */}
-      <div className="rounded-3xl border border-skin-base bg-skin-elev p-3 sm:p-4 space-y-3">
-        <div className="overflow-x-auto rounded-2xl border border-skin-base">
-          <table className="min-w-full text-[15px]">
-            <colgroup>
-              <col className="w-[35%]" />
-              <col className="w-[20%]" />
-              <col className="w-[25%]" />
-              <col className="w-[20%]" />
-            </colgroup>
+      {/* Table wrapper */}
+      <div className="overflow-x-auto rounded-xl border border-skin-muted bg-skin-base shadow">
+        <table className="min-w-full text-sm">
+          <thead className="sticky top-0 z-10 bg-skin-elevated">
+            <tr className="text-left">
+              <th className="px-4 py-3">Recipe</th>
+              <th className="px-4 py-3">Crafter(s)</th>
+              <th className="px-4 py-3">Tags</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filtered.map(r => (
+              <tr key={r.id} className="border-t border-skin-muted">
+                <td className="px-4 py-3 align-top">
+                  <div className="flex flex-col gap-1">
+                    <a
+                      href={getWowheadUrl(r.whType ?? 'item', r.id)}
+                      target="_blank"
+                      referrerPolicy="no-referrer"
+                      className="font-medium hover:underline"
+                      data-wh-rename-link="true"
+                    >
+                      {r.name}
+                    </a>
+                    {r.flavortext && (
+                      <div className="text-skin-muted text-xs leading-snug">{r.flavortext}</div>
+                    )}
+                  </div>
+                </td>
 
-            <thead className="text-skin-muted">
-              <tr className="text-left">
-                <th className="py-3 pl-5 pr-4">Recipe</th>
-                <th className="py-3 pr-4">Profession</th>
-                <th className="py-3 pr-4">Crafter(s)</th>
-                <th className="py-3 pr-5">Tags</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {filtered.map(r => (
-                <tr
-                  key={`${r.whType ?? 'item'}-${r.id}`}
-                  className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors"
-                >
-                  {/* Recipe */}
-                  <td className="py-3 pl-5 pr-4">
-                    <div className="min-h-20 flex flex-col justify-center leading-snug">
-                      <a
-                        href={getWowheadUrl(r.id, r.whType ?? 'item')}
-                        data-wh-icon="true"
-                        data-wh-rename-link="false"
-                        data-wh-rename-duplicate="false"
-                        className="hover:underline text-lg font-semibold text-brand-accent/90 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60 rounded"
+                {/* Crafters */}
+                <td className="px-4 py-3 align-top">
+                  <div className="flex flex-wrap gap-2">
+                    {r.crafters.map(c => (
+                      <button
+                        key={c}
+                        type="button"
+                        onClick={() => handleChipClick(c)}
+                        className="rounded-full border border-skin-muted bg-skin-elevated px-2.5 py-1 text-xs leading-tight hover:bg-skin-elevated/80"
+                        title={`Search for ${c}`}
                       >
-                        {r.name}
-                      </a>
-                      {r.flavortext && (
-                        <div className="text-xs text-skin-muted mt-1">{r.flavortext}</div>
-                      )}
-                    </div>
-                  </td>
+                        {c}
+                      </button>
+                    ))}
+                  </div>
+                </td>
 
-                  {/* Profession */}
-                  <td className="py-3 pr-4 align-middle text-sm text-skin-muted italic">
-                    {r.profession}
-                  </td>
-
-                  {/* Crafters as pill bubbles (no commas), clickable */}
-                  <td className="py-3 pr-4 align-middle text-xs">
-                    <div className="flex flex-wrap gap-1.5">
-                      {r.crafters.map((c, i) => (
+                {/* Tags */}
+                <td className="px-4 py-3 align-top">
+                  <div className="flex flex-wrap gap-2">
+                    {(r.tags ?? []).length ? (
+                      (r.tags ?? []).map(t => (
                         <button
-                          key={`${c}-${i}`}
+                          key={t}
                           type="button"
-                          onClick={() => handleChipClick(c)}
-                          title={`Search for ${c}`}
-                          className="px-2 py-0.5 rounded-full bg-white/10 text-skin-base border border-white/10 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60"
+                          onClick={() => handleChipClick(t)}
+                          className="rounded-full border border-skin-muted bg-skin-elevated px-2.5 py-1 text-xs leading-tight hover:bg-skin-elevated/80"
+                          title={`Search for ${t}`}
                         >
-                          {c}
+                          {t}
                         </button>
-                      ))}
-                    </div>
-                  </td>
-
-                  {/* Tags as pill bubbles, clickable */}
-                  <td className="py-3 pr-5 align-middle text-xs">
-                    <div className="flex flex-wrap gap-1.5">
-                      {(r.tags ?? []).length ? (
-                        (r.tags ?? []).map((t, i) => (
-                          <button
-                            key={`${t}-${i}`}
-                            type="button"
-                            onClick={() => handleChipClick(t)}
-                            title={`Search for ${t}`}
-                            className="px-2 py-0.5 rounded-full bg-white/10 text-skin-base border border-white/10 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent/60"
-                          >
-                            {t}
-                          </button>
-                        ))
-                      ) : (
-                        <span className="text-skin-muted">—</span>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+                      ))
+                    ) : (
+                      <span className="text-skin-muted">—</span>
+                    )}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   )
