@@ -177,7 +177,7 @@ export default function Attendance() {
       <header className="pb-2 border-b border-skin-base">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Attendance</h1>
         <p className="text-skin-muted mt-2 text-sm">
-          Last 6 weeks {dateRange ? `(${dateRange})` : ""}.
+          Last 6 weeks {dateRange ? `(${dateRange})` : ""}, pulled from Warcraft Logs.
         </p>
       </header>
 

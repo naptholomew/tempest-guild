@@ -81,21 +81,21 @@ export default function Crafting() {
         </p>
       </header>
 
-      <div className="rounded-3xl border border-skin-base bg-skin-elev p-3 sm:p-4 space-y-3">
-        {/* Filters */}
+      {/* Sticky controls bar — matches Attendance */}
+      <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base py-3">
         <div className="flex flex-wrap gap-3 items-center">
           <input
             ref={searchRef}
             value={q}
             onChange={e => setQ(e.target.value)}
             placeholder="Search recipes, crafters, or tags..."
-            className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
+            className="rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
           />
 
           <select
             value={prof}
             onChange={e => setProf(e.target.value)}
-            className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
+            className="rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
           >
             {professions.map(p => (
               <option key={p}>{p}</option>
@@ -105,15 +105,17 @@ export default function Crafting() {
           <select
             value={crafter}
             onChange={e => setCrafter(e.target.value)}
-            className="rounded-2xl bg-black/30 border border-skin-base px-4 py-2.5 outline-none focus:ring-2 ring-brand-accent"
+            className="rounded-lg bg-skin-elev border border-skin-base px-4 py-2 outline-none focus:ring-2 ring-brand-accent"
           >
             {crafters.map(c => (
               <option key={c}>{c}</option>
             ))}
           </select>
         </div>
+      </div>
 
-        {/* Table */}
+      {/* Card with table */}
+      <div className="rounded-3xl border border-skin-base bg-skin-elev p-3 sm:p-4 space-y-3">
         <div className="overflow-x-auto rounded-2xl border border-skin-base">
           <table className="min-w-full text-[15px]">
             <colgroup>
