@@ -181,19 +181,18 @@ export default function Attendance() {
         </p>
       </header>
 
-      {/* Sticky controls bar — even spacing + interior padding to match layout */}
-      <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm py-3">
-        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 items-center gap-3">
-            {/* Left: Search + 50% filter */}
-            <div className="flex flex-wrap items-center gap-3 justify-center sm:justify-start">
+      {/* Sticky controls bar — same height, now with interior padding to match layout */}
+      <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex gap-2 items-center">
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search player…"
-                className="w-full sm:w-[22rem] md:w-[26rem] px-3 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 outline-none focus:ring-2 ring-brand-accent"
+                className="px-3 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 w-72"
               />
-              <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
+              <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
                 <input
                   type="checkbox"
                   checked={only50}
@@ -202,11 +201,8 @@ export default function Attendance() {
                 />
                 Show only 50%+
               </label>
-            </div>
 
-            {/* Middle: Sort */}
-            <div className="flex justify-center">
-              <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
+              <label className="inline-flex items-center gap-2 text-sm text-skin-muted select-none">
                 <span>Sort</span>
                 <select
                   value={sortKey}
@@ -221,9 +217,9 @@ export default function Attendance() {
               </label>
             </div>
 
-            {/* Right: status + buttons */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 justify-center sm:justify-end">
-              <div className="text-skin-base/80 text-xs sm:text-sm text-center sm:text-right">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+              {/* Message + Updated line */}
+              <div className="text-skin-base/80 text-xs sm:text-sm">
                 {msg && (
                   <>
                     <div>{msg}</div>
@@ -235,6 +231,8 @@ export default function Attendance() {
                   </>
                 )}
               </div>
+
+              {/* Buttons */}
               <div className="flex gap-2">
                 <button
                   onClick={() => refresh(false)}
