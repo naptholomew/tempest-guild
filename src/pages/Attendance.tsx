@@ -182,7 +182,7 @@ export default function Attendance() {
       </header>
 
       {/* Controls (sticky) */}
-      <div className="sticky top-0 z-10 bg-skin-page/70 backdrop-blur supports-[backdrop-filter]:bg-skin-page/60 py-3">
+	<div className="sticky top-0 z-10 bg-skin-page py-3">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex gap-2 items-center">
             <input
