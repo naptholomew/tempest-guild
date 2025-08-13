@@ -16,7 +16,7 @@
       "aoe",
       "arcane"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 16022,
@@ -30,7 +30,7 @@
       "trinket",
       "utility"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 18283,
@@ -45,7 +45,7 @@
       "ranged",
       "hunter"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 16984,
@@ -61,7 +61,7 @@
       "fire",
       "resist"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 15050,
@@ -79,7 +79,7 @@
       "fire",
       "resist"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 15052,
@@ -95,7 +95,7 @@
       "fire",
       "resist"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 15051,
@@ -113,7 +113,7 @@
       "fire",
       "resist"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 22194,
@@ -125,7 +125,7 @@
     "tags": [
       "blacksmithing"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 19684,
