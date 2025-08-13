@@ -24,12 +24,14 @@ interface Recipe {
   whType?: WowheadType;
   flavortext?: string;
   tags?: string[];
-  rarity?: Rarity; // optional rarity from data
+  rarity?: Rarity;
 }
 
 export default function Crafting() {
+  // Ensure tooltip script is loaded/initialized
   useWowheadTooltips();
 
+  // Normalize incoming JSON once (no state needed for static data)
   const recipes: Recipe[] = useMemo(
     () =>
       (craftingRaw as any[]).map((r) => ({
@@ -42,13 +44,48 @@ export default function Crafting() {
     []
   );
 
+  // UI state
   const [query, setQuery] = useState("");
   const [prof, setProf] = useState<string>("All");
   const [crafter, setCrafter] = useState<string>("All");
   const searchRef = useRef<HTMLInputElement>(null);
   const searchId = useId();
 
-  // --- NEW: runtime rarity detected from Wowhead tooltip classes ---
+  // Derived filter options
+  const professions = useMemo(
+    () => ["All", ...Array.from(new Set(recipes.map((r) => r.profession)))],
+    [recipes]
+  );
+  const crafters = useMemo(
+    () => ["All", ...Array.from(new Set(recipes.flatMap((r) => r.crafters)))],
+    [recipes]
+  );
+
+  // Filtered list (declare BEFORE effects that reference it)
+  const filtered = useMemo(() => {
+    const needle = query.toLowerCase().trim();
+    return recipes.filter((r) => {
+      const inName = !needle || r.name.toLowerCase().includes(needle);
+      const inTags = !needle || (r.tags ?? []).some((t) => t.toLowerCase().includes(needle));
+      const inCrafters = !needle || r.crafters.some((c) => c.toLowerCase().includes(needle));
+      const matchesProf = prof === "All" || r.profession === prof;
+      const matchesCrafter = crafter === "All" || r.crafters.includes(crafter);
+      return (inName || inTags || inCrafters) && matchesProf && matchesCrafter;
+    });
+  }, [recipes, query, prof, crafter]);
+
+  // Ask Wowhead to (re)decorate links when rows change
+  useEffect(() => {
+    // @ts-ignore - Wowhead global
+    if (typeof window !== "undefined" && window.$WowheadPower) {
+      // @ts-ignore
+      window.$WowheadPower.refreshLinks?.();
+    }
+  }, [filtered]);
+
+  // --- Runtime rarity detection via Wowhead-applied classes ---
+  // We let Wowhead inject `q0..q5` classes or inline colors on <a>,
+  // then read those and map to WoW rarity. Data-provided rarity wins.
   const [autoRarity, setAutoRarity] = useState<Record<string, Rarity>>({});
 
   const classToRarity = (cls: string): Rarity | undefined => {
@@ -60,7 +97,6 @@ export default function Crafting() {
     if (/\bq5\b/.test(cls)) return "legendary";
     return undefined;
   };
-
   const hexToRarity = (hexLower: string): Rarity | undefined => {
     const c = hexLower.toLowerCase();
     if (c.includes("#9d9d9d")) return "poor";
@@ -73,22 +109,19 @@ export default function Crafting() {
     if (c.includes("#00ccff")) return "heirloom";
     return undefined;
   };
-
   const rgbToHexish = (rgb: string) => {
     const m = rgb.match(/\d+/g);
     if (!m) return null;
     const [r, g, b] = m.slice(0, 3).map((n) => Number(n));
     const h = (x: number) => x.toString(16).padStart(2, "0");
     return `#${h(r)}${h(g)}${h(b)}`;
+    // not exact if color-spaces differ, but fine for WoW's sRGB
   };
 
-  // After filtered list changes (and we refresh Wowhead links),
-  // scan anchors to pick up tooltip-applied rarity classes; also observe for changes.
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    // Small delay gives Wowhead time to mutate links
-    const scanTimeout = window.setTimeout(() => {
+    const scan = () => {
       const links = document.querySelectorAll<HTMLAnchorElement>(
         'a[data-wh-rename-link="true"][data-item-id]'
       );
@@ -99,14 +132,12 @@ export default function Crafting() {
         if (!id) return;
         const key = `${type}:${id}`;
 
-        // Prefer class-based detection (q0..q5)
         let rar = classToRarity(link.className || "");
 
-        // Fallback: inline style color or computed color
         if (!rar) {
-          const styleAttr = link.getAttribute("style") || "";
-          const styleHexMatch = styleAttr.match(/#([0-9a-fA-F]{3,6})/);
-          if (styleHexMatch) rar = hexToRarity(`#${styleHexMatch[1]}`);
+          const inline = link.getAttribute("style") || "";
+          const hexMatch = inline.match(/#([0-9a-fA-F]{3,6})/);
+          if (hexMatch) rar = hexToRarity(`#${hexMatch[1]}`);
         }
         if (!rar) {
           const comp = window.getComputedStyle(link).color; // rgb(...)
@@ -114,14 +145,19 @@ export default function Crafting() {
           if (hex) rar = hexToRarity(hex);
         }
 
-        if (rar && autoRarity[key] !== rar) updates[key] = rar;
+        if (rar && autoRarity[key] !== rar) {
+          updates[key] = rar;
+        }
       });
       if (Object.keys(updates).length) {
         setAutoRarity((prev) => ({ ...prev, ...updates }));
       }
-    }, 120);
+    };
 
-    // Watch for class/style changes on those anchors (Wowhead may update asynchronously)
+    // Defer a beat to let Wowhead mutate the DOM
+    const t = window.setTimeout(scan, 120);
+
+    // Observe future mutations too
     const observers: MutationObserver[] = [];
     const setupObservers = () => {
       const links = document.querySelectorAll<HTMLAnchorElement>(
@@ -132,16 +168,15 @@ export default function Crafting() {
         const type = (link.getAttribute("data-wh-type") || "item") as WowheadType;
         if (!id) return;
         const key = `${type}:${id}`;
-
         const obs = new MutationObserver((muts) => {
           for (const m of muts) {
             if (m.type === "attributes" && (m.attributeName === "class" || m.attributeName === "style")) {
               const el = m.target as HTMLElement;
               let rar = classToRarity(el.className || "");
               if (!rar) {
-                const styleAttr = el.getAttribute("style") || "";
-                const styleHexMatch = styleAttr.match(/#([0-9a-fA-F]{3,6})/);
-                if (styleHexMatch) rar = hexToRarity(`#${styleHexMatch[1]}`);
+                const inline = el.getAttribute("style") || "";
+                const hexMatch = inline.match(/#([0-9a-fA-F]{3,6})/);
+                if (hexMatch) rar = hexToRarity(`#${hexMatch[1]}`);
               }
               if (!rar) {
                 const comp = window.getComputedStyle(el).color;
@@ -161,47 +196,12 @@ export default function Crafting() {
     setupObservers();
 
     return () => {
-      window.clearTimeout(scanTimeout);
+      window.clearTimeout(t);
       observers.forEach((o) => o.disconnect());
     };
-  }, [filtered, autoRarity]); // re-check when list changes; state change is guarded
+  }, [filtered]); // only rescan when rows change
 
-  // ---------------------------------------------------------------
-
-  const professions = useMemo(
-    () => ["All", ...Array.from(new Set(recipes.map((r) => r.profession)))],
-    [recipes]
-  );
-  const crafters = useMemo(
-    () => ["All", ...Array.from(new Set(recipes.flatMap((r) => r.crafters)))],
-    [recipes]
-  );
-
-  const filtered = useMemo(() => {
-    const needle = query.toLowerCase().trim();
-    return recipes.filter((r) => {
-      const inName = !needle || r.name.toLowerCase().includes(needle);
-      const inTags = !needle || (r.tags ?? []).some((t) => t.toLowerCase().includes(needle));
-      const inCrafters = !needle || r.crafters.some((c) => c.toLowerCase().includes(needle));
-      const matchesProf = prof === "All" || r.profession === prof;
-      const matchesCrafter = crafter === "All" || r.crafters.includes(crafter);
-      return (inName || inTags || inCrafters) && matchesProf && matchesCrafter;
-    });
-  }, [recipes, query, prof, crafter]);
-
-  useEffect(() => {
-    // @ts-ignore
-    if (window.$WowheadPower) window.$WowheadPower.refreshLinks?.();
-  }, [filtered]);
-
-  const handleChipClick = (term: string) => {
-    setQuery(term);
-    setTimeout(() => searchRef.current?.focus(), 0);
-  };
-
-  const total = recipes.length;
-
-  // Tailwind classes for WoW rarity colors
+  // Rarity → Tailwind color (WoW hexes). Data rarity wins; else auto-detected.
   const rarityToTextClass = (rarity?: Rarity) => {
     switch (rarity) {
       case "poor": return "text-[#9d9d9d]";
@@ -215,13 +215,24 @@ export default function Crafting() {
       default: return "text-brand-accent";
     }
   };
+
+  // Handlers
+  const handleChipClick = (term: string) => {
+    setQuery(term);
+    setTimeout(() => searchRef.current?.focus(), 0);
+  };
+
+  const total = recipes.length;
   const count = filtered.length;
 
   return (
     <section className="space-y-8">
+      {/* Header */}
       <header className="pb-2 border-b border-skin-base">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Crafting</h1>
-        <p className="text-skin-muted mt-2 text-sm">Browse recipes by profession, crafter, or tag. Click any chip to filter.</p>
+        <p className="text-skin-muted mt-2 text-sm">
+          Browse recipes by profession, crafter, or tag. Click any chip to filter.
+        </p>
       </header>
 
       {/* Sticky controls bar */}
@@ -283,7 +294,7 @@ export default function Crafting() {
                 </select>
               </label>
 
-              {/* Status moved left and prevented wrapping */}
+              {/* Status (no wrap) */}
               <div className="whitespace-nowrap text-[11px] sm:text-xs text-skin-base/80 leading-tight sm:ml-auto shrink-0">
                 Showing <strong>{count}</strong> of <strong>{total}</strong>
               </div>
@@ -292,7 +303,7 @@ export default function Crafting() {
         </div>
       </div>
 
-      {/* Card + table in the same max width as Attendance */}
+      {/* Table */}
       <div className="mx-auto max-w-[1200px] rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8">
         <div className="overflow-x-auto">
           <table className="w-full table-fixed text-base">
@@ -334,7 +345,7 @@ export default function Crafting() {
                       </div>
                     </td>
 
-                    {/* Crafters — classic rounded pills */}
+                    {/* Crafters — tidy rounded pills */}
                     <td className="w-1/3 pl-6 pr-4 py-4 align-top">
                       <div className="flex flex-wrap gap-2">
                         {r.crafters.map((c) => (
