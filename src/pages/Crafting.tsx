@@ -212,7 +212,7 @@ export default function Crafting() {
       case "legendary": return "text-[#ff8000]";
       case "artifact": return "text-[#e6cc80]";
       case "heirloom": return "text-[#00ccff]";
-      default: return "text-brand-accent";
+      default: return "text-skin-base";
     }
   };
 
