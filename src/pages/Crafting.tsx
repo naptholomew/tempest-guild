@@ -140,44 +140,47 @@ export default function Crafting() {
       {/* Card with table (parallels Attendance card) */}
       <div className="rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8">
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm">
+          <table className="min-w-full table-fixed text-base">{/* ↑ larger text */}
             <thead>
               <tr className="text-left">
-                <th className="px-4 py-3">Recipe</th>
-                <th className="px-4 py-3">Crafter(s)</th>
-                <th className="px-4 py-3">Tags</th>
+                <th className="w-1/3 px-4 py-3">Recipe</th>
+                <th className="w-1/3 px-4 py-3">Crafter(s)</th>
+                <th className="w-1/3 px-4 py-3">Tags</th>
               </tr>
             </thead>
             <tbody>
               {filtered.map((r) => (
                 <tr key={`${r.whType ?? "item"}:${r.id}`} className="border-t border-skin-base/60">
                   {/* Recipe cell with Wowhead link */}
-                  <td className="px-4 py-3 align-top">
+                  <td className="w-1/3 px-4 py-4 align-top">{/* ↑ a bit more padding */}
                     <div className="flex flex-col gap-1">
                       <a
                         href={getWowheadUrl(Number(r.id), (r.whType ?? "item") as WowheadType)}
                         target="_blank"
                         referrerPolicy="no-referrer"
-                        className="font-medium hover:underline"
+                        className="text-brand-accent text-lg font-semibold hover:underline"{/* gold + larger */}
                         data-wh-rename-link="true"
                       >
                         {r.name}
                       </a>
                       {r.flavortext && (
-                        <div className="text-skin-muted text-xs leading-snug">{r.flavortext}</div>
+                        <div className="text-skin-muted text-sm leading-snug">{r.flavortext}</div>
                       )}
                     </div>
                   </td>
 
                   {/* Crafters as pill chips */}
-                  <td className="px-4 py-3 align-top">
+                  <td className="w-1/3 px-4 py-4 align-top">
                     <div className="flex flex-wrap gap-2">
                       {r.crafters.map((c) => (
                         <button
                           key={c}
                           type="button"
                           onClick={() => handleChipClick(c)}
-                          className="rounded-full border border-skin-base bg-skin-elev px-2.5 py-1 text-xs leading-tight hover:bg-skin-elev/80"
+                          className="rounded-full border px-3 py-1.5 text-sm leading-tight transition
+                                     border-skin-base/70 bg-skin-elev text-skin-base/90
+                                     hover:bg-brand-accent/15 hover:border-brand-accent hover:text-brand-accent
+                                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                           title={`Search for ${c}`}
                         >
                           {c}
@@ -187,7 +190,7 @@ export default function Crafting() {
                   </td>
 
                   {/* Tags as pill chips */}
-                  <td className="px-4 py-3 align-top">
+                  <td className="w-1/3 px-4 py-4 align-top">
                     <div className="flex flex-wrap gap-2">
                       {(r.tags ?? []).length ? (
                         (r.tags ?? []).map((t) => (
@@ -195,7 +198,10 @@ export default function Crafting() {
                             key={t}
                             type="button"
                             onClick={() => handleChipClick(t)}
-                            className="rounded-full border border-skin-base bg-skin-elev px-2.5 py-1 text-xs leading-tight hover:bg-skin-elev/80"
+                            className="rounded-full border px-3 py-1.5 text-sm leading-tight transition
+                                       border-skin-base/70 bg-skin-elev text-skin-base/90
+                                       hover:bg-brand-accent/15 hover:border-brand-accent hover:text-brand-accent
+                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                             title={`Search for ${t}`}
                           >
                             {t}
