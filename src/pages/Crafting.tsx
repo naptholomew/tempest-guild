@@ -6,6 +6,17 @@ import craftingRaw from "../data/crafting.mock.json"; // adjust path if needed
 
 type WowheadType = "item" | "spell";
 
+type Rarity =
+  | "poor"      // gray
+  | "common"    // white
+  | "uncommon"  // green
+  | "rare"      // blue
+  | "epic"      // purple
+  | "legendary" // orange
+  | "artifact"  // tan
+  | "heirloom"; // light blue // red/orange
+
+
 interface Recipe {
   id: number;
   name: string;
@@ -14,6 +25,7 @@ interface Recipe {
   whType?: WowheadType;
   flavortext?: string;
   tags?: string[];
+  rarity?: Rarity; // optional rarity, if present will color the name
 }
 
 export default function Crafting() {
@@ -25,6 +37,7 @@ export default function Crafting() {
       id: Number(r.id),
       crafters: Array.isArray(r.crafters) ? r.crafters.map(String) : [],
       tags: Array.isArray(r.tags) ? r.tags.map(String) : [],
+      rarity: (r as any).rarity as Rarity | undefined,
     })),
     []
   );
@@ -67,6 +80,24 @@ export default function Crafting() {
   };
 
   const total = recipes.length;
+
+  // Map a rarity -> text color utility (tailwind). Fallback to brand gold.
+  const rarityToTextClass = (rarity?: Rarity) => {
+    // WoW color hexes (classic UI)
+    // poor: #9d9d9d, common: #ffffff, uncommon: #1eff00, rare: #0070dd,
+    // epic: #a335ee, legendary: #ff8000, artifact: #e6cc80, heirloom: #00ccff
+    switch (rarity) {
+      case "poor": return "text-[#9d9d9d]";
+      case "common": return "text-[#ffffff]";
+      case "uncommon": return "text-[#1eff00]";
+      case "rare": return "text-[#0070dd]";
+      case "epic": return "text-[#a335ee]";
+      case "legendary": return "text-[#ff8000]";
+      case "artifact": return "text-[#e6cc80]";
+      case "heirloom": return "text-[#00ccff]";
+      default: return "text-brand-accent";
+    }
+  };
   const count = filtered.length;
 
   return (
@@ -169,7 +200,7 @@ export default function Crafting() {
                           target="_blank"
                           rel="noopener noreferrer"
                           referrerPolicy="no-referrer"
-                          className="text-brand-accent text-lg font-semibold hover:underline"
+                          className={`text-lg font-semibold hover:underline ${rarityToTextClass(r.rarity)}`}
                           data-wh-rename-link="true"
                         >
                           {r.name}
@@ -188,12 +219,13 @@ export default function Crafting() {
                             key={c}
                             type="button"
                             onClick={() => handleChipClick(c)}
-                            className="rounded-full border px-3 py-1.5 text-sm leading-tight transition
-                                       border-brand-accent/70 text-brand-accent bg-brand-accent/10
-                                       hover:bg-brand-accent/20 hover:border-brand-accent
-                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                            className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm leading-tight transition
+                                       border-skin-base bg-skin-elev text-skin-base/90
+                                       hover:bg-skin-elev/80 hover:border-skin-base/80
+                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base"
                             title={`Search for ${c}`}
                           >
+                            <span className="i-lucide-user h-3.5 w-3.5 opacity-80" />
                             {c}
                           </button>
                         ))}
@@ -209,12 +241,13 @@ export default function Crafting() {
                               key={t}
                               type="button"
                               onClick={() => handleChipClick(t)}
-                              className="rounded-full border px-3 py-1.5 text-sm leading-tight transition
-                                         border-skin-base/70 bg-skin-base/60 text-skin-base/90
-                                         hover:bg-skin-base/70 hover:border-skin-base
+                              className="inline-flex items-center gap-1.5 rounded-full border border-dashed px-3 py-1.5 text-sm leading-tight transition
+                                         border-skin-base/70 bg-skin-elev/70 text-skin-base/90
+                                         hover:bg-skin-elev/80 hover:border-skin-base
                                          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base"
                               title={`Search for ${t}`}
                             >
+                              <span className="i-lucide-tag h-3.5 w-3.5 opacity-80" />
                               {t}
                             </button>
                           ))
