@@ -219,7 +219,7 @@ export default function Crafting() {
                             key={c}
                             type="button"
                             onClick={() => handleChipClick(c)}
-                            className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm leading-tight transition
+                            className="inline-flex items-center gap-1.5 rounded-md border px-2.5 py-1 text-sm leading-normal transition
                                        border-skin-base bg-skin-elev text-skin-base/90
                                        hover:bg-skin-elev/80 hover:border-skin-base/80
                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base"
@@ -236,24 +236,22 @@ export default function Crafting() {
                     <td className="w-1/3 pl-6 pr-4 py-4 align-top">
                       <div className="flex flex-wrap gap-2">
                         {tags.length ? (
-                          tags.map((t) => (
+                        tags.map((t, i) => (
+                          <span key={`${t}-${i}`} className="inline-flex items-center">
                             <button
-                              key={t}
                               type="button"
                               onClick={() => handleChipClick(t)}
-                              className="inline-flex items-center gap-1.5 rounded-full border border-dashed px-3 py-1.5 text-sm leading-tight transition
-                                         border-skin-base/70 bg-skin-elev/70 text-skin-base/90
-                                         hover:bg-skin-elev/80 hover:border-skin-base
-                                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base"
+                              className="px-0 py-0 bg-transparent border-0 text-skin-base/90 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-skin-base/60"
                               title={`Search for ${t}`}
                             >
-                              <span className="i-lucide-tag h-3.5 w-3.5 opacity-80" />
                               {t}
                             </button>
-                          ))
-                        ) : (
-                          <span className="text-skin-muted">—</span>
-                        )}
+                            {i < tags.length - 1 && <span className="px-1">,</span>}
+                          </span>
+                        ))
+                      ) : (
+                        <span className="text-skin-muted">—</span>
+                      )}
                       </div>
                     </td>
                   </tr>
