@@ -1,8 +1,8 @@
 // src/pages/Crafting.tsx
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState, useId } from "react";
 import useWowheadTooltips from "../hooks/useWowheadTooltips";
 import { getWowheadUrl } from "../lib/wowhead";
-import craftingData from "../data/crafting.mock.json"; // adjust path if needed
+import craftingRaw from "../data/crafting.mock.json"; // adjust path if needed
 
 type WowheadType = "item" | "spell";
 
@@ -19,23 +19,22 @@ interface Recipe {
 export default function Crafting() {
   useWowheadTooltips();
 
-  // Data from JSON (normalize to be safe)
-  const [recipes] = useState<Recipe[]>(
-    () => (craftingData as any[]).map((r) => ({
+  const recipes: Recipe[] = useMemo(
+    () => (craftingRaw as any[]).map((r) => ({
       ...r,
       id: Number(r.id),
       crafters: Array.isArray(r.crafters) ? r.crafters.map(String) : [],
       tags: Array.isArray(r.tags) ? r.tags.map(String) : [],
-    })) as Recipe[]
+    })),
+    []
   );
 
-  // Controls
   const [query, setQuery] = useState("");
   const [prof, setProf] = useState<string>("All");
   const [crafter, setCrafter] = useState<string>("All");
   const searchRef = useRef<HTMLInputElement>(null);
+  const searchId = useId();
 
-  // Derived filter options
   const professions = useMemo(
     () => ["All", ...Array.from(new Set(recipes.map((r) => r.profession)))],
     [recipes]
@@ -45,58 +44,67 @@ export default function Crafting() {
     [recipes]
   );
 
-  // Filtering logic: search includes name, tags, and crafters
   const filtered = useMemo(() => {
     const needle = query.toLowerCase().trim();
     return recipes.filter((r) => {
       const inName = !needle || r.name.toLowerCase().includes(needle);
-      const inTags =
-        !needle || (r.tags ?? []).some((t) => t.toLowerCase().includes(needle));
-      const inCrafters =
-        !needle || r.crafters.some((c) => c.toLowerCase().includes(needle));
+      const inTags = !needle || (r.tags ?? []).some((t) => t.toLowerCase().includes(needle));
+      const inCrafters = !needle || r.crafters.some((c) => c.toLowerCase().includes(needle));
       const matchesProf = prof === "All" || r.profession === prof;
       const matchesCrafter = crafter === "All" || r.crafters.includes(crafter);
       return (inName || inTags || inCrafters) && matchesProf && matchesCrafter;
     });
   }, [recipes, query, prof, crafter]);
 
-  // Refresh Wowhead tooltips after render updates
   useEffect(() => {
     // @ts-ignore
     if (window.$WowheadPower) window.$WowheadPower.refreshLinks?.();
   }, [filtered]);
 
-  // Clicking a bubble fills the search bar with that term and focuses it
   const handleChipClick = (term: string) => {
     setQuery(term);
     setTimeout(() => searchRef.current?.focus(), 0);
   };
 
+  const total = recipes.length;
+  const count = filtered.length;
+
   return (
     <section className="space-y-8">
-      {/* Header (mirror Attendance.tsx) */}
       <header className="pb-2 border-b border-skin-base">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Crafting</h1>
-        <p className="text-skin-muted mt-2 text-sm">
-          Browse recipes by profession, crafter, or tag. Click any chip to filter.
-        </p>
+        <p className="text-skin-muted mt-2 text-sm">Browse recipes by profession, crafter, or tag. Click any chip to filter.</p>
       </header>
 
-      {/* Sticky controls bar — matches Attendance height and styling */}
       <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            {/* Left: search */}
             <div className="flex items-center gap-3 w-full">
-              <input
-                ref={searchRef}
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search recipes, tags, or crafters…"
-                className="w-full sm:w-[22rem] md:w-[19.5rem] px-4 py-2 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 outline-none focus:ring-2 ring-brand-accent"
-              />
+              <div className="relative w-full sm:w-[22rem] md:w-[19.5rem]">
+                <label htmlFor={searchId} className="sr-only">Search crafting</label>
+                <input
+                  id={searchId}
+                  ref={searchRef}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search recipes, tags, or crafters…"
+                  className="w-full px-4 py-2 pr-10 rounded-lg border border-skin-base bg-skin-elev text-skin-base/90 outline-none focus:ring-2 ring-brand-accent"
+                />
+                {query && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQuery("");
+                      searchRef.current?.focus();
+                    }}
+                    className="absolute inset-y-0 right-0 flex items-center pr-3 text-skin-muted hover:text-brand-accent"
+                    title="Clear search"
+                  >
+                    ✕
+                  </button>
+                )}
+              </div>
 
-              {/* Profession */}
               <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
                 <span>Profession</span>
                 <select
@@ -105,14 +113,11 @@ export default function Crafting() {
                   className="px-2 py-1 rounded-md border border-skin-base bg-skin-elev text-skin-base/90"
                 >
                   {professions.map((p) => (
-                    <option key={p} value={p}>
-                      {p}
-                    </option>
+                    <option key={p} value={p}>{p}</option>
                   ))}
                 </select>
               </label>
 
-              {/* Crafter */}
               <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
                 <span>Crafter</span>
                 <select
@@ -121,26 +126,22 @@ export default function Crafting() {
                   className="px-2 py-1 rounded-md border border-skin-base bg-skin-elev text-skin-base/90"
                 >
                   {crafters.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
+                    <option key={c} value={c}>{c}</option>
                   ))}
                 </select>
               </label>
             </div>
 
-            {/* Right: (reserved for parity) */}
-            <div className="flex items-center gap-2 text-[11px] sm:text-xs text-skin-base/80 leading-tight">
-              {/* Intentionally left minimal to match bar height and spacing */}
+            <div className="text-[11px] sm:text-xs text-skin-base/80 leading-tight">
+              Showing <strong>{count}</strong> of <strong>{total}</strong>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Card with table (parallels Attendance card) */}
       <div className="rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8">
         <div className="overflow-x-auto">
-          <table className="min-w-full table-fixed text-base">{/* ↑ larger text */}
+          <table className="min-w-full table-fixed text-base">
             <thead>
               <tr className="text-left">
                 <th className="w-1/3 px-4 py-3">Recipe</th>
@@ -149,75 +150,69 @@ export default function Crafting() {
               </tr>
             </thead>
             <tbody>
-              {filtered.map((r) => (
-                <tr key={`${r.whType ?? "item"}:${r.id}`} className="border-t border-skin-base/60">
-                  {/* Recipe cell with Wowhead link */}
-                  <td className="w-1/3 px-4 py-4 align-top">{/* ↑ a bit more padding */}
-                    <div className="flex flex-col gap-1">
-                      <a
-                        href={getWowheadUrl(Number(r.id), (r.whType ?? "item") as WowheadType)}
-                        target="_blank"
-                        referrerPolicy="no-referrer"
-                        className="text-brand-accent text-lg font-semibold hover:underline"{/* gold + larger */}
-                        data-wh-rename-link="true"
-                      >
-                        {r.name}
-                      </a>
-                      {r.flavortext && (
-                        <div className="text-skin-muted text-sm leading-snug">{r.flavortext}</div>
-                      )}
-                    </div>
-                  </td>
-
-                  {/* Crafters as pill chips */}
-                  <td className="w-1/3 px-4 py-4 align-top">
-                    <div className="flex flex-wrap gap-2">
-                      {r.crafters.map((c) => (
-                        <button
-                          key={c}
-                          type="button"
-                          onClick={() => handleChipClick(c)}
-                          className="rounded-full border px-3 py-1.5 text-sm leading-tight transition
-                                     border-skin-base/70 bg-skin-elev text-skin-base/90
-                                     hover:bg-brand-accent/15 hover:border-brand-accent hover:text-brand-accent
-                                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-                          title={`Search for ${c}`}
+              {filtered.map((r) => {
+                const whType: WowheadType = r.whType ?? "item";
+                const tags = r.tags ?? [];
+                return (
+                  <tr key={`${whType}:${r.id}`} className="border-t border-skin-base/60">
+                    <td className="w-1/3 px-4 py-4 align-top">
+                      <div className="flex flex-col gap-1">
+                        <a
+                          href={getWowheadUrl(Number(r.id), whType)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          referrerPolicy="no-referrer"
+                          className="text-brand-accent text-lg font-semibold hover:underline"
+                          data-wh-rename-link="true"
                         >
-                          {c}
-                        </button>
-                      ))}
-                    </div>
-                  </td>
-
-                  {/* Tags as pill chips */}
-                  <td className="w-1/3 px-4 py-4 align-top">
-                    <div className="flex flex-wrap gap-2">
-                      {(r.tags ?? []).length ? (
-                        (r.tags ?? []).map((t) => (
+                          {r.name}
+                        </a>
+                        {r.flavortext && (
+                          <div className="text-skin-muted text-sm leading-snug">{r.flavortext}</div>
+                        )}
+                      </div>
+                    </td>
+                    <td className="w-1/3 px-4 py-4 align-top">
+                      <div className="flex flex-wrap gap-2">
+                        {r.crafters.map((c) => (
                           <button
-                            key={t}
+                            key={c}
                             type="button"
-                            onClick={() => handleChipClick(t)}
-                            className="rounded-full border px-3 py-1.5 text-sm leading-tight transition
-                                       border-skin-base/70 bg-skin-elev text-skin-base/90
-                                       hover:bg-brand-accent/15 hover:border-brand-accent hover:text-brand-accent
-                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-                            title={`Search for ${t}`}
+                            onClick={() => handleChipClick(c)}
+                            className="rounded-full border px-3 py-1.5 text-sm leading-tight transition border-skin-base/70 bg-skin-elev text-skin-base/90 hover:bg-brand-accent/15 hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                            title={`Search for ${c}`}
                           >
-                            {t}
+                            {c}
                           </button>
-                        ))
-                      ) : (
-                        <span className="text-skin-muted">—</span>
-                      )}
-                    </div>
-                  </td>
-                </tr>
-              ))}
+                        ))}
+                      </div>
+                    </td>
+                    <td className="w-1/3 px-4 py-4 align-top">
+                      <div className="flex flex-wrap gap-2">
+                        {tags.length ? (
+                          tags.map((t) => (
+                            <button
+                              key={t}
+                              type="button"
+                              onClick={() => handleChipClick(t)}
+                              className="rounded-full border px-3 py-1.5 text-sm leading-tight transition border-skin-base/70 bg-skin-elev text-skin-base/90 hover:bg-brand-accent/15 hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                              title={`Search for ${t}`}
+                            >
+                              {t}
+                            </button>
+                          ))
+                        ) : (
+                          <span className="text-skin-muted">—</span>
+                        )}
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
               {!filtered.length && (
                 <tr>
                   <td className="px-4 py-6 text-skin-muted" colSpan={3}>
-                    No results.
+                    <span aria-live="polite">No results.</span>
                   </td>
                 </tr>
               )}
