@@ -161,7 +161,7 @@ export default function Crafting() {
                 <td className="px-4 py-3 align-top">
                   <div className="flex flex-col gap-1">
                     <a
-                      href={getWowheadUrl(r.whType ?? "item", r.id)}
+                      href={getWowheadUrl((r.whType ?? "item") as WowheadType, Number(r.id))}
                       target="_blank"
                       referrerPolicy="no-referrer"
                       className="font-medium hover:underline"
