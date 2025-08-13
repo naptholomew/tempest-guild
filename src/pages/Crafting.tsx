@@ -24,14 +24,14 @@ interface Recipe {
   whType?: WowheadType;
   flavortext?: string;
   tags?: string[];
-  rarity?: Rarity;
+  rarity?: Rarity; // now provided by JSON only
 }
 
 export default function Crafting() {
-  // Ensure tooltip script is loaded/initialized
+  // Keep tooltips (hover cards), but DO NOT read any data from Wowhead.
   useWowheadTooltips();
 
-  // Normalize incoming JSON once (no state needed for static data)
+  // Normalize JSON once
   const recipes: Recipe[] = useMemo(
     () =>
       (craftingRaw as any[]).map((r) => ({
@@ -51,7 +51,7 @@ export default function Crafting() {
   const searchRef = useRef<HTMLInputElement>(null);
   const searchId = useId();
 
-  // Derived filter options
+  // Options
   const professions = useMemo(
     () => ["All", ...Array.from(new Set(recipes.map((r) => r.profession)))],
     [recipes]
@@ -61,7 +61,7 @@ export default function Crafting() {
     [recipes]
   );
 
-  // Filtered list (declare BEFORE effects that reference it)
+  // Filtered list
   const filtered = useMemo(() => {
     const needle = query.toLowerCase().trim();
     return recipes.filter((r) => {
@@ -74,7 +74,7 @@ export default function Crafting() {
     });
   }, [recipes, query, prof, crafter]);
 
-  // Ask Wowhead to (re)decorate links when rows change
+  // Refresh tooltip markup (not data) after list changes
   useEffect(() => {
     // @ts-ignore - Wowhead global
     if (typeof window !== "undefined" && window.$WowheadPower) {
@@ -83,125 +83,7 @@ export default function Crafting() {
     }
   }, [filtered]);
 
-  // --- Runtime rarity detection via Wowhead-applied classes ---
-  // We let Wowhead inject `q0..q5` classes or inline colors on <a>,
-  // then read those and map to WoW rarity. Data-provided rarity wins.
-  const [autoRarity, setAutoRarity] = useState<Record<string, Rarity>>({});
-
-  const classToRarity = (cls: string): Rarity | undefined => {
-    if (/\bq0\b/.test(cls)) return "poor";
-    if (/\bq1\b/.test(cls)) return "common";
-    if (/\bq2\b/.test(cls)) return "uncommon";
-    if (/\bq3\b/.test(cls)) return "rare";
-    if (/\bq4\b/.test(cls)) return "epic";
-    if (/\bq5\b/.test(cls)) return "legendary";
-    return undefined;
-  };
-  const hexToRarity = (hexLower: string): Rarity | undefined => {
-    const c = hexLower.toLowerCase();
-    if (c.includes("#9d9d9d")) return "poor";
-    if (c.includes("#ffffff")) return "common";
-    if (c.includes("#1eff00")) return "uncommon";
-    if (c.includes("#0070dd")) return "rare";
-    if (c.includes("#a335ee")) return "epic";
-    if (c.includes("#ff8000")) return "legendary";
-    if (c.includes("#e6cc80")) return "artifact";
-    if (c.includes("#00ccff")) return "heirloom";
-    return undefined;
-  };
-  const rgbToHexish = (rgb: string) => {
-    const m = rgb.match(/\d+/g);
-    if (!m) return null;
-    const [r, g, b] = m.slice(0, 3).map((n) => Number(n));
-    const h = (x: number) => x.toString(16).padStart(2, "0");
-    return `#${h(r)}${h(g)}${h(b)}`;
-    // not exact if color-spaces differ, but fine for WoW's sRGB
-  };
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const scan = () => {
-      const links = document.querySelectorAll<HTMLAnchorElement>(
-        'a[data-wh-rename-link="true"][data-item-id]'
-      );
-      const updates: Record<string, Rarity> = {};
-      links.forEach((link) => {
-        const id = link.getAttribute("data-item-id");
-        const type = (link.getAttribute("data-wh-type") || "item") as WowheadType;
-        if (!id) return;
-        const key = `${type}:${id}`;
-
-        let rar = classToRarity(link.className || "");
-
-        if (!rar) {
-          const inline = link.getAttribute("style") || "";
-          const hexMatch = inline.match(/#([0-9a-fA-F]{3,6})/);
-          if (hexMatch) rar = hexToRarity(`#${hexMatch[1]}`);
-        }
-        if (!rar) {
-          const comp = window.getComputedStyle(link).color; // rgb(...)
-          const hex = rgbToHexish(comp);
-          if (hex) rar = hexToRarity(hex);
-        }
-
-        if (rar && autoRarity[key] !== rar) {
-          updates[key] = rar;
-        }
-      });
-      if (Object.keys(updates).length) {
-        setAutoRarity((prev) => ({ ...prev, ...updates }));
-      }
-    };
-
-    // Defer a beat to let Wowhead mutate the DOM
-    const t = window.setTimeout(scan, 120);
-
-    // Observe future mutations too
-    const observers: MutationObserver[] = [];
-    const setupObservers = () => {
-      const links = document.querySelectorAll<HTMLAnchorElement>(
-        'a[data-wh-rename-link="true"][data-item-id]'
-      );
-      links.forEach((link) => {
-        const id = link.getAttribute("data-item-id");
-        const type = (link.getAttribute("data-wh-type") || "item") as WowheadType;
-        if (!id) return;
-        const key = `${type}:${id}`;
-        const obs = new MutationObserver((muts) => {
-          for (const m of muts) {
-            if (m.type === "attributes" && (m.attributeName === "class" || m.attributeName === "style")) {
-              const el = m.target as HTMLElement;
-              let rar = classToRarity(el.className || "");
-              if (!rar) {
-                const inline = el.getAttribute("style") || "";
-                const hexMatch = inline.match(/#([0-9a-fA-F]{3,6})/);
-                if (hexMatch) rar = hexToRarity(`#${hexMatch[1]}`);
-              }
-              if (!rar) {
-                const comp = window.getComputedStyle(el).color;
-                const hex = rgbToHexish(comp);
-                if (hex) rar = hexToRarity(hex);
-              }
-              if (rar) {
-                setAutoRarity((prev) => (prev[key] === rar ? prev : { ...prev, [key]: rar }));
-              }
-            }
-          }
-        });
-        obs.observe(link, { attributes: true, attributeFilter: ["class", "style"] });
-        observers.push(obs);
-      });
-    };
-    setupObservers();
-
-    return () => {
-      window.clearTimeout(t);
-      observers.forEach((o) => o.disconnect());
-    };
-  }, [filtered]); // only rescan when rows change
-
-  // Rarity → Tailwind color (WoW hexes). Data rarity wins; else auto-detected.
+  // Rarity → Tailwind text color (using WoW hexes). JSON source only.
   const rarityToTextClass = (rarity?: Rarity) => {
     switch (rarity) {
       case "poor": return "text-[#9d9d9d]";
@@ -212,11 +94,10 @@ export default function Crafting() {
       case "legendary": return "text-[#ff8000]";
       case "artifact": return "text-[#e6cc80]";
       case "heirloom": return "text-[#00ccff]";
-      default: return "text-skin-base";
+      default: return "text-skin-base"; // neutral if unknown
     }
   };
 
-  // Handlers
   const handleChipClick = (term: string) => {
     setQuery(term);
     setTimeout(() => searchRef.current?.focus(), 0);
@@ -318,12 +199,9 @@ export default function Crafting() {
               {filtered.map((r) => {
                 const whType: WowheadType = r.whType ?? "item";
                 const tags = r.tags ?? [];
-                const key = `${whType}:${r.id}`;
-                const detected = autoRarity[key];
-                const displayRarity = r.rarity ?? detected;
 
                 return (
-                  <tr key={key} className="border-t border-skin-base/60">
+                  <tr key={`${whType}:${r.id}`} className="border-t border-skin-base/60">
                     {/* Recipe */}
                     <td className="w-1/3 px-4 py-4 align-top">
                       <div className="flex flex-col gap-1">
@@ -332,10 +210,8 @@ export default function Crafting() {
                           target="_blank"
                           rel="noopener noreferrer"
                           referrerPolicy="no-referrer"
-                          className={`text-lg font-semibold hover:underline ${rarityToTextClass(displayRarity)}`}
+                          className={`text-lg font-semibold hover:underline ${rarityToTextClass(r.rarity)}`}
                           data-wh-rename-link="true"
-                          data-item-id={r.id}
-                          data-wh-type={whType}
                         >
                           {r.name}
                         </a>

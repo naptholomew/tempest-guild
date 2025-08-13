@@ -143,7 +143,7 @@
       "caster",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 19683,
@@ -161,7 +161,7 @@
       "caster",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 19682,
@@ -179,7 +179,7 @@
       "caster",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 15048,
@@ -196,7 +196,7 @@
       "chest",
       "nature"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 20295,
@@ -213,7 +213,7 @@
       "legs",
       "nature"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 15049,
@@ -228,7 +228,7 @@
       "shoulders",
       "nature"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 22761,
@@ -242,7 +242,7 @@
       "armor",
       "belt"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 22760,
@@ -256,7 +256,7 @@
       "armor",
       "boots"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 22759,
@@ -270,7 +270,7 @@
       "armor",
       "helm"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 25130,
@@ -287,7 +287,7 @@
       "enchant",
       "healer"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 25129,
@@ -304,7 +304,7 @@
       "enchant",
       "caster"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 22251,
@@ -319,7 +319,7 @@
       "bag",
       "utility"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 14044,
@@ -336,7 +336,7 @@
       "cloak",
       "fire"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 21342,
@@ -351,7 +351,7 @@
       "bag",
       "utility"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 18282,
@@ -365,7 +365,7 @@
       "weapon",
       "utility"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 19162,
@@ -379,7 +379,7 @@
       "armor",
       "belt"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 16005,
@@ -397,7 +397,7 @@
       "utility",
       "aoe"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 20039,
@@ -410,7 +410,7 @@
       "blacksmithing",
       "armor"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 17014,
@@ -423,7 +423,7 @@
       "blacksmithing",
       "armor"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 19164,
@@ -436,7 +436,7 @@
       "blacksmithing",
       "armor"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 19148,
@@ -449,7 +449,7 @@
       "blacksmithing",
       "armor"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 15063,
@@ -467,7 +467,7 @@
       "melee",
       "pre-bis"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 15062,
@@ -485,7 +485,7 @@
       "melee",
       "pre-bis"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 18262,
@@ -500,7 +500,7 @@
       "blacksmithing",
       "utility"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 13453,
@@ -517,7 +517,7 @@
       "consumable",
       "elixir"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 21546,
@@ -534,7 +534,7 @@
       "elixir",
       "fire"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 9264,
@@ -553,7 +553,7 @@
       "shadow",
       "caster"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13452,
@@ -576,7 +576,7 @@
       "melee",
       "hunter"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 27837,
@@ -1138,7 +1138,7 @@
       "utility",
       "aoe"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13513,
@@ -1161,7 +1161,7 @@
       "raiding",
       "all-resist"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13511,
@@ -1183,7 +1183,7 @@
       "flask",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13506,
@@ -1203,7 +1203,7 @@
       "flask",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13512,
@@ -1224,7 +1224,7 @@
       "flask",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13510,
@@ -1245,7 +1245,7 @@
       "flask",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 18168,
@@ -1262,7 +1262,7 @@
       "trinket",
       "utility"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 5634,
@@ -1283,7 +1283,7 @@
       "pvp",
       "movement-immunity"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 9088,
@@ -1300,7 +1300,7 @@
       "debuff",
       "utility"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 22658,
@@ -1317,7 +1317,7 @@
       "resist",
       "naxxramas"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 22654,
@@ -1334,7 +1334,7 @@
       "resist",
       "naxxramas"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 22652,
@@ -1351,7 +1351,7 @@
       "resist",
       "naxxramas"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 22655,
@@ -1367,7 +1367,7 @@
       "resist",
       "naxxramas"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 18587,
@@ -1383,7 +1383,7 @@
       "rez",
       "utility"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 7189,
@@ -1400,7 +1400,7 @@
       "pvp",
       "utility"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 10646,
@@ -1418,7 +1418,7 @@
       "pvp",
       "aoe"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13454,
@@ -1437,7 +1437,7 @@
       "elixir",
       "arcane"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13461,
@@ -1460,7 +1460,7 @@
       "resist",
       "arcane"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13457,
@@ -1484,7 +1484,7 @@
       "resist",
       "fire"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13456,
@@ -1507,7 +1507,7 @@
       "resist",
       "frost"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13458,
@@ -1530,7 +1530,7 @@
       "resist",
       "nature"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13459,
@@ -1554,7 +1554,7 @@
       "resist",
       "shadow"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 18634,
@@ -1571,7 +1571,7 @@
       "pvp",
       "resist"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 18510,
@@ -1586,7 +1586,7 @@
       "leatherworking",
       "armor"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 18638,
@@ -1603,7 +1603,7 @@
       "pvp",
       "resist"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 6043,
@@ -1618,7 +1618,7 @@
       "blacksmithing",
       "utility"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 19149,
@@ -1634,7 +1634,7 @@
       "armor",
       "belt"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 3387,
@@ -1657,7 +1657,7 @@
       "pvp",
       "invulnerability"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 12640,
@@ -1673,7 +1673,7 @@
       "melee",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 20008,
@@ -1692,7 +1692,7 @@
       "pvp",
       "movement-immunity"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 15059,
@@ -1706,7 +1706,7 @@
       "armor",
       "chest"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 20007,
@@ -1729,7 +1729,7 @@
       "caster",
       "healer"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 13444,
@@ -1752,7 +1752,7 @@
       "caster",
       "healer"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 18253,
@@ -1773,7 +1773,7 @@
       "hybrid",
       "healer"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 13442,
@@ -1811,7 +1811,7 @@
       "mount",
       "movement"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 19163,
@@ -1825,7 +1825,7 @@
       "armor",
       "belt"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 16983,
@@ -1839,7 +1839,7 @@
       "armor",
       "helm"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 14155,
@@ -1854,7 +1854,7 @@
       "bag",
       "utility"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 19169,
@@ -1870,7 +1870,7 @@
       "caster-support",
       "raiding"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 15138,
@@ -1889,7 +1889,7 @@
       "resist",
       "raid-requirement"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 19687,
@@ -1903,7 +1903,7 @@
       "armor",
       "bracer"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 19685,
@@ -1917,7 +1917,7 @@
       "armor",
       "gloves"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 19688,
@@ -1930,7 +1930,7 @@
       "leatherworking",
       "armor"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 13462,
@@ -1946,7 +1946,7 @@
       "consumable",
       "potion"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 15047,
@@ -1963,7 +1963,7 @@
       "chest",
       "fire"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 9030,
@@ -1980,7 +1980,7 @@
       "consumable",
       "potion"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 14136,
@@ -1993,7 +1993,7 @@
       "tailoring",
       "armor"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 14046,
@@ -2011,7 +2011,7 @@
       "bag",
       "utility"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 20476,
@@ -2027,7 +2027,7 @@
       "nature",
       "resist"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 20478,
@@ -2043,7 +2043,7 @@
       "nature",
       "resist"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 20477,
@@ -2059,7 +2059,7 @@
       "nature",
       "resist"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 10548,
@@ -2074,7 +2074,7 @@
       "ranged",
       "hunter"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 6041,
@@ -2087,7 +2087,7 @@
       "blacksmithing",
       "utility"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 15056,
@@ -2103,7 +2103,7 @@
       "rogue",
       "druid"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 21278,
@@ -2120,7 +2120,7 @@
       "rogue",
       "druid"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 15057,
@@ -2137,7 +2137,7 @@
       "rogue",
       "druid"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 15058,
@@ -2154,7 +2154,7 @@
       "rogue",
       "druid"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 17193,
@@ -2167,7 +2167,7 @@
       "blacksmithing",
       "weapon"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 15997,
@@ -2182,7 +2182,7 @@
     "tags": [
       "engineering"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 12645,
@@ -2196,7 +2196,7 @@
       "armor",
       "utility"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 22385,
@@ -2209,7 +2209,7 @@
       "blacksmithing",
       "armor"
     ],
-    "rarity": null
+    "rarity": "epic"
   },
   {
     "id": 18639,
@@ -2227,7 +2227,7 @@
       "resist",
       "shadow"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 15053,
@@ -2244,7 +2244,7 @@
       "chest",
       "fire"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 15054,
@@ -2261,7 +2261,7 @@
       "legs",
       "fire"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 15055,
@@ -2276,6 +2276,6 @@
       "shoulders",
       "fire"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   }
 ]
