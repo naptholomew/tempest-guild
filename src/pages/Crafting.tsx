@@ -76,10 +76,12 @@ export default function Crafting() {
         <p className="text-skin-muted mt-2 text-sm">Browse recipes by profession, crafter, or tag. Click any chip to filter.</p>
       </header>
 
+      {/* Sticky controls bar */}
       <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3 w-full">
+              {/* Search */}
               <div className="relative w-full sm:w-[22rem] md:w-[19.5rem]">
                 <label htmlFor={searchId} className="sr-only">Search crafting</label>
                 <input
@@ -105,6 +107,7 @@ export default function Crafting() {
                 )}
               </div>
 
+              {/* Profession */}
               <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
                 <span>Profession</span>
                 <select
@@ -118,6 +121,7 @@ export default function Crafting() {
                 </select>
               </label>
 
+              {/* Crafter */}
               <label className="inline-flex items-center gap-2 text-xs sm:text-sm text-skin-muted select-none">
                 <span>Crafter</span>
                 <select
@@ -130,18 +134,20 @@ export default function Crafting() {
                   ))}
                 </select>
               </label>
-            </div>
 
-            <div className="text-[11px] sm:text-xs text-skin-base/80 leading-tight">
-              Showing <strong>{count}</strong> of <strong>{total}</strong>
+              {/* Status moved left and prevented wrapping */}
+              <div className="whitespace-nowrap text-[11px] sm:text-xs text-skin-base/80 leading-tight sm:ml-auto shrink-0">
+                Showing <strong>{count}</strong> of <strong>{total}</strong>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8">
+      {/* Card + table in the same max width as Attendance */}
+      <div className="mx-auto max-w-[1200px] rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8">
         <div className="overflow-x-auto">
-          <table className="min-w-full table-fixed text-base">
+          <table className="w-full table-fixed text-base">
             <thead>
               <tr className="text-left">
                 <th className="w-1/3 px-4 py-3">Recipe</th>
@@ -155,6 +161,7 @@ export default function Crafting() {
                 const tags = r.tags ?? [];
                 return (
                   <tr key={`${whType}:${r.id}`} className="border-t border-skin-base/60">
+                    {/* Recipe */}
                     <td className="w-1/3 px-4 py-4 align-top">
                       <div className="flex flex-col gap-1">
                         <a
@@ -172,14 +179,19 @@ export default function Crafting() {
                         )}
                       </div>
                     </td>
-                    <td className="w-1/3 px-4 py-4 align-top">
+
+                    {/* Crafters — nudged right */}
+                    <td className="w-1/3 pl-6 pr-4 py-4 align-top">
                       <div className="flex flex-wrap gap-2">
                         {r.crafters.map((c) => (
                           <button
                             key={c}
                             type="button"
                             onClick={() => handleChipClick(c)}
-                            className="rounded-full border px-3 py-1.5 text-sm leading-tight transition border-skin-base/70 bg-skin-elev text-skin-base/90 hover:bg-brand-accent/15 hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                            className="rounded-full border px-3 py-1.5 text-sm leading-tight transition
+                                       border-brand-accent/70 text-brand-accent bg-brand-accent/10
+                                       hover:bg-brand-accent/20 hover:border-brand-accent
+                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                             title={`Search for ${c}`}
                           >
                             {c}
@@ -187,7 +199,9 @@ export default function Crafting() {
                         ))}
                       </div>
                     </td>
-                    <td className="w-1/3 px-4 py-4 align-top">
+
+                    {/* Tags — nudged right and visually distinct */}
+                    <td className="w-1/3 pl-6 pr-4 py-4 align-top">
                       <div className="flex flex-wrap gap-2">
                         {tags.length ? (
                           tags.map((t) => (
@@ -195,7 +209,10 @@ export default function Crafting() {
                               key={t}
                               type="button"
                               onClick={() => handleChipClick(t)}
-                              className="rounded-full border px-3 py-1.5 text-sm leading-tight transition border-skin-base/70 bg-skin-elev text-skin-base/90 hover:bg-brand-accent/15 hover:border-brand-accent hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                              className="rounded-full border px-3 py-1.5 text-sm leading-tight transition
+                                         border-skin-base/70 bg-skin-base/60 text-skin-base/90
+                                         hover:bg-skin-base/70 hover:border-skin-base
+                                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base"
                               title={`Search for ${t}`}
                             >
                               {t}
