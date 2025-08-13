@@ -527,7 +527,9 @@
     "crafters": [
       "Cynthea",
       "Melevolence",
-      "Holypeach"
+      "Holypeach",
+	  "Bobijuana",
+	  "Wimbleburr"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1010,7 +1012,9 @@
     "id": 23804,
     "name": "Enchant Weapon - Mighty Intellect",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+      "Taters"	
+	],
     "whType": "spell",
     "flavortext": "",
     "tags": [
@@ -1076,7 +1080,8 @@
       "Melevolence",
       "Shedbol",
       "Holypeach",
-      "Cynthea"
+      "Cynthea",
+	  "Bobijuana"	  
     ],
     "whType": "item",
     "flavortext": "",
@@ -1097,7 +1102,8 @@
       "Melevolence",
       "Shedbol",
       "Holypeach",
-      "Cynthea"
+      "Cynthea",
+	  "Bobijuana"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1135,7 +1141,8 @@
       "Cynthea",
       "Melevolence",
       "Noblehart",
-      "Shedbol"
+      "Shedbol",
+	  "Bobijuana"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1335,7 +1342,8 @@
     "profession": "Alchemy",
     "crafters": [
       "Melevolence",
-      "Shedbol"
+      "Shedbol",
+	  "Bobijuana"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1355,7 +1363,8 @@
       "Melevolence",
       "Noblehart",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+	  "Bobijuana"	  
     ],
     "whType": "item",
     "flavortext": "",
@@ -1376,7 +1385,9 @@
       "Noblehart",
       "Shedbol",
       "Holypeach",
-      "Cynthea"
+      "Cynthea",
+	  "Bobijuana",	
+	  "Wimbleburr"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1396,7 +1407,9 @@
       "Melevolence",
       "Noblehart",
       "Holypeach",
-      "Cynthea"
+      "Cynthea",
+	  "Bobijuana",
+	  "Wimbleburr"	  
     ],
     "whType": "item",
     "flavortext": "",
@@ -1416,7 +1429,9 @@
       "Holypeach",
       "Melevolence",
       "Noblehart",
-      "Cynthea"
+      "Cynthea",
+	  "Bobijuana",
+	  "Wimbleburr"	
     ],
     "whType": "item",
     "flavortext": "",
@@ -1437,7 +1452,9 @@
       "Melevolence",
       "Noblehart",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+	  "Bobijuana",
+      "Wimbleburr"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1532,7 +1549,8 @@
       "Cynthea",
       "Melevolence",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+	  "Wimbleburr"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1564,7 +1582,9 @@
     "id": 20008,
     "name": "Living Action Potion",
     "profession": "Alchemy",
-    "crafters": [],
+    "crafters": [
+	"Bobijuana"
+	],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -1597,7 +1617,8 @@
       "Cynthea",
       "Melevolence",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+	  "Bobijuana"	  
     ],
     "whType": "item",
     "flavortext": "",
@@ -1618,7 +1639,8 @@
       "Cynthea",
       "Melevolence",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+	  "Bobijuana"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1638,7 +1660,8 @@
     "crafters": [
       "Holypeach",
       "Shedbol",
-      "Cynthea"
+      "Cynthea",
+	  "Bobijuana"
     ],
     "whType": "item",
     "flavortext": "",
