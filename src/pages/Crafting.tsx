@@ -221,50 +221,47 @@ export default function Crafting() {
                       </div>
                     </td>
 
-                    {/* Crafters — fair yellow outline + soft glow hover on the column */}
+                    {/* Crafters — fair yellow outline; glow only on pill hover */}
                     <td className="w-1/3 pl-6 pr-4 py-4 align-top">
-                      <div className="-m-1 p-1 rounded-lg transition hover:bg-skin-elev/60 hover:ring-2 hover:ring-amber-200/40">
-                        <div className="flex flex-wrap gap-2">
-                          {r.crafters.map((c) => (
-                            <button
-                              key={c}
-                              type="button"
-                              onClick={() => handleChipClick(c)}
-                              className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight transition
-                                         border-amber-300 text-skin-base/90 bg-transparent
-                                         hover:border-amber-400 hover:bg-amber-50/5
-                                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60"
-                              title={`Search for ${c}`}
-                            >
-                              {c}
-                            </button>
-                          ))}
-                        </div>
+                      <div className="flex flex-wrap gap-2">
+                        {r.crafters.map((c) => (
+                          <button
+                            key={c}
+                            type="button"
+                            onClick={() => handleChipClick(c)}
+                            className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight transition
+                                       border-amber-300 text-skin-base/90 bg-transparent
+                                       hover:border-amber-400 hover:bg-amber-50/5 hover:ring-1 hover:ring-amber-300/40
+                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60"
+                            title={`Search for ${c}`}
+                          >
+                            {c}
+                          </button>
+                        ))}
                       </div>
                     </td>
 
-                    {/* Tags — comma-separated text + soft glow hover on the column */}
+                    {/* Tags — back to pills (no golden border); glow only on pill hover */}
                     <td className="w-1/3 pl-6 pr-4 py-4 align-top">
-                      <div className="-m-1 p-1 rounded-lg transition hover:bg-skin-elev/60 hover:ring-2 hover:ring-amber-200/40">
-                        <div className="flex flex-wrap gap-x-1 gap-y-1">
-                          {tags.length ? (
-                            tags.map((t, i) => (
-                              <span key={`${t}-${i}`} className="inline">
-                                <button
-                                  type="button"
-                                  onClick={() => handleChipClick(t)}
-                                  className="px-0 py-0 bg-transparent border-0 text-skin-base/90 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-200/60"
-                                  title={`Search for ${t}`}
-                                >
-                                  {t}
-                                </button>
-                                {i < tags.length - 1 && <span>, </span>}
-                              </span>
-                            ))
-                          ) : (
-                            <span className="text-skin-muted">—</span>
-                          )}
-                        </div>
+                      <div className="flex flex-wrap gap-2">
+                        {tags.length ? (
+                          tags.map((t, i) => (
+                            <button
+                              key={`${t}-${i}`}
+                              type="button"
+                              onClick={() => handleChipClick(t)}
+                              className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight transition
+                                         border-skin-base/70 text-skin-base/90 bg-skin-elev
+                                         hover:bg-skin-elev/80 hover:border-skin-base/80 hover:ring-1 hover:ring-skin-base/60
+                                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base/60"
+                              title={`Search for ${t}`}
+                            >
+                              {t}
+                            </button>
+                          ))
+                        ) : (
+                          <span className="text-skin-muted">—</span>
+                        )}
                       </div>
                     </td>
                   </tr>
