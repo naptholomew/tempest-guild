@@ -112,7 +112,10 @@
     "id": 22194,
     "name": "Black Grasp of the Destroyer",
     "profession": "Blacksmithing",
-    "crafters": [],
+    "crafters": [
+	  "Brokensword",
+	  "Joros"
+	],
     "whType": "item",
     "flavortext": "",
     "tags": [],
@@ -1141,7 +1144,8 @@
       "Melevolence",
       "Noblehart",
       "Shedbol",
-      "Bobijuana"
+      "Bobijuana",
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1195,7 +1199,8 @@
     "crafters": [
       "Cynthea",
       "Shedbol",
-      "Holypeach"
+      "Holypeach",
+      "Drakares"	  
     ],
     "whType": "item",
     "flavortext": "",
@@ -1213,7 +1218,8 @@
     "name": "Gift of Arthas",
     "profession": "Alchemy",
     "crafters": [
-      "Cynthea"
+      "Cynthea",
+      "Drakares"	  
     ],
     "whType": "item",
     "flavortext": "",
@@ -1342,7 +1348,8 @@
     "crafters": [
       "Melevolence",
       "Shedbol",
-      "Bobijuana"
+      "Bobijuana",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1363,7 +1370,8 @@
       "Noblehart",
       "Shedbol",
       "Holypeach",
-      "Bobijuana"
+      "Bobijuana",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1386,7 +1394,8 @@
       "Holypeach",
       "Cynthea",
       "Bobijuana",
-      "Wimbleburr"
+      "Wimbleburr",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1408,7 +1417,8 @@
       "Holypeach",
       "Cynthea",
       "Bobijuana",
-      "Wimbleburr"
+      "Wimbleburr",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1430,7 +1440,8 @@
       "Noblehart",
       "Cynthea",
       "Bobijuana",
-      "Wimbleburr"
+      "Wimbleburr",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1453,7 +1464,8 @@
       "Shedbol",
       "Holypeach",
       "Bobijuana",
-      "Wimbleburr"
+      "Wimbleburr",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1549,7 +1561,8 @@
       "Melevolence",
       "Shedbol",
       "Holypeach",
-      "Wimbleburr"
+      "Wimbleburr",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1582,7 +1595,8 @@
     "name": "Living Action Potion",
     "profession": "Alchemy",
     "crafters": [
-      "Bobijuana"
+      "Bobijuana",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1617,7 +1631,8 @@
       "Melevolence",
       "Shedbol",
       "Holypeach",
-      "Bobijuana"
+      "Bobijuana",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1639,7 +1654,8 @@
       "Melevolence",
       "Shedbol",
       "Holypeach",
-      "Bobijuana"
+      "Bobijuana",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1679,7 +1695,8 @@
     "crafters": [
       "Cynthea",
       "Melevolence",
-      "Holypeach"
+      "Holypeach",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1824,7 +1841,8 @@
     "name": "Purification Potion",
     "profession": "Alchemy",
     "crafters": [
-      "Cynthea"
+      "Cynthea",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1856,7 +1874,8 @@
     "profession": "Alchemy",
     "crafters": [
       "Jeager",
-      "Cynthea"
+      "Cynthea",
+	  "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
