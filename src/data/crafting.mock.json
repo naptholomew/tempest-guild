@@ -35,7 +35,7 @@
     "profession": "Engineering",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Ranged Hit Scope",
     "tags": [
       "era",
       "hunter",
@@ -178,7 +178,7 @@
     "profession": "Leatherworking",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "era",
       "nature",
@@ -192,7 +192,7 @@
     "profession": "Leatherworking",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "era",
       "nature",
@@ -206,7 +206,7 @@
     "profession": "Leatherworking",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "era",
       "nature",
@@ -313,22 +313,6 @@
       "healing"
     ],
     "rarity": "epic"
-  },
-  {
-    "id": 16005,
-    "name": "Dark Iron Bomb",
-    "profession": "Engineering",
-    "crafters": [
-      "Draxxar"
-    ],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "pvp",
-      "utility",
-      "era"
-    ],
-    "rarity": "common"
   },
   {
     "id": 20039,
@@ -906,6 +890,7 @@
     "flavortext": "",
     "tags": [
       "enchant",
+      "enchant",
       "gloves",
       "era"
     ],
@@ -1046,20 +1031,6 @@
       "era"
     ],
     "rarity": "rare"
-  },
-  {
-    "id": 4852,
-    "name": "Flash Bomb",
-    "profession": "Engineering",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "pvp",
-      "utility",
-      "era"
-    ],
-    "rarity": "common"
   },
   {
     "id": 13513,
@@ -1205,7 +1176,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "nature",
       "resist",
@@ -1235,7 +1206,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "frost",
       "resist",
@@ -1249,7 +1220,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "frost",
       "resist",
@@ -1263,7 +1234,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "frost",
       "resist",
@@ -1277,7 +1248,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "frost",
       "resist",
@@ -1518,51 +1489,6 @@
     "rarity": "rare"
   },
   {
-    "id": 22665,
-    "name": "Icy Scale Bracers",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22664,
-    "name": "Icy Scale Breastplate",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22666,
-    "name": "Icy Scale Gauntlets",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
     "id": 6043,
     "name": "Iron Counterweight",
     "profession": "Blacksmithing",
@@ -1655,7 +1581,20 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "chest",
+      "healing",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+    {
+    "id": 15061,
+    "name": "Living Shoulders",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "healing",
       "era"
     ],
     "rarity": "rare"
@@ -1829,51 +1768,6 @@
     "rarity": "rare"
   },
   {
-    "id": 22663,
-    "name": "Polar Bracers",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22662,
-    "name": "Polar Gloves",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22661,
-    "name": "Polar Tunic",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
     "id": 19687,
     "name": "Primal Batskin Bracers",
     "profession": "Leatherworking",
@@ -1991,7 +1885,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "resist",
       "era"
@@ -2004,7 +1898,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "resist",
       "era"
@@ -2017,7 +1911,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "resist",
       "era"
@@ -2110,7 +2004,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "nature",
       "resist",
@@ -2124,7 +2018,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "nature",
       "resist",
@@ -2138,7 +2032,7 @@
     "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
-    "flavortext": "",
+    "flavortext": "Phase 6",
     "tags": [
       "nature",
       "resist",
