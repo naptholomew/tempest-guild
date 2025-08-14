@@ -9,11 +9,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "bomb",
       "pvp",
       "utility",
-      "aoe",
-      "arcane"
+      "era"
     ],
     "rarity": "common"
   },
@@ -26,7 +24,8 @@
     "flavortext": "",
     "tags": [
       "trinket",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -38,9 +37,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "scope",
-      "ranged",
-      "hunter"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -53,9 +50,9 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "boots",
       "fire",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -72,7 +69,8 @@
       "armor",
       "chest",
       "fire",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -87,7 +85,8 @@
       "armor",
       "legs",
       "fire",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -102,9 +101,9 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "shoulders",
       "fire",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -113,12 +112,14 @@
     "name": "Black Grasp of the Destroyer",
     "profession": "Blacksmithing",
     "crafters": [
-	  "Brokensword",
-	  "Joros"
-	],
+      "Brokensword",
+      "Joros"
+    ],
     "whType": "item",
     "flavortext": "",
-    "tags": [],
+    "tags": [
+      "era"
+    ],
     "rarity": "epic"
   },
   {
@@ -132,9 +133,9 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "boots",
       "caster",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -151,7 +152,8 @@
       "armor",
       "legs",
       "caster",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -168,7 +170,8 @@
       "armor",
       "chest",
       "caster",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -184,7 +187,8 @@
     "tags": [
       "armor",
       "chest",
-      "nature"
+      "nature",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -200,7 +204,8 @@
     "tags": [
       "armor",
       "legs",
-      "nature"
+      "nature",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -213,8 +218,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "shoulders",
-      "nature"
+      "nature",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -227,7 +232,7 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "belt"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -240,7 +245,7 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "boots"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -253,7 +258,7 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "helm"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -269,7 +274,7 @@
     "flavortext": "",
     "tags": [
       "enchant",
-      "healer"
+      "era"
     ],
     "rarity": "common"
   },
@@ -285,7 +290,8 @@
     "flavortext": "",
     "tags": [
       "enchant",
-      "caster"
+      "caster",
+      "era"
     ],
     "rarity": "common"
   },
@@ -298,8 +304,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "bag",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -315,7 +321,8 @@
     "tags": [
       "armor",
       "cloak",
-      "fire"
+      "fire",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -328,8 +335,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "bag",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -342,7 +349,8 @@
     "flavortext": "",
     "tags": [
       "weapon",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -355,7 +363,7 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "belt"
+      "era"
     ],
     "rarity": "epic"
   },
@@ -369,10 +377,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "bomb",
       "pvp",
       "utility",
-      "aoe"
+      "era"
     ],
     "rarity": "common"
   },
@@ -384,7 +391,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "armor"
+      "armor",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -396,7 +404,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "armor"
+      "armor",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -408,7 +417,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "armor"
+      "armor",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -420,7 +430,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "armor"
+      "armor",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -437,7 +448,7 @@
       "armor",
       "gloves",
       "melee",
-      "pre-bis"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -454,7 +465,7 @@
       "armor",
       "legs",
       "melee",
-      "pre-bis"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -468,7 +479,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -484,7 +496,8 @@
     "flavortext": "",
     "tags": [
       "consumable",
-      "elixir"
+      "elixir",
+      "era"
     ],
     "rarity": "common"
   },
@@ -500,7 +513,8 @@
     "tags": [
       "consumable",
       "elixir",
-      "fire"
+      "fire",
+      "era"
     ],
     "rarity": "common"
   },
@@ -517,8 +531,8 @@
     "tags": [
       "consumable",
       "elixir",
-      "shadow",
-      "caster"
+      "caster",
+      "era"
     ],
     "rarity": "common"
   },
@@ -540,7 +554,7 @@
       "elixir",
       "agility",
       "melee",
-      "hunter"
+      "era"
     ],
     "rarity": "common"
   },
@@ -556,8 +570,8 @@
     "tags": [
       "enchant",
       "weapon",
-      "two-hand",
-      "agility"
+      "agility",
+      "era"
     ],
     "rarity": "common"
   },
@@ -573,8 +587,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "two-hand",
-      "intellect"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -590,8 +603,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "two-hand",
-      "spirit"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -608,8 +620,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "two-hand",
-      "melee-dps"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -625,8 +636,8 @@
     "flavortext": "",
     "tags": [
       "enchant",
-      "boots",
-      "agility"
+      "agility",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -642,7 +653,7 @@
     "tags": [
       "enchant",
       "bracer",
-      "intellect"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -658,7 +669,7 @@
     "tags": [
       "enchant",
       "bracer",
-      "healing"
+      "era"
     ],
     "rarity": "common"
   },
@@ -674,7 +685,7 @@
     "tags": [
       "enchant",
       "bracer",
-      "spirit"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -690,7 +701,7 @@
     "tags": [
       "enchant",
       "bracer",
-      "stamina"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -706,7 +717,7 @@
     "tags": [
       "enchant",
       "bracer",
-      "strength"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -721,7 +732,8 @@
     "flavortext": "",
     "tags": [
       "enchant",
-      "chest"
+      "chest",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -735,7 +747,7 @@
     "tags": [
       "enchant",
       "cloak",
-      "dodge"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -751,7 +763,8 @@
     "tags": [
       "enchant",
       "cloak",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -768,7 +781,8 @@
     "tags": [
       "enchant",
       "cloak",
-      "agility"
+      "agility",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -784,7 +798,7 @@
     "tags": [
       "enchant",
       "cloak",
-      "stealth"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -800,7 +814,7 @@
     "tags": [
       "enchant",
       "cloak",
-      "threat-reduction"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -817,7 +831,7 @@
     "tags": [
       "enchant",
       "gloves",
-      "herbalism"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -834,7 +848,7 @@
     "tags": [
       "enchant",
       "gloves",
-      "mining"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -848,7 +862,8 @@
     "tags": [
       "enchant",
       "gloves",
-      "fire"
+      "fire",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -862,7 +877,8 @@
     "tags": [
       "enchant",
       "gloves",
-      "frost"
+      "frost",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -878,7 +894,7 @@
     "tags": [
       "enchant",
       "gloves",
-      "healing"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -894,7 +910,7 @@
     "tags": [
       "enchant",
       "gloves",
-      "riding"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -910,7 +926,7 @@
     "tags": [
       "enchant",
       "gloves",
-      "shadow"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -927,7 +943,7 @@
     "tags": [
       "enchant",
       "gloves",
-      "skinning"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -941,7 +957,8 @@
     "tags": [
       "enchant",
       "gloves",
-      "agility"
+      "agility",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -957,7 +974,8 @@
     "tags": [
       "enchant",
       "weapon",
-      "agility"
+      "agility",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -973,7 +991,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "proc-crusader"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -990,7 +1008,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "proc-fiery"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -1006,7 +1024,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "healing"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1022,7 +1040,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "intellect"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1038,7 +1056,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "spirit"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1054,7 +1072,7 @@
     "tags": [
       "enchant",
       "weapon",
-      "spell-power"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1066,10 +1084,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "bomb",
       "pvp",
       "utility",
-      "aoe"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1091,7 +1108,7 @@
       "consumable",
       "flask",
       "raiding",
-      "all-resist"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1112,7 +1129,8 @@
     "tags": [
       "consumable",
       "flask",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1131,7 +1149,8 @@
     "tags": [
       "consumable",
       "flask",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1152,7 +1171,8 @@
     "tags": [
       "consumable",
       "flask",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1172,7 +1192,8 @@
     "tags": [
       "consumable",
       "flask",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1188,7 +1209,8 @@
     "flavortext": "",
     "tags": [
       "trinket",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1200,7 +1222,7 @@
       "Cynthea",
       "Shedbol",
       "Holypeach",
-      "Drakares"	  
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1209,7 +1231,7 @@
       "potion",
       "utility",
       "pvp",
-      "movement-immunity"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1219,14 +1241,14 @@
     "profession": "Alchemy",
     "crafters": [
       "Cynthea",
-      "Drakares"	  
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
     "tags": [
       "consumable",
-      "debuff",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1242,7 +1264,7 @@
       "cloak",
       "frost",
       "resist",
-      "naxxramas"
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1258,7 +1280,7 @@
       "gloves",
       "frost",
       "resist",
-      "naxxramas"
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1274,7 +1296,7 @@
       "chest",
       "frost",
       "resist",
-      "naxxramas"
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1289,7 +1311,7 @@
       "armor",
       "frost",
       "resist",
-      "naxxramas"
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1303,8 +1325,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "rez",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -1318,9 +1340,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "movement",
       "pvp",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -1334,10 +1356,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "sapper",
-      "raid-utility",
       "pvp",
-      "aoe"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1349,14 +1369,14 @@
       "Melevolence",
       "Shedbol",
       "Bobijuana",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
     "tags": [
       "consumable",
       "elixir",
-      "arcane"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1371,7 +1391,7 @@
       "Shedbol",
       "Holypeach",
       "Bobijuana",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1379,7 +1399,7 @@
       "consumable",
       "potion",
       "resist",
-      "arcane"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1395,7 +1415,7 @@
       "Cynthea",
       "Bobijuana",
       "Wimbleburr",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1403,7 +1423,8 @@
       "consumable",
       "potion",
       "resist",
-      "fire"
+      "fire",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1418,7 +1439,7 @@
       "Cynthea",
       "Bobijuana",
       "Wimbleburr",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1426,7 +1447,8 @@
       "consumable",
       "potion",
       "resist",
-      "frost"
+      "frost",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1441,7 +1463,7 @@
       "Cynthea",
       "Bobijuana",
       "Wimbleburr",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1449,7 +1471,8 @@
       "consumable",
       "potion",
       "resist",
-      "nature"
+      "nature",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1465,7 +1488,7 @@
       "Holypeach",
       "Bobijuana",
       "Wimbleburr",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1473,7 +1496,7 @@
       "consumable",
       "potion",
       "resist",
-      "shadow"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1489,7 +1512,8 @@
     "tags": [
       "trinket",
       "pvp",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1503,7 +1527,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "armor"
+      "armor",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1519,7 +1544,8 @@
     "tags": [
       "trinket",
       "pvp",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1533,7 +1559,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1548,7 +1575,7 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "belt"
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1562,7 +1589,7 @@
       "Shedbol",
       "Holypeach",
       "Wimbleburr",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1571,7 +1598,7 @@
       "potion",
       "utility",
       "pvp",
-      "invulnerability"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1584,9 +1611,9 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "strength",
       "melee",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1596,7 +1623,7 @@
     "profession": "Alchemy",
     "crafters": [
       "Bobijuana",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
@@ -1605,7 +1632,7 @@
       "potion",
       "utility",
       "pvp",
-      "movement-immunity"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1618,7 +1645,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "chest"
+      "chest",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1632,16 +1660,15 @@
       "Shedbol",
       "Holypeach",
       "Bobijuana",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
     "tags": [
       "consumable",
       "potion",
-      "mana-regen",
       "caster",
-      "healer"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1655,16 +1682,15 @@
       "Shedbol",
       "Holypeach",
       "Bobijuana",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
     "tags": [
       "consumable",
       "potion",
-      "mana",
       "caster",
-      "healer"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1683,8 +1709,7 @@
     "tags": [
       "consumable",
       "potion",
-      "hybrid",
-      "healer"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1696,16 +1721,15 @@
       "Cynthea",
       "Melevolence",
       "Holypeach",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
     "tags": [
       "consumable",
       "potion",
-      "warrior",
       "melee",
-      "burst"
+      "era"
     ],
     "rarity": null
   },
@@ -1720,8 +1744,7 @@
     "flavortext": "",
     "tags": [
       "utility",
-      "mount",
-      "movement"
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -1734,7 +1757,7 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "belt"
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1747,7 +1770,7 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "helm"
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1760,8 +1783,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "bag",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1774,9 +1797,8 @@
     "flavortext": "",
     "tags": [
       "weapon",
-      "debuff",
-      "caster-support",
-      "raiding"
+      "raiding",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -1794,7 +1816,7 @@
       "cloak",
       "fire",
       "resist",
-      "raid-requirement"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1807,7 +1829,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "bracer"
+      "bracer",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1820,7 +1843,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "gloves"
+      "gloves",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1832,7 +1856,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "armor"
+      "armor",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1842,13 +1867,14 @@
     "profession": "Alchemy",
     "crafters": [
       "Cynthea",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
     "tags": [
       "consumable",
-      "potion"
+      "potion",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1864,7 +1890,8 @@
     "tags": [
       "armor",
       "chest",
-      "fire"
+      "fire",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1875,13 +1902,14 @@
     "crafters": [
       "Jeager",
       "Cynthea",
-	  "Drakares"
+      "Drakares"
     ],
     "whType": "item",
     "flavortext": "",
     "tags": [
       "consumable",
-      "potion"
+      "potion",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1893,7 +1921,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "armor"
+      "armor",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1909,8 +1938,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "bag",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1925,7 +1954,8 @@
       "armor",
       "bracer",
       "nature",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1940,7 +1970,8 @@
       "armor",
       "chest",
       "nature",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1955,7 +1986,8 @@
       "armor",
       "gloves",
       "nature",
-      "resist"
+      "resist",
+      "era"
     ],
     "rarity": "rare"
   },
@@ -1967,9 +1999,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "scope",
-      "ranged",
-      "hunter"
+      "era"
     ],
     "rarity": "common"
   },
@@ -1981,7 +2011,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "common"
   },
@@ -1995,8 +2026,7 @@
     "tags": [
       "armor",
       "nature",
-      "rogue",
-      "druid"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -2011,8 +2041,7 @@
       "armor",
       "gloves",
       "nature",
-      "rogue",
-      "druid"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -2027,8 +2056,7 @@
       "armor",
       "legs",
       "nature",
-      "rogue",
-      "druid"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -2041,10 +2069,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "shoulders",
       "nature",
-      "rogue",
-      "druid"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -2056,7 +2082,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "weapon"
+      "weapon",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -2070,7 +2097,9 @@
     ],
     "whType": "item",
     "flavortext": "",
-    "tags": [],
+    "tags": [
+      "era"
+    ],
     "rarity": "uncommon"
   },
   {
@@ -2082,7 +2111,8 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "utility"
+      "utility",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -2094,7 +2124,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "armor"
+      "armor",
+      "era"
     ],
     "rarity": "epic"
   },
@@ -2111,7 +2142,7 @@
       "trinket",
       "pvp",
       "resist",
-      "shadow"
+      "era"
     ],
     "rarity": "rare"
   },
@@ -2127,7 +2158,8 @@
     "tags": [
       "armor",
       "chest",
-      "fire"
+      "fire",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -2143,7 +2175,8 @@
     "tags": [
       "armor",
       "legs",
-      "fire"
+      "fire",
+      "era"
     ],
     "rarity": "uncommon"
   },
@@ -2156,9 +2189,232 @@
     "flavortext": "",
     "tags": [
       "armor",
-      "shoulders",
-      "fire"
+      "fire",
+      "era"
     ],
     "rarity": "uncommon"
+  },
+  {
+    "id": 23801,
+    "name": "Enchant Bracer - Mana Regeneration",
+    "profession": "Enchanting",
+    "crafters": [],
+    "whType": "spell",
+    "flavortext": "",
+    "tags": [
+      "bracer",
+      "era"
+    ],
+    "rarity": "common"
+  },
+  {
+    "id": 13689,
+    "name": "Enchant Shield - Lesser Block",
+    "profession": "Enchanting",
+    "crafters": [],
+    "whType": "spell",
+    "flavortext": "",
+    "tags": [
+      "shield",
+      "era"
+    ],
+    "rarity": "uncommon"
+  },
+  {
+    "id": 22665,
+    "name": "Icy Scale Bracers",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22664,
+    "name": "Icy Scale Breastplate",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22666,
+    "name": "Icy Scale Gauntlets",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22663,
+    "name": "Polar Bracers",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22662,
+    "name": "Polar Gloves",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22661,
+    "name": "Polar Tunic",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 20539,
+    "name": "Runed Stygian Belt",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 20537,
+    "name": "Runed Stygian Boots",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 20538,
+    "name": "Runed Stygian Leggings",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 22757,
+    "name": "Sylvan Crown",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "nature",
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 22758,
+    "name": "Sylvan Shoulders",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "nature",
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 22756,
+    "name": "Sylvan Vest",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "nature",
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 22660,
+    "name": "Gaea's Embrace",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "nature",
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 14156,
+    "name": "Bottomless Bag",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "era"
+    ],
+    "rarity": "rare"
   }
 ]
