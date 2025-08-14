@@ -50,7 +50,7 @@ export default function Sidebar() {
   return (
     <aside
       className={clsx(
-        'h-screen sticky top-0 bg-skin-elev border-r border-skin-base transition-[width] duration-300 ease-out overflow-hidden',
+        'h-screen sticky top-0 bg-skin-elev border-r border-skin-base transition-[width] duration-300 ease-out overflow-hidden shrink-0 z-20',
         collapsed ? 'w-[72px]' : 'w-[280px]'
       )}
     >
