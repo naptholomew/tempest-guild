@@ -221,7 +221,7 @@ export default function Crafting() {
                       </div>
                     </td>
 
-                    {/* Crafters — fair yellow outline; glow only on pill hover */}
+                    {/* Crafters — stronger glow on pill hover */}
                     <td className="w-1/3 pl-6 pr-4 py-4 align-top">
                       <div className="flex flex-wrap gap-2">
                         {r.crafters.map((c) => (
@@ -229,10 +229,12 @@ export default function Crafting() {
                             key={c}
                             type="button"
                             onClick={() => handleChipClick(c)}
-                            className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight transition
+                            className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight
+                                       transition transition-shadow duration-200
                                        border-amber-300 text-skin-base/90 bg-transparent
-                                       hover:border-amber-400 hover:bg-amber-50/5 hover:ring-1 hover:ring-amber-300/40
-                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/60"
+                                       hover:border-amber-400 hover:bg-amber-50/10
+                                       hover:ring-2 hover:ring-amber-300/90 hover:shadow-[0_0_14px_rgba(252,211,77,0.55)]
+                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/90"
                             title={`Search for ${c}`}
                           >
                             {c}
@@ -241,7 +243,7 @@ export default function Crafting() {
                       </div>
                     </td>
 
-                    {/* Tags — back to pills (no golden border); glow only on pill hover */}
+                    {/* Tags — neutral pills with stronger glow on hover */}
                     <td className="w-1/3 pl-6 pr-4 py-4 align-top">
                       <div className="flex flex-wrap gap-2">
                         {tags.length ? (
@@ -250,10 +252,12 @@ export default function Crafting() {
                               key={`${t}-${i}`}
                               type="button"
                               onClick={() => handleChipClick(t)}
-                              className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight transition
+                              className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight
+                                         transition transition-shadow duration-200
                                          border-skin-base/70 text-skin-base/90 bg-skin-elev
-                                         hover:bg-skin-elev/80 hover:border-skin-base/80 hover:ring-1 hover:ring-skin-base/60
-                                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base/60"
+                                         hover:bg-skin-elev/80 hover:border-skin-base
+                                         hover:ring-2 hover:ring-skin-base/90 hover:shadow-[0_0_12px_rgba(255,255,255,0.35)]
+                                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base/80"
                               title={`Search for ${t}`}
                             >
                               {t}

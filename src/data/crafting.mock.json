@@ -559,7 +559,7 @@
       "two-hand",
       "agility"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 20036,
@@ -576,7 +576,7 @@
       "two-hand",
       "intellect"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 20035,
@@ -593,7 +593,7 @@
       "two-hand",
       "spirit"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 20030,
@@ -611,7 +611,7 @@
       "two-hand",
       "melee-dps"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 20023,
@@ -628,7 +628,7 @@
       "boots",
       "agility"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 20008,
@@ -644,7 +644,7 @@
       "bracer",
       "intellect"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 23802,
@@ -660,7 +660,7 @@
       "bracer",
       "healing"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 20009,
@@ -676,7 +676,7 @@
       "bracer",
       "spirit"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 20011,
@@ -692,7 +692,7 @@
       "bracer",
       "stamina"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 20010,
@@ -708,7 +708,7 @@
       "bracer",
       "strength"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 20025,
@@ -723,7 +723,7 @@
       "enchant",
       "chest"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 25086,
@@ -737,7 +737,7 @@
       "cloak",
       "dodge"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 20014,
@@ -753,7 +753,7 @@
       "cloak",
       "resist"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 13882,
@@ -770,7 +770,7 @@
       "cloak",
       "agility"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 25083,
@@ -786,7 +786,7 @@
       "cloak",
       "stealth"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 25084,
@@ -802,7 +802,7 @@
       "cloak",
       "threat-reduction"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 13868,
@@ -819,7 +819,7 @@
       "gloves",
       "herbalism"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 13841,
@@ -836,7 +836,7 @@
       "gloves",
       "mining"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 25078,
@@ -850,7 +850,7 @@
       "gloves",
       "fire"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 25074,
@@ -864,7 +864,7 @@
       "gloves",
       "frost"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 25079,
@@ -880,7 +880,7 @@
       "gloves",
       "healing"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 13947,
@@ -896,7 +896,7 @@
       "gloves",
       "riding"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 25073,
@@ -912,7 +912,7 @@
       "gloves",
       "shadow"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 13698,
@@ -929,7 +929,7 @@
       "gloves",
       "skinning"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 25080,
@@ -943,7 +943,7 @@
       "gloves",
       "agility"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 23800,
@@ -959,7 +959,7 @@
       "weapon",
       "agility"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 20034,
@@ -975,7 +975,7 @@
       "weapon",
       "proc-crusader"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 13898,
@@ -992,7 +992,7 @@
       "weapon",
       "proc-fiery"
     ],
-    "rarity": null
+    "rarity": "uncommon"
   },
   {
     "id": 22750,
@@ -1008,7 +1008,7 @@
       "weapon",
       "healing"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 23804,
@@ -1024,7 +1024,7 @@
       "weapon",
       "intellect"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 23803,
@@ -1040,7 +1040,7 @@
       "weapon",
       "spirit"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 22749,
@@ -1056,7 +1056,7 @@
       "weapon",
       "spell-power"
     ],
-    "rarity": null
+    "rarity": "rare"
   },
   {
     "id": 4852,
