@@ -38,8 +38,8 @@
     "flavortext": "",
     "tags": [
       "era",
-	  "hunter",
-	  "scope"
+      "hunter",
+      "scope"
     ],
     "rarity": "rare"
   },
@@ -91,8 +91,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "fire",
-      "resist",
       "era"
     ],
     "rarity": "rare"
@@ -108,7 +106,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "mana-drain"
     ],
     "rarity": "epic"
   },
@@ -138,7 +137,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "legs",
       "caster",
       "raiding",
       "era"
@@ -155,7 +153,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "chest",
       "caster",
       "raiding",
       "era"
@@ -163,47 +160,15 @@
     "rarity": "rare"
   },
   {
-    "id": 15048,
-    "name": "Blue Dragonscale Breastplate",
-    "profession": "Leatherworking",
-    "crafters": [
-      "Seluna"
-    ],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "chest",
-      "nature",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 20295,
-    "name": "Blue Dragonscale Leggings",
-    "profession": "Leatherworking",
-    "crafters": [
-      "Seluna"
-    ],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "legs",
-      "nature",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 15049,
-    "name": "Blue Dragonscale Shoulders",
-    "profession": "Leatherworking",
+    "id": 14156,
+    "name": "Bottomless Bag",
+    "profession": "Tailoring",
     "crafters": [],
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "nature",
-      "era"
+      "era",
+      "utility"
     ],
     "rarity": "rare"
   },
@@ -215,7 +180,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "nature",
+      "resist"
     ],
     "rarity": "rare"
   },
@@ -227,7 +194,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "nature",
+      "resist"
     ],
     "rarity": "rare"
   },
@@ -239,7 +208,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "nature",
+      "resist"
     ],
     "rarity": "rare"
   },
@@ -254,7 +225,7 @@
     "whType": "spell",
     "flavortext": "",
     "tags": [
-      "enchant",
+      "caster",
       "era"
     ],
     "rarity": "common"
@@ -270,7 +241,6 @@
     "whType": "spell",
     "flavortext": "",
     "tags": [
-      "enchant",
       "caster",
       "era"
     ],
@@ -284,7 +254,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "utility",
+      "bag",
       "era"
     ],
     "rarity": "uncommon"
@@ -300,7 +270,7 @@
     "flavortext": "",
     "tags": [
       "cloak",
-      "fire",
+      "onyxia",
       "era"
     ],
     "rarity": "uncommon"
@@ -313,7 +283,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "utility",
+      "bag",
       "era"
     ],
     "rarity": "epic"
@@ -326,7 +296,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "utility",
+      "ranged",
       "era"
     ],
     "rarity": "epic"
@@ -339,7 +309,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "healing"
     ],
     "rarity": "epic"
   },
@@ -367,7 +338,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "fire",
+      "resist"
     ],
     "rarity": "epic"
   },
@@ -379,7 +352,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "fire",
+      "resist"
     ],
     "rarity": "epic"
   },
@@ -636,6 +611,22 @@
     "rarity": "common"
   },
   {
+    "id": 23801,
+    "name": "Enchant Bracer - Mana Regeneration",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "whType": "spell",
+    "flavortext": "",
+    "tags": [
+      "bracer",
+      "enchant",
+      "era"
+    ],
+    "rarity": "common"
+  },
+  {
     "id": 20009,
     "name": "Enchant Bracer - Superior Spirit",
     "profession": "Enchanting",
@@ -743,7 +734,6 @@
     "tags": [
       "enchant",
       "cloak",
-      "agility",
       "era"
     ],
     "rarity": "uncommon"
@@ -824,7 +814,6 @@
     "tags": [
       "enchant",
       "gloves",
-      "fire",
       "era"
     ],
     "rarity": "rare"
@@ -839,7 +828,6 @@
     "tags": [
       "enchant",
       "gloves",
-      "frost",
       "era"
     ],
     "rarity": "rare"
@@ -919,10 +907,25 @@
     "tags": [
       "enchant",
       "gloves",
-      "agility",
       "era"
     ],
     "rarity": "rare"
+  },
+  {
+    "id": 13689,
+    "name": "Enchant Shield - Lesser Block",
+    "profession": "Enchanting",
+    "crafters": [
+      "Taters"
+    ],
+    "whType": "spell",
+    "flavortext": "",
+    "tags": [
+      "shield",
+      "enchant",
+      "era"
+    ],
+    "rarity": "uncommon"
   },
   {
     "id": 23800,
@@ -935,7 +938,6 @@
     "flavortext": "",
     "tags": [
       "enchant",
-      "agility",
       "era"
     ],
     "rarity": "uncommon"
@@ -1177,12 +1179,25 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
       "utility",
       "pvp",
       "era"
     ],
     "rarity": "common"
+  },
+  {
+    "id": 22660,
+    "name": "Gaea's Embrace",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "nature",
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
   },
   {
     "id": 9088,
@@ -1208,7 +1223,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "cloak",
       "frost",
       "resist",
       "era"
@@ -1223,7 +1237,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "gloves",
       "frost",
       "resist",
       "era"
@@ -1238,7 +1251,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "chest",
       "frost",
       "resist",
       "era"
@@ -1301,6 +1313,7 @@
     "flavortext": "",
     "tags": [
       "pvp",
+      "boom",
       "era"
     ],
     "rarity": "common"
@@ -1318,7 +1331,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "elixir",
+      "caster",
+      "raiding",
       "era"
     ],
     "rarity": "common"
@@ -1339,7 +1353,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "arcane",
+      "raiding",
       "resist",
       "era"
     ],
@@ -1362,7 +1377,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "raiding",
       "resist",
       "fire",
       "era"
@@ -1385,7 +1400,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "raiding",
       "resist",
       "frost",
       "era"
@@ -1408,7 +1423,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "raiding",
       "resist",
       "nature",
       "era"
@@ -1432,8 +1447,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "raiding",
       "resist",
+      "shadow",
       "era"
     ],
     "rarity": "common"
@@ -1465,7 +1481,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "healing"
     ],
     "rarity": "epic"
   },
@@ -1485,6 +1502,51 @@
       "era"
     ],
     "rarity": "rare"
+  },
+  {
+    "id": 22665,
+    "name": "Icy Scale Bracers",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22664,
+    "name": "Icy Scale Breastplate",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22666,
+    "name": "Icy Scale Gauntlets",
+    "profession": "Leatherworking",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
   },
   {
     "id": 6043,
@@ -1511,7 +1573,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "resist",
+      "fire"
     ],
     "rarity": "epic"
   },
@@ -1597,8 +1661,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "raiding",
       "caster",
+      "healing",
       "era"
     ],
     "rarity": "common"
@@ -1618,8 +1683,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "raiding",
       "caster",
+      "healing",
       "era"
     ],
     "rarity": "common"
@@ -1637,7 +1703,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "caster",
+      "healing",
       "era"
     ],
     "rarity": "rare"
@@ -1655,11 +1722,11 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
+      "raiding",
       "melee",
       "era"
     ],
-    "rarity": null
+    "rarity": "common"
   },
   {
     "id": 7969,
@@ -1684,7 +1751,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "resist",
+      "fire"
     ],
     "rarity": "epic"
   },
@@ -1696,7 +1765,9 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "resist",
+      "fire"
     ],
     "rarity": "epic"
   },
@@ -1736,12 +1807,57 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "cloak",
+      "raiding",
       "fire",
       "resist",
       "era"
     ],
     "rarity": "rare"
+  },
+  {
+    "id": 22663,
+    "name": "Polar Bracers",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22662,
+    "name": "Polar Gloves",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
+  },
+  {
+    "id": 22661,
+    "name": "Polar Tunic",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "frost",
+      "resist",
+      "naxx",
+      "era"
+    ],
+    "rarity": "epic"
   },
   {
     "id": 19687,
@@ -1751,7 +1867,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "bracer",
       "era"
     ],
     "rarity": "rare"
@@ -1764,7 +1879,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "gloves",
       "era"
     ],
     "rarity": "rare"
@@ -1792,7 +1906,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
       "era"
     ],
     "rarity": "common"
@@ -1807,7 +1920,7 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "chest",
+      "healing",
       "fire",
       "era"
     ],
@@ -1825,7 +1938,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "potion",
       "era"
     ],
     "rarity": "common"
@@ -1838,7 +1950,8 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "era"
+      "era",
+      "caster"
     ],
     "rarity": "rare"
   },
@@ -1857,6 +1970,45 @@
       "era"
     ],
     "rarity": "common"
+  },
+  {
+    "id": 20539,
+    "name": "Runed Stygian Belt",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 20537,
+    "name": "Runed Stygian Boots",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 20538,
+    "name": "Runed Stygian Leggings",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
   },
   {
     "id": 20476,
@@ -1881,7 +2033,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "chest",
       "nature",
       "resist",
       "era"
@@ -1896,7 +2047,6 @@
     "whType": "item",
     "flavortext": "",
     "tags": [
-      "gloves",
       "nature",
       "resist",
       "era"
@@ -1929,60 +2079,6 @@
     "rarity": "common"
   },
   {
-    "id": 15056,
-    "name": "Stormshroud Armor",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "nature",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 21278,
-    "name": "Stormshroud Gloves",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "gloves",
-      "nature",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 15057,
-    "name": "Stormshroud Pants",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "legs",
-      "nature",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 15058,
-    "name": "Stormshroud Shoulders",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "nature",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
     "id": 17193,
     "name": "Sulfuron Hammer",
     "profession": "Blacksmithing",
@@ -1993,6 +2089,48 @@
       "era"
     ],
     "rarity": "epic"
+  },
+  {
+    "id": 22757,
+    "name": "Sylvan Crown",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "nature",
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 22758,
+    "name": "Sylvan Shoulders",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "nature",
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
+  },
+  {
+    "id": 22756,
+    "name": "Sylvan Vest",
+    "profession": "Tailoring",
+    "crafters": [],
+    "whType": "item",
+    "flavortext": "",
+    "tags": [
+      "nature",
+      "resist",
+      "era"
+    ],
+    "rarity": "rare"
   },
   {
     "id": 15997,
@@ -2055,9 +2193,7 @@
     "id": 15053,
     "name": "Volcanic Breastplate",
     "profession": "Leatherworking",
-    "crafters": [
-      "Riot"
-    ],
+    "crafters": [],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -2071,9 +2207,7 @@
     "id": 15054,
     "name": "Volcanic Leggings",
     "profession": "Leatherworking",
-    "crafters": [
-      "Riot"
-    ],
+    "crafters": [],
     "whType": "item",
     "flavortext": "",
     "tags": [
@@ -2095,228 +2229,5 @@
       "era"
     ],
     "rarity": "uncommon"
-  },
-  {
-    "id": 23801,
-    "name": "Enchant Bracer - Mana Regeneration",
-    "profession": "Enchanting",
-    "crafters": [],
-    "whType": "spell",
-    "flavortext": "",
-    "tags": [
-      "bracer",
-      "era"
-    ],
-    "rarity": "common"
-  },
-  {
-    "id": 13689,
-    "name": "Enchant Shield - Lesser Block",
-    "profession": "Enchanting",
-    "crafters": [],
-    "whType": "spell",
-    "flavortext": "",
-    "tags": [
-      "shield",
-      "era"
-    ],
-    "rarity": "uncommon"
-  },
-  {
-    "id": 22665,
-    "name": "Icy Scale Bracers",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22664,
-    "name": "Icy Scale Breastplate",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22666,
-    "name": "Icy Scale Gauntlets",
-    "profession": "Leatherworking",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22663,
-    "name": "Polar Bracers",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22662,
-    "name": "Polar Gloves",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 22661,
-    "name": "Polar Tunic",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "frost",
-      "resist",
-      "naxx",
-      "era"
-    ],
-    "rarity": "epic"
-  },
-  {
-    "id": 20539,
-    "name": "Runed Stygian Belt",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "resist",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 20537,
-    "name": "Runed Stygian Boots",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "resist",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 20538,
-    "name": "Runed Stygian Leggings",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "resist",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 22757,
-    "name": "Sylvan Crown",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "nature",
-      "resist",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 22758,
-    "name": "Sylvan Shoulders",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "nature",
-      "resist",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 22756,
-    "name": "Sylvan Vest",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "nature",
-      "resist",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 22660,
-    "name": "Gaea's Embrace",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "nature",
-      "resist",
-      "era"
-    ],
-    "rarity": "rare"
-  },
-  {
-    "id": 14156,
-    "name": "Bottomless Bag",
-    "profession": "Tailoring",
-    "crafters": [],
-    "whType": "item",
-    "flavortext": "",
-    "tags": [
-      "era"
-    ],
-    "rarity": "rare"
   }
 ]
