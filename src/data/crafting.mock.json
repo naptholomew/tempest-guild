@@ -911,6 +911,20 @@
     ],
     "rarity": "rare"
   },
+    {
+    "id": 25072,
+    "name": "Enchant Gloves - Threat",
+    "profession": "Enchanting",
+    "crafters": [],
+    "whType": "spell",
+    "flavortext": "",
+    "tags": [
+      "enchant",
+      "gloves",
+      "era"
+    ],
+    "rarity": "rare"
+  },
   {
     "id": 13689,
     "name": "Enchant Shield - Lesser Block",
