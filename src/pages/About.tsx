@@ -1,9 +1,11 @@
+import React from "react";
+
 export default function About() {
   return (
     <section className="space-y-8">
       <header className="pb-2 border-b border-skin-base">
-        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Welcome to Tempest</h1>
-        <p className="text-skin-muted mt-2 text-sm">A World of Warcraft Classic Guild on Dreamscythe.</p>
+        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡ Welcome to Tempest</h1>
+        <p className="text-skin-muted mt-2 text-sm">A World of Warcraft Classic guild on Dreamscythe.</p>
       </header>
 
       {/* History + Contact */}
@@ -14,17 +16,15 @@ export default function About() {
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
           <div className="space-y-4 leading-relaxed text-[16px] text-skin-base/90 flex-1">
             <p>
-			Tempest began as a guild on the Horde PvE Era Realm Mankrik during the height of World of Warcraft Classic’s resurgence.
-			Originally flying under the banner of Enigmatic, we built a tight-knit core of players who weren’t just raid teammates — 
-			we became friends, bonded by countless boss kills, repair bills, and Alterac Valley hell.
-			<br />
-			<br />			
-			Our mission is to provide an organized, safe, and reliable home for players who want to enjoy all parts of the game.
-			From high-end progression raiding to casual dungeon runs we value preparation, communication, and good vibes.
-			This site is your gateway to our team, our Discord, and all the ways you can get involved. 
-			Whether you’re here to push progression or just want a guild where people remember your name, Tempest welcomes you.
-
-
+              Tempest began as a guild on the Horde PvE Era realm Mankrik during the height of World of Warcraft Classic’s resurgence.
+              Originally flying under the banner of Enigmatic, we built a tight-knit core of players who weren’t just raid teammates —
+              we became friends, bonded by countless boss kills, repair bills, and Alterac Valley hell.
+            </p>
+            <p>
+              Our mission is to provide an organized, safe, and reliable home for players who want to enjoy all parts of the game.
+              From high-end progression raiding to casual dungeon runs we value preparation, communication, and good vibes.
+              This site is your gateway to our team, our Discord, and all the ways you can get involved.
+              Whether you’re here to push progression or just want a guild where people remember your name, Tempest welcomes you.
             </p>
           </div>
           <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-10 text-[15px]">
@@ -43,39 +43,34 @@ export default function About() {
         <div className="lg:col-span-1 rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8 flex flex-col">
           <h2 className="text-2xl font-bold text-skin-base">Contact</h2>
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
-          <div className="grid grid-cols-1 gap-y-3 text-[15px] flex-1">
+          <dl className="grid grid-cols-1 gap-y-3 text-[15px] flex-1">
             <div>
-              <div className="text-skin-muted">Discord Link</div>
-              <div className="text-skin-base/90">
+              <dt className="text-skin-muted">Discord</dt>
+              <dd className="text-skin-base/90">
                 <a href="#" className="hover:underline">discord.gg/tempest-guild</a>
-              </div>
+              </dd>
             </div>
-
             <div>
-              <div className="text-skin-muted">Leadership Contact</div>
-              <div className="text-skin-base/90">Draxxar · Beeper · Sneakywurm</div>
+              <dt className="text-skin-muted">Leadership</dt>
+              <dd className="text-skin-base/90">Draxxar · Beeper · Sneakywurm</dd>
             </div>
-
             <div>
-              <div className="text-skin-muted">Raid Lead Contact</div>
-              <div className="text-skin-base/90">Draxxar · Hexus · Tokèn · Beeper</div>
+              <dt className="text-skin-muted">Raid Lead</dt>
+              <dd className="text-skin-base/90">Draxxar · Hexus · Tokèn · Beeper</dd>
             </div>
-
             <div>
-              <div className="text-skin-muted">Recruitment Contact</div>
-              <div className="text-skin-base/90">Draxxar · Brokensword</div>
+              <dt className="text-skin-muted">Recruitment</dt>
+              <dd className="text-skin-base/90">Draxxar · Brokensword</dd>
             </div>
-
             <div>
-              <div className="text-skin-muted">Raid Times</div>
-              <div className="text-skin-base/90">Tue/Thu · 7:30–10:30 PM (Server)</div>
+              <dt className="text-skin-muted">Raid Times</dt>
+              <dd className="text-skin-base/90">Tue/Thu · 7:30–10:30 PM (Server)</dd>
             </div>
-
             <div>
-              <div className="text-skin-muted">Recruitment</div>
-              <div className="text-skin-base/90">Open for social members only.</div>
+              <dt className="text-skin-muted">Recruitment Status</dt>
+              <dd className="text-skin-base/90">Open for social members only.</dd>
             </div>
-          </div>
+          </dl>
         </div>
       </div>
 
@@ -86,24 +81,19 @@ export default function About() {
             <tr className="text-left">
               <th className="py-3 pr-4 pl-5">Date</th>
               <th className="py-3 pr-4">Guild Milestone</th>
-
+              <th className="py-3 pr-5">Notes</th>
             </tr>
           </thead>
           <tbody>
             <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
-              <td className="py-3 pr-4 align-middle">Temple of Ahn'Qiraj Fumigated</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Week one! 5 Pulls on C'thun.</td>
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-03-24</td>
+              <td className="py-3 pr-4 align-middle">Blackwing Lair Declawed</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was way harder than Nef.</td>
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-05-01</td>
               <td className="py-3 pr-4 align-middle">Zul'Gurub Liberated</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Edge of Madness was busted, wtf.</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-03-24</td>
-              <td className="py-3 pr-4 align-middle">Blackwing Lair Declawed</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was way harder than Nef.</td>
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
@@ -112,22 +102,12 @@ export default function About() {
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
-              <td className="py-3 pr-4 align-middle">The First MC Rep Run</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">The first venture into the core.</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
-              <td className="py-3 pr-4 align-middle">Guild's First UBRS Night</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">God, we ran so many UBRS.</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2024-11-21</td>
-              <td className="py-3 pr-4 align-middle">Guild founded (again)</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">A spark in the storm cloud.</td>
+              <td className="py-3 pr-4 align-middle">Temple of Ahn'Qiraj Fumigated</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Week one! 5 Pulls on C'thun.</td>
             </tr>
           </tbody>
         </table>
       </div>
     </section>
-  )
+  );
 }

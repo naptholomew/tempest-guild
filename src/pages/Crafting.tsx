@@ -1,5 +1,5 @@
 // src/pages/Crafting.tsx
-import React, { useEffect, useMemo, useRef, useState, useId } from "react";
+import React, { useDeferredValue, useEffect, useMemo, useRef, useState, useId } from "react";
 import useWowheadTooltips from "../hooks/useWowheadTooltips";
 import { getWowheadUrl } from "../lib/wowhead";
 import craftingRaw from "../data/crafting.mock.json"; // adjust path if needed
@@ -27,6 +27,37 @@ interface Recipe {
   rarity?: Rarity; // JSON-driven only
 }
 
+const rarityToTextClass = (rarity?: Rarity) => {
+  switch (rarity) {
+    case "poor": return "text-[#9d9d9d]";
+    case "common": return "text-[#ffffff]";
+    case "uncommon": return "text-[#1eff00]";
+    case "rare": return "text-[#0070dd]";
+    case "epic": return "text-[#a335ee]";
+    case "legendary": return "text-[#ff8000]";
+    case "artifact": return "text-[#e6cc80]";
+    case "heirloom": return "text-[#00ccff]";
+    default: return "text-skin-base"; // neutral if unknown
+  }
+};
+
+function Chip({
+  children, onClick, tone = "neutral", title,
+}: { children: React.ReactNode; onClick?: () => void; tone?: "neutral" | "accent"; title?: string }) {
+  const base =
+    "inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight transition transition-shadow duration-200 focus-visible:outline-none";
+  const styles =
+    tone === "accent"
+      ? "border-amber-300 text-skin-base/90 bg-transparent hover:border-amber-400 hover:bg-amber-50/10 hover:ring-2 hover:ring-amber-300/90 hover:shadow-[0_0_14px_rgba(252,211,77,0.55)] focus-visible:ring-amber-300/90"
+      : "border-skin-base/70 text-skin-base/90 bg-skin-elev hover:bg-skin-elev/80 hover:border-skin-base hover:ring-2 hover:ring-skin-base/90 hover:shadow-[0_0_12px_rgba(255,255,255,0.35)] focus-visible:ring-skin-base/80";
+  const Comp: any = onClick ? "button" : "span";
+  return (
+    <Comp type={onClick ? "button" : undefined} onClick={onClick} className={`${base} ${styles}`} title={title}>
+      {children}
+    </Comp>
+  );
+}
+
 export default function Crafting() {
   // Keep Wowhead tooltips (hover cards only)
   useWowheadTooltips();
@@ -38,7 +69,8 @@ export default function Crafting() {
         ...r,
         id: Number(r.id),
         crafters: Array.isArray(r.crafters) ? r.crafters.map(String) : [],
-        tags: Array.isArray(r.tags) ? r.tags.map(String) : [],
+        // De-duplicate and sanitize tags on load
+        tags: Array.isArray(r.tags) ? Array.from(new Set(r.tags.map(String))) : [],
         rarity: (r as any).rarity as Rarity | undefined,
       })),
     []
@@ -46,6 +78,7 @@ export default function Crafting() {
 
   // UI state
   const [query, setQuery] = useState("");
+  const deferredQuery = useDeferredValue(query);
   const [prof, setProf] = useState<string>("All");
   const [crafter, setCrafter] = useState<string>("All");
   const searchRef = useRef<HTMLInputElement>(null);
@@ -63,7 +96,7 @@ export default function Crafting() {
 
   // Filtered list
   const filtered = useMemo(() => {
-    const needle = query.toLowerCase().trim();
+    const needle = deferredQuery.toLowerCase().trim();
     return recipes.filter((r) => {
       const inName = !needle || r.name.toLowerCase().includes(needle);
       const inTags = !needle || (r.tags ?? []).some((t) => t.toLowerCase().includes(needle));
@@ -72,7 +105,7 @@ export default function Crafting() {
       const matchesCrafter = crafter === "All" || r.crafters.includes(crafter);
       return (inName || inTags || inCrafters) && matchesProf && matchesCrafter;
     });
-  }, [recipes, query, prof, crafter]);
+  }, [recipes, deferredQuery, prof, crafter]);
 
   // Refresh tooltip markup (not data) after list changes
   useEffect(() => {
@@ -82,21 +115,6 @@ export default function Crafting() {
       window.$WowheadPower.refreshLinks?.();
     }
   }, [filtered]);
-
-  // Rarity → Tailwind text color (WoW hexes). JSON source only.
-  const rarityToTextClass = (rarity?: Rarity) => {
-    switch (rarity) {
-      case "poor": return "text-[#9d9d9d]";
-      case "common": return "text-[#ffffff]";
-      case "uncommon": return "text-[#1eff00]";
-      case "rare": return "text-[#0070dd]";
-      case "epic": return "text-[#a335ee]";
-      case "legendary": return "text-[#ff8000]";
-      case "artifact": return "text-[#e6cc80]";
-      case "heirloom": return "text-[#00ccff]";
-      default: return "text-skin-base"; // neutral if unknown
-    }
-  };
 
   const handleChipClick = (term: string) => {
     setQuery(term);
@@ -110,7 +128,7 @@ export default function Crafting() {
     <section className="space-y-8">
       {/* Header */}
       <header className="pb-2 border-b border-skin-base">
-        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡Tempest Crafting</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡ Tempest Crafting</h1>
         <p className="text-skin-muted mt-2 text-sm">
           Browse recipes by profession, crafter, or tag. To be added just DM Naps.
         </p>
@@ -208,10 +226,8 @@ export default function Crafting() {
                         <a
                           href={getWowheadUrl(Number(r.id), whType)}
                           target="_blank"
-                          rel="noopener noreferrer"
-                          referrerPolicy="no-referrer"
-                          className={`text-lg font-semibold hover:underline ${rarityToTextClass(r.rarity)}`}
-                          data-wh-rename-link="true"
+                          rel="noreferrer"
+                          className={`font-semibold leading-tight ${rarityToTextClass(r.rarity)}`}
                         >
                           {r.name}
                         </a>
@@ -221,47 +237,25 @@ export default function Crafting() {
                       </div>
                     </td>
 
-                    {/* Crafters — stronger glow on pill hover */}
+                    {/* Crafters — accent pills */}
                     <td className="w-1/3 pl-6 pr-4 py-4 align-top">
                       <div className="flex flex-wrap gap-2">
                         {r.crafters.map((c) => (
-                          <button
-                            key={c}
-                            type="button"
-                            onClick={() => handleChipClick(c)}
-                            className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight
-                                       transition transition-shadow duration-200
-                                       border-amber-300 text-skin-base/90 bg-transparent
-                                       hover:border-amber-400 hover:bg-amber-50/10
-                                       hover:ring-2 hover:ring-amber-300/90 hover:shadow-[0_0_14px_rgba(252,211,77,0.55)]
-                                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-300/90"
-                            title={`Search for ${c}`}
-                          >
+                          <Chip key={c} onClick={() => handleChipClick(c)} tone="accent" title={`Search for ${c}`}>
                             {c}
-                          </button>
+                          </Chip>
                         ))}
                       </div>
                     </td>
 
-                    {/* Tags — neutral pills with stronger glow on hover */}
+                    {/* Tags — neutral pills */}
                     <td className="w-1/3 pl-6 pr-4 py-4 align-top">
                       <div className="flex flex-wrap gap-2">
                         {tags.length ? (
                           tags.map((t, i) => (
-                            <button
-                              key={`${t}-${i}`}
-                              type="button"
-                              onClick={() => handleChipClick(t)}
-                              className="inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight
-                                         transition transition-shadow duration-200
-                                         border-skin-base/70 text-skin-base/90 bg-skin-elev
-                                         hover:bg-skin-elev/80 hover:border-skin-base
-                                         hover:ring-2 hover:ring-skin-base/90 hover:shadow-[0_0_12px_rgba(255,255,255,0.35)]
-                                         focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-skin-base/80"
-                              title={`Search for ${t}`}
-                            >
+                            <Chip key={`${t}-${i}`} onClick={() => handleChipClick(t)} title={`Search for ${t}`}>
                               {t}
-                            </button>
+                            </Chip>
                           ))
                         ) : (
                           <span className="text-skin-muted">—</span>

@@ -1,7 +1,9 @@
+import React from "react";
+
 export default function RaidPolicy() {
   return (
     <section className="space-y-8">
-      <header className="pb-2 border border-transparent border-b border-skin-base">
+      <header className="pb-2 border-b border-skin-base">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡ Tempest Raid Policy</h1>
         <p className="text-skin-muted mt-2 text-sm">
           Clear guidelines for joining, preparing, and thriving in Tempest raids.
@@ -41,7 +43,7 @@ export default function RaidPolicy() {
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
           <div className="space-y-4 leading-relaxed text-[15px] text-skin-base/90 flex-1">
             <p>
-              Questions about loot or requirements? Ask an officer. <i>It's your responsiblity to ask!</i> If you're unsure who to talk to, start here:
+              Questions about loot or requirements? Ask an officer. <i>It's your responsibility to ask!</i> If you're unsure who to talk to, start here:
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li><b>Melee:</b> Drak, Brokensword, Hexus</li>
@@ -61,7 +63,7 @@ export default function RaidPolicy() {
               <li>Gear: Invites go to players appropriately geared for the content.</li>
               <li>Alts: <i>Limited.</i> Alts aren’t eligible for loot if a main still needs the item.</li>
               <li>Consumables: <i>Required.</i> See the raid signup for the list.</li>
-              <li>World Buffs: <i>Required.</i> See the raid signup for the list.</li>			  
+              <li>World Buffs: <i>Required.</i> See the raid signup for the list.</li>
             </ul>
           </div>
         </div>
@@ -72,19 +74,19 @@ export default function RaidPolicy() {
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
           <div className="space-y-4 leading-relaxed text-[15px] text-skin-base/90 flex-1">
             <p>
-For AQ40 and Naxx we have moved to a Loot Council system to better support our raid goals. 
-We aim to ensure that gear goes to players who consistently show up, contribute meaningfully, and will use their upgrades to push progression forward.
-<br /><br /><b>For this system we consider the following:</b> 
+              For AQ40 and Naxx we have moved to a Loot Council system to better support our raid goals.
+              We aim to ensure that gear goes to players who consistently show up, contribute meaningfully, and will use their upgrades to push progression forward.
+              <br /><br /><b>For this system we consider the following:</b>
             </p>
             <ul className="list-disc list-inside space-y-1">
-              <li>Upgrade Size & Long-Term Usage</li>
-              <li>Attendance & Consistency</li>
-              <li>Raid Performance & Preparedness</li>
+              <li>Upgrade Size &amp; Long-Term Usage</li>
+              <li>Attendance &amp; Consistency</li>
+              <li>Raid Performance &amp; Preparedness</li>
               <li>Guild Contribution</li>
             </ul>
 
             <p>
-              <b>Non LC Drops:</b> Open roll with a +1. Main Spec over Off Spec. If you win a contested roll, you
+              <b>Non-LC Drops:</b> Open roll with a +1. Main Spec over Off Spec. If you win a contested roll, you
               receive +1 for this lockout and have disadvantage on further contested rolls in the same lockout.
             </p>
             <p>
@@ -112,7 +114,7 @@ We aim to ensure that gear goes to players who consistently show up, contribute 
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
                   See the raid invite. Each Tempest PUG may have different loot rules.
                 </td>
-              </tr>	
+              </tr>
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
                 <td className="py-3 pr-4 pl-5 align-middle text-sm">Naxxramas</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
@@ -128,26 +130,25 @@ We aim to ensure that gear goes to players who consistently show up, contribute 
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
                 <td className="py-3 pr-4 pl-5 align-middle text-sm">Blackwing Lair</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 - Some items may still be Hard Reserved.
+                  2x SR MS&gt;OS +1 — Some items may still be Hard Reserved.
                 </td>
               </tr>
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
                 <td className="py-3 pr-4 pl-5 align-middle text-sm">Molten Core</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 - Some items may still be Hard Reserved.
+                  2x SR MS&gt;OS +1 — Some items may still be Hard Reserved.
                 </td>
               </tr>
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
-                <td className="py-3 pr-4 pl-5 align-middle text-sm">20 Man Content AQ20+ZG</td>
+                <td className="py-3 pr-4 pl-5 align-middle text-sm">20 Man Content AQ20 + ZG</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 - Some items may still be Hard Reserved.
+                  2x SR MS&gt;OS +1 — Some items may still be Hard Reserved.
                 </td>
               </tr>
-		  
             </tbody>
           </table>
         </div>
       </div>
     </section>
-  )
+  );
 }
