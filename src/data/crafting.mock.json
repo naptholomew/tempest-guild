@@ -806,7 +806,9 @@
     "id": 25074,
     "name": "Enchant Gloves - Frost Power",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+	"Heartsbane"
+	],
     "whType": "spell",
     "flavortext": "",
     "tags": [
