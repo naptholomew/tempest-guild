@@ -44,12 +44,12 @@ export default function About() {
           <h2 className="text-2xl font-bold text-skin-base">Contact</h2>
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
           <dl className="grid grid-cols-1 gap-y-3 text-[15px] flex-1">
-            <div>
+/*            <div>
               <dt className="text-skin-muted">Discord</dt>
               <dd className="text-skin-base/90">
                 <a href="#" className="hover:underline">discord.gg/tempest-guild</a>
               </dd>
-            </div>
+            </div>*/
             <div>
               <dt className="text-skin-muted">Leadership</dt>
               <dd className="text-skin-base/90">Draxxar · Beeper · Sneakywurm</dd>
@@ -86,9 +86,9 @@ export default function About() {
           </thead>
           <tbody>
             <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-03-24</td>
-              <td className="py-3 pr-4 align-middle">Blackwing Lair Declawed</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was way harder than Nef.</td>
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-08-04</td>
+              <td className="py-3 pr-4 align-middle">Temple of Ahn'Qiraj Fumigated</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Week one! 5 Pulls on C'thun.</td>
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-05-01</td>
@@ -96,15 +96,36 @@ export default function About() {
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Edge of Madness was busted, wtf.</td>
             </tr>
             <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-03-24</td>
+              <td className="py-3 pr-4 align-middle">Blackwing Lair Declawed</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was way harder than Nef.</td>
+            </tr>
+            <tr className="border-t border-skin-base">
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-16</td>
               <td className="py-3 pr-4 align-middle">Molten Core Extinguished</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Got Rag on night one!</td>
             </tr>
             <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
-              <td className="py-3 pr-4 align-middle">Temple of Ahn'Qiraj Fumigated</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Week one! 5 Pulls on C'thun.</td>
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-16</td>
+              <td className="py-3 pr-4 align-middle">Alterac Valley Opens</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">And so the torture begins.</td>
+            </tr>			
+            <tr className="border-t border-skin-base">
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-07</td>
+              <td className="py-3 pr-4 align-middle">The First MC Rep Run</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Wow, so much rep. Many douses.</td>
             </tr>
+            <tr className="border-t border-skin-base">
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
+              <td className="py-3 pr-4 align-middle">First Official Raid Night</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">UBRS Spam. Spammity spam.</td>
+            </tr>
+            <tr className="border-t border-skin-base">
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2024-01-02</td>
+              <td className="py-3 pr-4 align-middle">Last Classic Era Raid Night</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">UBRS Spam. Spammity spam.</td>
+            </tr>				
+
           </tbody>
         </table>
       </div>
