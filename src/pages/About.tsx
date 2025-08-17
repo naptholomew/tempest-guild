@@ -96,6 +96,11 @@ export default function About() {
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Edge of Madness was busted, wtf.</td>
             </tr>
             <tr className="border-t border-skin-base">
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-04-08</td>
+              <td className="py-3 pr-4 align-middle">Geddon Dropped his Binding</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Garr has the other in his DFT pocket.</td>
+            </tr>
+            <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-03-24</td>
               <td className="py-3 pr-4 align-middle">Blackwing Lair Declawed</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was way harder than Nef.</td>
