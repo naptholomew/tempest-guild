@@ -43,13 +43,14 @@ export default function About() {
         <div className="lg:col-span-1 rounded-3xl border border-skin-base bg-skin-elev p-6 sm:p-8 flex flex-col">
           <h2 className="text-2xl font-bold text-skin-base">Contact</h2>
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
-          <dl className="grid grid-cols-1 gap-y-3 text-[15px] flex-1">
-/*            <div>
+ 
+         <dl className="grid grid-cols-1 gap-y-3 text-[15px] flex-1">
+{/*            <div>
               <dt className="text-skin-muted">Discord</dt>
               <dd className="text-skin-base/90">
                 <a href="#" className="hover:underline">discord.gg/tempest-guild</a>
               </dd>
-            </div>*/
+            </div>*/}
             <div>
               <dt className="text-skin-muted">Leadership</dt>
               <dd className="text-skin-base/90">Draxxar · Beeper · Sneakywurm</dd>
