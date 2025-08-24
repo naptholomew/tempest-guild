@@ -678,7 +678,9 @@
     "id": 25086,
     "name": "Enchant Cloak - Dodge",
     "profession": "Enchanting",
-    "crafters": [],
+    "crafters": [
+	"Taters"
+	],
     "whType": "spell",
     "flavortext": "",
     "tags": [
