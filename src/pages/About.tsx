@@ -16,14 +16,14 @@ export default function About() {
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
           <div className="space-y-4 leading-relaxed text-[16px] text-skin-base/90 flex-1">
             <p>
-              Tempest began as a guild on the Horde PvE Era realm Mankrik during the height of World of Warcraft Classic’s resurgence.
-              Originally flying under the banner of Enigmatic, we built a tight-knit core of players who weren’t just raid teammates —
-              we became friends, bonded by countless boss kills, repair bills, and Alterac Valley hell.
+              Tempest began as a guild on the Horde PvE Era realm Mankrik, back on the Classic Era server.
+			  Originally flying under the banner of Enigmatic, we built a tight-knit core of players who weren’t just raid teammates —
+              we became friends, bonded by boss kills, repair bills, and countless hours in Alterac Valley.
             </p>
             <p>
               Our mission is to provide an organized, safe, and reliable home for players who want to enjoy all parts of the game.
               From high-end progression raiding to casual dungeon runs we value preparation, communication, and good vibes.
-              This site is your gateway to our team, our Discord, and all the ways you can get involved.
+              This site is your gateway to our team, and all the ways you can get involved.
               Whether you’re here to push progression or just want a guild where people remember your name, Tempest welcomes you.
             </p>
           </div>
@@ -34,7 +34,7 @@ export default function About() {
             </li>
             <li className="flex items-start gap-2">
               <span className="text-skin-muted">Focus</span>
-              <span className="text-skin-base/90">Progression raiding · Helpful, social core</span>
+              <span className="text-skin-base/90">Progression raiding · Social Core</span>
             </li>
           </ul>
         </div>
@@ -52,20 +52,20 @@ export default function About() {
               </dd>
             </div>*/}
             <div>
-              <dt className="text-skin-muted">Leadership</dt>
+              <dt className="text-skin-muted">Leadership Contacts</dt>
               <dd className="text-skin-base/90">Draxxar · Beeper · Sneakywurm</dd>
             </div>
             <div>
-              <dt className="text-skin-muted">Raid Lead</dt>
+              <dt className="text-skin-muted">Raid Lead Contacts</dt>
               <dd className="text-skin-base/90">Draxxar · Hexus · Tokèn · Beeper</dd>
             </div>
             <div>
-              <dt className="text-skin-muted">Recruitment</dt>
+              <dt className="text-skin-muted">Recruitment Contacts</dt>
               <dd className="text-skin-base/90">Draxxar · Brokensword</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Raid Times</dt>
-              <dd className="text-skin-base/90">Tue/Thu · 7:30–10:30 PM (Server)</dd>
+              <dd className="text-skin-base/90">Tue/Thu · 8:00–11:00 PM CST (Server)</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Status</dt>
