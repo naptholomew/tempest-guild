@@ -224,7 +224,7 @@ const RowItem = memo(function RowItem({
           className={[
             "font-medium transition-all",
             active
-              ? "text-sky-300 drop-shadow-[0_0_10px_rgba(56,189,248,0.9)]"
+              ? "text-sky-200 drop-shadow-[0_0_4px_rgba(56,189,248,0.35)]"
               : "text-skin-base/95",
           ].join(" ")}
         >
@@ -235,7 +235,7 @@ const RowItem = memo(function RowItem({
           className={[
             "text-xs font-semibold transition-all",
             pct >= 75 ? "text-green-400" : pct >= 50 ? "text-yellow-400" : "text-red-400",
-            active ? "drop-shadow-[0_0_6px_rgba(56,189,248,0.65)]" : "",
+            active ? "drop-shadow-[0_0_2px_rgba(56,189,248,0.25)]" : "",
           ].join(" ")}
           aria-label={`${pct}% attendance`}
         >
@@ -250,7 +250,7 @@ const RowItem = memo(function RowItem({
         className={[
           "w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden transition-all focus:outline-none",
           active
-            ? "scale-[1.03] ring-[6px] ring-sky-400/80 ring-offset-2 ring-offset-skin-elev shadow-2xl shadow-sky-400/60"
+            ? "scale-[1.01] ring-[2px] ring-sky-400/30 ring-offset-1 ring-offset-skin-elev shadow-md shadow-sky-400/20"
             : "",
         ].join(" ")}
         role="progressbar"
