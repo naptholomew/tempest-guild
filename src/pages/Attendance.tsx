@@ -161,7 +161,7 @@ const RowItem: React.FC<{
         </div>
       </div>
 
-      <div className="w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden transition transform group-hover:scale-[1.01] group-hover:ring-3 group-hover:ring-white/30">
+      <div className="w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden transition transform group-hover:scale-[1.01] group-hover:ring-8 group-hover:ring-white/80 group-hover:shadow-2xl group-hover:shadow-blue-400/60>
         <div
           className={`h-full ${barColor} transition-[width] duration-700 ease-out`}
           style={{ width: `${pct}%` }}
