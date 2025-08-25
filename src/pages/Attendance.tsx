@@ -60,7 +60,7 @@ function Controls({
   };
   return (
     <div className="sticky top-0 z-10 bg-skin-elev border-b border-skin-base shadow-sm">
-      <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 py-3">
+      <div className="mx-auto max-w=[1200px] max-w-[1200px] px-4 sm:px-6 lg:px-8 py-3">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           {/* Left: search */}
           <div className="flex items-center gap-3">
@@ -143,25 +143,68 @@ const RowItem: React.FC<{
   const pct = clamp01(row.pct ?? computePct(row.attended, row.possible));
   const barColor = colorForPct(pct);
   const [show, setShow] = useState(false);
-  const [xy, setXY] = useState<{x:number;y:number}>({x:0,y:0});
+  const [xy, setXY] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+
+  // Track when the BAR (not the whole row) is hovered so we can sync the name glow.
+  const [barHover, setBarHover] = useState(false);
 
   return (
     <li
       className="group relative"
       onMouseEnter={() => setShow(true)}
       onMouseLeave={() => setShow(false)}
-      onMouseMove={(e) => setXY({x: e.clientX + 12, y: e.clientY + 12})}
+      onMouseMove={(e) => setXY({ x: e.clientX + 12, y: e.clientY + 12 })}
     >
       <div className="flex items-baseline justify-between mb-1">
-        <div className="text-skin-base/95 font-medium">{row.name}</div>
         <div
-          className={`text-xs font-semibold ${pct >= 75 ? "text-green-400" : pct >= 50 ? "text-yellow-400" : "text-red-400"}`}
+          className={[
+            "font-medium transition-all",
+            // Base text color
+            "text-skin-base/95",
+            // When the BAR is hovered, make the name glow (Tempest blue) and brighten.
+            barHover
+              ? "text-sky-300 drop-shadow-[0_0_10px_rgba(56,189,248,0.9)]"
+              : "",
+          ].join(" ")}
+        >
+          {row.name}
+        </div>
+
+        <div
+          className={[
+            "text-xs font-semibold transition-colors",
+            pct >= 75
+              ? "text-green-400"
+              : pct >= 50
+              ? "text-yellow-400"
+              : "text-red-400",
+            barHover ? "drop-shadow-[0_0_6px_rgba(56,189,248,0.65)]" : "",
+          ].join(" ")}
         >
           {pct}%
         </div>
       </div>
 
-      <div className="w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden transition transform group-hover:scale-[1.01] group-hover:ring-8 group-hover:ring-white/80 group-hover:shadow-2xl group-hover:shadow-blue-400/60>
+      {/* Progress bar track with dramatic hover glow */}
+      <div
+        onMouseEnter={() => setBarHover(true)}
+        onMouseLeave={() => setBarHover(false)}
+        className="
+          w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden
+          transition-all
+          hover:scale-[1.03]
+          hover:ring-6 hover:ring-sky-400/80
+          hover:ring-offset-2 hover:ring-offset-skin-elev
+          hover:shadow-2xl hover:shadow-sky-400/60
+          focus:outline-none
+        "
+        role="progressbar"
+        aria-valuenow={pct}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        tabIndex={0}
+        title={`${row.name} ${pct}%`}
+      >
         <div
           className={`h-full ${barColor} transition-[width] duration-700 ease-out`}
           style={{ width: `${pct}%` }}
