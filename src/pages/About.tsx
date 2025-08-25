@@ -113,7 +113,7 @@ export default function About() {
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-16</td>
-              <td className="py-3 pr-4 align-middle">Alterac Valley Opens</td>
+              <td className="py-3 pr-4 align-middle">Alterac Valley Opened</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">And so the torture begins.</td>
             </tr>			
             <tr className="border-t border-skin-base">
@@ -129,7 +129,7 @@ export default function About() {
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2024-01-02</td>
               <td className="py-3 pr-4 align-middle">Last Classic Era Raid Night</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">UBRS Spam. Spammity spam.</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted"></td>
             </tr>				
 
           </tbody>
