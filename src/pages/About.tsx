@@ -17,13 +17,13 @@ export default function About() {
           <div className="space-y-4 leading-relaxed text-[16px] text-skin-base/90 flex-1">
             <p>
               Tempest began as a guild on the Horde PvE Era realm Mankrik, back on the Classic Era server.
-			  Originally flying under the banner of Enigmatic, we built a tight-knit core of players who weren’t just raid teammates —
-              we became friends, bonded by boss kills, repair bills, and countless hours in Alterac Valley.
+			  Originally flying under the banner of Enigmatic, we built a tight-knit core of players who weren’t just raid teammates, but friends.
+              Bonded by boss kills, bad trash pulls, and countless hours in Alterac Valley.
             </p>
             <p>
               Our mission is to provide an organized, safe, and reliable home for players who want to enjoy all parts of the game.
               From high-end progression raiding to casual dungeon runs we value preparation, communication, and good vibes.
-              This site is your gateway to our team, and all the ways you can get involved.
+              This page is your gateway to our team, and all the ways you can get involved.
               Whether you’re here to push progression or just want a guild where people remember your name, Tempest welcomes you.
             </p>
           </div>
