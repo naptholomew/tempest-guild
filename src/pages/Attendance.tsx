@@ -18,7 +18,7 @@ const API: string =
   (import.meta as any).env?.VITE_ATTEND_BACKEND ||
   "https://tempest-attendance.onrender.com/api/attendance/refresh";
 
-const CACHE_KEY = "att_cache_v3"; // bump schema version if structure changes
+const CACHE_KEY = "att_cache_v3";
 
 // ---------- utilities ----------
 const pctFrom = (attended: number, possible: number) =>
@@ -35,6 +35,14 @@ const parseMaybeDate = (s?: string): number => {
   return Number.isNaN(t) ? -Infinity : t;
 };
 
+/** Format "YYYY-MM-DD" -> "MM-DD-YY". Falls back to the original string if not ISO-like. */
+const toMMDDYY = (iso: string): string => {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return iso;
+  const [, y, mo, d] = m;
+  return `${mo}-${d}-${y.slice(2)}`;
+};
+
 // ---------- tooltip ----------
 function PlayerTooltip({
   name,
@@ -45,19 +53,30 @@ function PlayerTooltip({
   presentDates: string[];
   allNights: string[];
 }) {
-  const present = useMemo(() => new Set(presentDates), [presentDates]);
-  const missing = useMemo(() => allNights.filter((d) => !present.has(d)), [allNights, present]);
+  // Compute present/missing sets
+  const presentSet = useMemo(() => new Set(presentDates), [presentDates]);
+  const missing = useMemo(
+    () => allNights.filter((d) => !presentSet.has(d)),
+    [allNights, presentSet]
+  );
+
+  // Format (sort original ISO strings for chronology, then map to mm-dd-yy)
+  const presentFmt = useMemo(
+    () => (presentDates.length ? presentDates.slice().sort().map(toMMDDYY) : []),
+    [presentDates]
+  );
+  const missingFmt = useMemo(() => missing.map(toMMDDYY), [missing]);
 
   return (
     <div className="text-xs">
       <div className="font-semibold mb-1">{name}</div>
       <div className="mb-1">
         <span className="font-semibold text-green-400">Present:</span>{" "}
-        {presentDates.length ? presentDates.slice().sort().join(", ") : "—"}
+        {presentFmt.length ? presentFmt.join(", ") : "—"}
       </div>
       <div>
         <span className="font-semibold text-red-400">Missed:</span>{" "}
-        {missing.length ? missing.join(", ") : "—"}
+        {missingFmt.length ? missingFmt.join(", ") : "—"}
       </div>
     </div>
   );
@@ -178,20 +197,18 @@ const RowItem = memo(function RowItem({
   const barColor = barColorForPct(pct);
 
   const [tooltipOpen, setTooltipOpen] = useState(false);
-  const [barHover, setBarHover] = useState(false);
-  const [xy, _setXY] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const rafRef = useRef<number | null>(null);
+  const [xy, setXY] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
   // Tooltip follows pointer, throttled to one update per frame
+  const rafRef = useRef<number | null>(null);
   const onMouseMove = useCallback((e: React.MouseEvent<HTMLLIElement>) => {
     if (rafRef.current != null) return;
     const { clientX, clientY } = e;
     rafRef.current = requestAnimationFrame(() => {
-      _setXY({ x: clientX + 12, y: clientY + 12 });
+      setXY({ x: clientX + 12, y: clientY + 12 });
       rafRef.current = null;
     });
   }, []);
-
   useEffect(() => {
     return () => {
       if (rafRef.current != null) {
@@ -201,9 +218,6 @@ const RowItem = memo(function RowItem({
     };
   }, []);
 
-  // Active when bar is hovered OR when the tooltip is visible (hover anywhere on the row)
-  const active = barHover || tooltipOpen;
-
   const progressId = useId();
   const nameId = useId();
 
@@ -211,31 +225,24 @@ const RowItem = memo(function RowItem({
     <li
       className="group relative"
       onMouseEnter={() => setTooltipOpen(true)}
-      onMouseLeave={() => {
-        setTooltipOpen(false);
-        setBarHover(false);
-      }}
+      onMouseLeave={() => setTooltipOpen(false)}
       onMouseMove={onMouseMove}
       aria-describedby={progressId}
     >
       <div className="flex items-baseline justify-between mb-1">
+        {/* Name turns GOLD on its own hover only (matches Crafting) */}
         <div
           id={nameId}
-          className={[
-            "font-medium transition-all",
-            active
-              ? "text-sky-200 drop-shadow-[0_0_4px_rgba(56,189,248,0.35)]"
-              : "text-skin-base/95",
-          ].join(" ")}
+          className="font-medium text-skin-base/95 transition-colors hover:text-brand-accent"
+          title={row.name}
         >
           {row.name}
         </div>
 
         <div
           className={[
-            "text-xs font-semibold transition-all",
+            "text-xs font-semibold",
             pct >= 75 ? "text-green-400" : pct >= 50 ? "text-yellow-400" : "text-red-400",
-            active ? "drop-shadow-[0_0_2px_rgba(56,189,248,0.25)]" : "",
           ].join(" ")}
           aria-label={`${pct}% attendance`}
         >
@@ -243,16 +250,15 @@ const RowItem = memo(function RowItem({
         </div>
       </div>
 
-      {/* Progress bar track — expands/glows when bar OR row is hovered */}
+      {/* Progress bar track — GOLD outline + glow ONLY on bar hover (aligned with Crafting chips) */}
       <div
-        onMouseEnter={() => setBarHover(true)}
-        onMouseLeave={() => setBarHover(false)}
-        className={[
-          "w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden transition-all focus:outline-none",
-          active
-            ? "scale-[1.01] ring-[2px] ring-sky-400/30 ring-offset-1 ring-offset-skin-elev shadow-md shadow-sky-400/20"
-            : "",
-        ].join(" ")}
+        className="
+          w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden
+          transition-all focus:outline-none
+          hover:border-amber-400 hover:bg-amber-50/10
+          hover:ring-2 hover:ring-amber-300/90
+          hover:shadow-[0_0_14px_rgba(252,211,77,0.55)]
+        "
         role="progressbar"
         aria-labelledby={nameId}
         aria-valuenow={pct}
@@ -293,17 +299,21 @@ const RowItem = memo(function RowItem({
   );
 }, areEqualRowProps);
 
-// Shallow memo comparison to prevent unnecessary RowItem re-renders
 function areEqualRowProps(
   prev: { row: Row; nights: string[]; perPlayerDates: Record<string, string[]> },
   next: { row: Row; nights: string[]; perPlayerDates: Record<string, string[]> }
 ) {
   const a = prev.row;
   const b = next.row;
-  if (a.name !== b.name || a.attended !== b.attended || a.possible !== b.possible || a.pct !== b.pct || a.lastSeen !== b.lastSeen) {
+  if (
+    a.name !== b.name ||
+    a.attended !== b.attended ||
+    a.possible !== b.possible ||
+    a.pct !== b.pct ||
+    a.lastSeen !== b.lastSeen
+  ) {
     return false;
   }
-  // nights/perPlayerDates typically change wholesale on refresh, so bail if ref differs
   if (prev.nights !== next.nights) return false;
   if (prev.perPlayerDates !== next.perPlayerDates) return false;
   return true;
@@ -320,7 +330,9 @@ export default function Attendance() {
   // Controls
   const [query, setQuery] = useState("");
   const deferredQuery = useDeferredValue(query);
-  const [sortKey, setSortKey] = useState<SortKey>(() => (localStorage.getItem("att_sortKey") as SortKey) || "pct");
+  const [sortKey, setSortKey] = useState<SortKey>(
+    () => (localStorage.getItem("att_sortKey") as SortKey) || "pct"
+  );
   useEffect(() => localStorage.setItem("att_sortKey", sortKey), [sortKey]);
 
   // On mount: load cache, optionally auto-refresh
@@ -425,33 +437,34 @@ export default function Attendance() {
   }, [nights]);
 
   // Filters + sorting
-  const filteredSorted = useMemo(() => {
+  const filteredSorted = useMemo((): Row[] => {
     const q = deferredQuery.trim().toLowerCase();
 
     const filtered = rows.filter((r) => (q ? r.name.toLowerCase().includes(q) : true));
 
-    // Stable-ish sort: comparator prefers pct/name/attended/lastSeen, but we also include index tie-breaker
     const withIndex = filtered.map((r, i) => ({ r, i }));
     withIndex.sort((a, b) => {
       switch (sortKey) {
         case "pct":
-          return (b.r.pct ?? 0) - (a.r.pct ?? 0) ||
-                 b.r.attended - a.r.attended ||
-                 a.r.name.localeCompare(b.r.name) ||
-                 a.i - b.i;
+          return (
+            (b.r.pct ?? 0) - (a.r.pct ?? 0) ||
+            b.r.attended - a.r.attended ||
+            a.r.name.localeCompare(b.r.name) ||
+            a.i - b.i
+          );
         case "name":
           return a.r.name.localeCompare(b.r.name) || a.i - b.i;
         case "attended":
-          return b.r.attended - a.r.attended ||
-                 (b.r.pct ?? 0) - (a.r.pct ?? 0) ||
-                 a.r.name.localeCompare(b.r.name) ||
-                 a.i - b.i;
+          return (
+            b.r.attended - a.r.attended ||
+            (b.r.pct ?? 0) - (a.r.pct ?? 0) ||
+            a.r.name.localeCompare(b.r.name) ||
+            a.i - b.i
+          );
         case "lastSeen": {
           const ta = parseMaybeDate(a.r.lastSeen);
           const tb = parseMaybeDate(b.r.lastSeen);
-          return (tb - ta) ||
-                 (b.r.pct ?? 0) - (a.r.pct ?? 0) ||
-                 a.i - b.i;
+          return tb - ta || (b.r.pct ?? 0) - (a.r.pct ?? 0) || a.i - b.i;
         }
         default:
           return a.i - b.i;
