@@ -5,7 +5,7 @@ export default function About() {
     <section className="space-y-8">
       <header className="pb-2 border-b border-skin-base">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡ Welcome to Tempest</h1>
-        <p className="text-skin-muted mt-2 text-sm">A World of Warcraft Classic guild on Dreamscythe.</p>
+        <p className="text-skin-muted mt-2 text-sm">A Classic guild on the Dreamscythe PvE Server.</p>
       </header>
 
       {/* History + Contact */}
