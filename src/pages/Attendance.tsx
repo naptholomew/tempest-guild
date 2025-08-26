@@ -240,7 +240,6 @@ const RowItem = memo(function RowItem({
           onMouseEnter={() => setNameHover(true)}
           onMouseLeave={() => setNameHover(false)}
           className={["font-medium transition-colors", nameActive ? "text-brand-accent" : "text-skin-base/95"].join(" ")}
-          title={row.name}
         >
           {row.name}
         </div>
@@ -272,9 +271,9 @@ const RowItem = memo(function RowItem({
         aria-valuenow={pct}
         aria-valuemin={0}
         aria-valuemax={100}
+        aria-valuetext={`${row.name} ${pct}%`}
         tabIndex={0}
         id={progressId}
-        title={`${row.name} ${pct}%`}
       >
         <div
           className={`h-full ${barColor} transition-[width] duration-700 ease-out`}
