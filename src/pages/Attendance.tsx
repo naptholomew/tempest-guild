@@ -53,14 +53,9 @@ function PlayerTooltip({
   presentDates: string[];
   allNights: string[];
 }) {
-  // Compute present/missing sets
   const presentSet = useMemo(() => new Set(presentDates), [presentDates]);
-  const missing = useMemo(
-    () => allNights.filter((d) => !presentSet.has(d)),
-    [allNights, presentSet]
-  );
+  const missing = useMemo(() => allNights.filter((d) => !presentSet.has(d)), [allNights, presentSet]);
 
-  // Format (sort original ISO strings for chronology, then map to mm-dd-yy)
   const presentFmt = useMemo(
     () => (presentDates.length ? presentDates.slice().sort().map(toMMDDYY) : []),
     [presentDates]
@@ -199,6 +194,11 @@ const RowItem = memo(function RowItem({
   const [tooltipOpen, setTooltipOpen] = useState(false);
   const [xy, setXY] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
 
+  // Name should turn gold when either the NAME or the BAR is hovered
+  const [nameHover, setNameHover] = useState(false);
+  const [barHover, setBarHover] = useState(false);
+  const nameActive = nameHover || barHover;
+
   // Tooltip follows pointer, throttled to one update per frame
   const rafRef = useRef<number | null>(null);
   const onMouseMove = useCallback((e: React.MouseEvent<HTMLLIElement>) => {
@@ -225,15 +225,21 @@ const RowItem = memo(function RowItem({
     <li
       className="group relative"
       onMouseEnter={() => setTooltipOpen(true)}
-      onMouseLeave={() => setTooltipOpen(false)}
+      onMouseLeave={() => {
+        setTooltipOpen(false);
+        setNameHover(false);
+        setBarHover(false);
+      }}
       onMouseMove={onMouseMove}
       aria-describedby={progressId}
     >
       <div className="flex items-baseline justify-between mb-1">
-        {/* Name turns GOLD on its own hover only (matches Crafting) */}
+        {/* Name turns GOLD when name OR bar is hovered */}
         <div
           id={nameId}
-          className="font-medium text-skin-base/95 transition-colors hover:text-brand-accent"
+          onMouseEnter={() => setNameHover(true)}
+          onMouseLeave={() => setNameHover(false)}
+          className={["font-medium transition-colors", nameActive ? "text-brand-accent" : "text-skin-base/95"].join(" ")}
           title={row.name}
         >
           {row.name}
@@ -252,6 +258,8 @@ const RowItem = memo(function RowItem({
 
       {/* Progress bar track — GOLD outline + glow ONLY on bar hover (aligned with Crafting chips) */}
       <div
+        onMouseEnter={() => setBarHover(true)}
+        onMouseLeave={() => setBarHover(false)}
         className="
           w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden
           transition-all focus:outline-none
