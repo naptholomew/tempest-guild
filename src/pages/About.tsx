@@ -53,23 +53,23 @@ export default function About() {
             </div>*/}
             <div>
               <dt className="text-skin-muted">Leadership Contacts</dt>
-              <dd className="text-skin-base/90">Draxxar · Beeper · Sneakywurm</dd>
+              <dd className="text-skin-base/90">Draxxar · Owlboy · Sneakywurm</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Raid Lead Contacts</dt>
-              <dd className="text-skin-base/90">Draxxar · Hexus · Tokèn · Beeper</dd>
+              <dd className="text-skin-base/90">Draxxar · Hexus · Tokèn · Owlboy</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Contacts</dt>
-              <dd className="text-skin-base/90">Draxxar · Brokensword</dd>
+              <dd className="text-skin-base/90">Owlboy · Holypeach · Draxxar</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Raid Times</dt>
-              <dd className="text-skin-base/90">Tue/Thu · 8:00–11:00 PM CST (Server)</dd>
+              <dd className="text-skin-base/90">Tue/Thu · 7:00–10:00 PM Server Time</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Status</dt>
-              <dd className="text-skin-base/90">Open for social members only.</dd>
+              <dd className="text-skin-base/90">Need Mages & Other DPS for Naxx Progression<br>Open for social members only.</dd>
             </div>
           </dl>
         </div>
