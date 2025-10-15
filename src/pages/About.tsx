@@ -65,11 +65,11 @@ export default function About() {
             </div>
             <div>
               <dt className="text-skin-muted">Raid Times</dt>
-              <dd className="text-skin-base/90">Tue/Thu · 7:00–10:00 PM Server Time</dd>
+              <dd className="text-skin-base/90">Naxx: Tue/Thu · 7:00–10:00 PM Server</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Status</dt>
-              <dd className="text-skin-base/90">Need Mages & Other DPS for Naxx Progression<br />Always open for social members!</dd>
+              <dd className="text-skin-base/90">Need Mages & a few solid DPS for Naxx Progression. And we're always open for social members!</dd>
             </div>
           </dl>
         </div>
