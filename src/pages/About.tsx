@@ -69,7 +69,7 @@ export default function About() {
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Status</dt>
-              <dd className="text-skin-base/90">Need Mages & Other DPS for Naxx Progression<br>Open for social members only.</dd>
+              <dd className="text-skin-base/90">Need Mages & Other DPS for Naxx Progression<br />Always open for social members!</dd>
             </div>
           </dl>
         </div>
