@@ -110,7 +110,7 @@ export default function RaidPolicy() {
             </thead>
             <tbody>
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
-                <td className="py-3 pr-4 pl-5 align-middle text-sm">Any PUG Runs</td>
+                <td className="py-3 pr-4 pl-5 align-middle text-sm">Any PUG House Runs</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
                   See the raid signup. Each Tempest PUG may have different loot rules.
                 </td>
@@ -130,19 +130,19 @@ export default function RaidPolicy() {
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
                 <td className="py-3 pr-4 pl-5 align-middle text-sm">Blackwing Lair</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 — Select items may still be managed. See SR for Details.
+                  2x SR MS&gt;OS +1 — See SR for Details.
                 </td>
               </tr>
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
                 <td className="py-3 pr-4 pl-5 align-middle text-sm">Molten Core</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 — Select items may still be managed. See SR for Details.
+                  2x SR MS&gt;OS +1 — See SR for Details.
                 </td>
               </tr>
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
                 <td className="py-3 pr-4 pl-5 align-middle text-sm">20 Man Content AQ20 + ZG</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 — Select items may still be managed. See SR for Details.
+                  2x SR MS&gt;OS +1 — See SR for Details.
                 </td>
               </tr>
             </tbody>

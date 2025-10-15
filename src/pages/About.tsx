@@ -127,7 +127,7 @@ export default function About() {
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">UBRS Spam. Spammity spam.</td>
             </tr>
             <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2024-01-02</td>
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2024-11-24</td>
               <td className="py-3 pr-4 align-middle">Last Classic Era Raid Night</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted"></td>
             </tr>				
