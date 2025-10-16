@@ -47,7 +47,7 @@ export default function RaidPolicy() {
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li><b>Melee:</b> Drak, Brokensword, Hexus</li>
-              <li><b>Casters:</b> Beeper, Token, Morri</li>
+              <li><b>Casters:</b> Owlboy, Token, Morri</li>
               <li><b>Healers:</b> Holypeach, Jimmyc, Xan</li>
             </ul>
 
