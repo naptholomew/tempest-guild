@@ -68,8 +68,8 @@ export default function About() {
               <dd className="text-skin-base/90">Naxx: Tue/Thu · 7:00–10:00 PM Server</dd>
             </div>
             <div>
-              <dt className="text-skin-muted">Recruitment Status</dt>
-              <dd className="text-skin-base/90">⚡ Consistent Mages<br />Bench DPS & Healers<br />All Social Members for TBC!</dd>
+              <dt className="text-skin-muted">Recruitment Needs</dt>
+              <dd className="text-skin-base/90">⚡ Consistent Mages<br />⚡ Bench DPS & Healers<br />⚡ Social Members for TBC!</dd>
             </div>
           </dl>
         </div>
