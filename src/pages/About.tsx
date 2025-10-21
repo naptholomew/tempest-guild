@@ -69,7 +69,7 @@ export default function About() {
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Status</dt>
-              <dd className="text-skin-base/90">Need Mages & a few solid DPS for Naxx Progression. And we're always open for social members!</dd>
+              <dd className="text-skin-base/90">⚡ Consistent Mages<br />Bench DPS & Healers<br />All Social Members for TBC!</dd>
             </div>
           </dl>
         </div>
