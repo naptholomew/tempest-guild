@@ -487,7 +487,7 @@ export default function Attendance() {
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡ Tempest Attendance</h1>
         <p className="text-skin-muted mt-2 text-sm">
           Last 6 weeks {dateRange ? `(${dateRange})` : ""}, pulled from Warcraft Logs.<br />
-		  <b>WARNING:</b> This does not currently track alt and main attendance correctly. 
+		  <b>WARNING:</b> This does not combine alt and main attendance. 
         </p>
       </header>
 

@@ -53,8 +53,8 @@ export default function RaidPolicy() {
 
             <p><b>Required Raid Addons:</b></p>
             <ul className="list-disc list-inside space-y-1">
-              <li>AngryEra for Raid Assignments)</li>
-              <li>BigWigs for Raid Timers</li>
+              <li>AngryEra, for Raid Assignments</li>
+              <li>BigWigs, for Raid Timers</li>
               <li>ThreatClassic2 or Details: Tiny Threat</li>
             </ul>
 
