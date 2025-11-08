@@ -43,7 +43,7 @@ export default function RaidPolicy() {
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
           <div className="space-y-4 leading-relaxed text-[15px] text-skin-base/90 flex-1">
             <p>
-              Questions about loot or requirements? Ask an officer. <i>It's your responsibility to ask!</i> If you're unsure who to talk to, start here:
+              Questions about loot, raid requirements or your gear? Ask an officer. <i>We're here for you to ask!</i> If you're unsure who to talk to, start here:
             </p>
             <ul className="list-disc list-inside space-y-1">
               <li><b>Melee:</b> Drak, Brokensword, Hexus</li>
@@ -53,8 +53,8 @@ export default function RaidPolicy() {
 
             <p><b>Required Raid Addons:</b></p>
             <ul className="list-disc list-inside space-y-1">
-              <li>AngryEra (raid assignments)</li>
-              <li>Deadly Boss Mods or BigWigs</li>
+              <li>AngryEra for Raid Assignments)</li>
+              <li>BigWigs for Raid Timers</li>
               <li>ThreatClassic2 or Details: Tiny Threat</li>
             </ul>
 
