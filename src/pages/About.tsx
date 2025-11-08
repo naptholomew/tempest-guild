@@ -65,11 +65,11 @@ export default function About() {
             </div>
             <div>
               <dt className="text-skin-muted">Raid Times</dt>
-              <dd className="text-skin-base/90">⚡ Naxx: Tue/Thu · 7:00–10:00 PM Server<br />⚡ BWL Pug: Sat 8:00 PM Server⚡ Progression: Naxx 11/15</dd>
+              <dd className="text-skin-base/90">⚡ Naxx: Tue/Thu · 7:00–10:00 PM Server<br />⚡ BWL Pug: Sat 8:00 PM Server<br />⚡ Progression: Naxx 11/15</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Needs</dt>
-              <dd className="text-skin-base/90">⚡Healers for Naxx Progression <br />⚡ DPS and Healers for TBC:<br />👉 Enhancement Shaman x1 <br /> 👉 Restoration Shaman x2 <br /> 👉 BM or Surv Hunter x3 👉 x3 <br />  👉 Warlocks x3  </dd>
+              <dd className="text-skin-base/90">⚡Healers for Naxx Progression <br />👉 [TBC] Enhancement Shaman x1 <br /> 👉 [TBC] Restoration Shaman x2 <br /> 👉 [TBC] BM or Surv Hunter x3 <br />  👉 [TBC] Warlocks x3  </dd>
             </div>
           </dl>
         </div>
