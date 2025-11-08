@@ -65,11 +65,11 @@ export default function About() {
             </div>
             <div>
               <dt className="text-skin-muted">Raid Times</dt>
-              <dd className="text-skin-base/90">Naxx: Tue/Thu · 7:00–10:00 PM Server</dd>
+              <dd className="text-skin-base/90">⚡ Naxx: Tue/Thu · 7:00–10:00 PM Server<br />⚡ BWL Pug: Sat 8:00 PM Server⚡ Progression: Naxx 11/15</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Needs</dt>
-              <dd className="text-skin-base/90">⚡ Consistent Mages<br />⚡ Bench DPS & Healers<br />⚡ Social Members for TBC!</dd>
+              <dd className="text-skin-base/90">⚡Healers for Naxx Progression <br />⚡ DPS and Healers for TBC:<br />👉 Enhancement Shaman x1 <br /> 👉 Restoration Shaman x2 <br /> 👉 BM or Surv Hunter x3 👉 x3 <br />  👉 Warlocks x3  </dd>
             </div>
           </dl>
         </div>
@@ -93,7 +93,7 @@ export default function About() {
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-05-01</td>
-              <td className="py-3 pr-4 align-middle">Zul'Gurub Liberated</td>
+              <td className="py-3 pr-4 align-middle">Zul'Gurub Cleared</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Edge of Madness was busted, wtf.</td>
             </tr>
             <tr className="border-t border-skin-base">
@@ -103,18 +103,13 @@ export default function About() {
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-03-24</td>
-              <td className="py-3 pr-4 align-middle">Blackwing Lair Declawed</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was way harder than Nef.</td>
+              <td className="py-3 pr-4 align-middle">Blackwing Lair Cleared</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was harder than Nef.</td>
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-16</td>
-              <td className="py-3 pr-4 align-middle">Molten Core Extinguished</td>
+              <td className="py-3 pr-4 align-middle">Molten Core Cleared</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Got Rag on night one!</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-16</td>
-              <td className="py-3 pr-4 align-middle">Alterac Valley Opened</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">And so the torture begins.</td>
             </tr>			
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-07</td>
@@ -123,8 +118,8 @@ export default function About() {
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
-              <td className="py-3 pr-4 align-middle">First Official Raid Night</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">UBRS Spam. Spammity spam.</td>
+              <td className="py-3 pr-4 align-middle">First Anniversary Raid Night</td>
+              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">How many UBRS did we even run?</td>
             </tr>
             <tr className="border-t border-skin-base">
               <td className="py-3 pr-4 pl-5 align-middle text-sm">2024-11-24</td>
