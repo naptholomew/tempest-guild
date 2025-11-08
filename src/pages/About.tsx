@@ -69,7 +69,7 @@ export default function About() {
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Needs</dt>
-              <dd className="text-skin-base/90">⚡[Naxx] Open Slots for Healers x2 <br />👉 [TBC] Enhancement Shaman x1 <br /> 👉 [TBC] Restoration Shaman x2 <br /> 👉 [TBC] BM or Surv Hunter x3 <br />  👉 [TBC] Warlocks x3  </dd>
+              <dd className="text-skin-base/90">⚡ [Naxx] Open Slots for Healers x2 <br />👉 [TBC] Enhancement Shaman x1 <br /> 👉 [TBC] Restoration Shaman x2 <br /> 👉 [TBC] BM or Surv Hunter x3 <br />  👉 [TBC] Warlocks x3  </dd>
             </div>
           </dl>
         </div>
