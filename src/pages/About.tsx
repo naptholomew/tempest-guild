@@ -53,7 +53,7 @@ export default function About() {
             </div>*/}
             <div>
               <dt className="text-skin-muted">Leadership Contacts</dt>
-              <dd className="text-skin-base/90">Drakares · Napsberto</dd>
+              <dd className="text-skin-base/90">Drakares · Napsberto · Sneakywurm</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Raid Lead Contacts</dt>
@@ -69,7 +69,7 @@ export default function About() {
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Needs</dt>
-              <dd className="text-skin-base/90">👉 Open Recruitment for TBC <br />Highest Priority on Warlocks</dd>
+              <dd className="text-skin-base/90">👉 Open Recruitment for TBC <br />👉 Highest Priority on Warlocks</dd>
             </div>
           </dl>
         </div>
