@@ -15,14 +15,16 @@ import clsx from "clsx";
 const LINKS = [
   { to: "/", label: "About Us", icon: ScrollText },
   { to: "/raid-policy", label: "Raid Policy", icon: Gavel },
-  { to: "/attendance", label: "Attendance", icon: Users },
+//  { to: "/attendance", label: "Attendance", icon: Users },
   { to: "/crafting", label: "Crafting Recipes", icon: Hammer },
 ] as const;
 
 const EXTRA_LINKS = [
-  { to: "https://fresh.warcraftlogs.com/guild/calendar/775047", label: "WCL Calendar", icon: CalendarDays },
-  { to: "https://thatsmybis.com/22393/tempest/loot/temple-of-ahnqiraj", label: "AQ40 Gear List", icon: ListChecks },
-  { to: "https://thatsmybis.com/22393/tempest/loot/naxxramas", label: "NAXX Gear List", icon: ListTodo },
+  { to: "https://fresh.warcraftlogs.com/guild/calendar/775047", label: "WCL Guild Calendar", icon: CalendarDays },
+  { to: "https://fresh.warcraftlogs.com/guild/calendar/791017", label: "WCL PUG Calendar", icon: CalendarDays },
+  { to: "https://thatsmybis.com/23406/tempest/loot/karazhan", label: "Kara Gear List", icon: ListChecks },
+  { to: "https://thatsmybis.com/23406/tempest/loot/serpentshrine-cavern", label: "SSC Gear List", icon: ListTodo },
+  { to: "https://thatsmybis.com/23406/tempest/loot/tempest-keep", label: "TK Gear List", icon: ListTodo },
 ] as const;
 
 // Helper: detect "mobile" using same breakpoint as Tailwind's md (<768px)
