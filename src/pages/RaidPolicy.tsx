@@ -46,15 +46,14 @@ export default function RaidPolicy() {
               Questions about loot, raid requirements or your gear? Ask an officer. <i>We're here for you to ask!</i> If you're unsure who to talk to, start here:
             </p>
             <ul className="list-disc list-inside space-y-1">
-              <li><b>Melee:</b> Drak, Brokensword, Hexus</li>
-              <li><b>Casters:</b> Owlboy, Token, Morri</li>
-              <li><b>Healers:</b> Holypeach, Jimmyc, Xan</li>
+              <li><b>Melee:</b> Drak, Napsberto, Sneakywurm</li>
+              <li><b>Casters:</b> Napsberto, Token, Morri</li>
+              <li><b>Healers:</b> Peachgrove, Xandriela</li>
             </ul>
 
             <p><b>Required Raid Addons:</b></p>
             <ul className="list-disc list-inside space-y-1">
-              <li>AngryEra, for Raid Assignments</li>
-              <li>BigWigs, for Raid Timers</li>
+              <li>BigWigs, or similar Raid Timers</li>
               <li>ThreatClassic2 or Details: Tiny Threat</li>
             </ul>
 
@@ -74,7 +73,7 @@ export default function RaidPolicy() {
           <div className="h-0.5 w-16 bg-brand-accent/40 rounded-full mt-2 mb-5" />
           <div className="space-y-4 leading-relaxed text-[15px] text-skin-base/90 flex-1">
             <p>
-              For AQ40 and Naxx we have moved to a Loot Council system to better support our raid goals.
+              For TBC we are switching to a priority loot council system. 
               We aim to ensure that gear goes to players who consistently show up, contribute meaningfully, and will use their upgrades to push progression forward.
               <br /><br /><b>For this system we consider the following:</b>
             </p>
@@ -116,33 +115,9 @@ export default function RaidPolicy() {
                 </td>
               </tr>
               <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
-                <td className="py-3 pr-4 pl-5 align-middle text-sm">Naxxramas</td>
+                <td className="py-3 pr-4 pl-5 align-middle text-sm">Left Blank</td>
                 <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  Loot council system. See the Naxx Gear List.
-                </td>
-              </tr>
-              <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
-                <td className="py-3 pr-4 pl-5 align-middle text-sm">Temple of Ahn'Qiraj</td>
-                <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  Loot council system. See the AQ40 Gear List.
-                </td>
-              </tr>
-              <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
-                <td className="py-3 pr-4 pl-5 align-middle text-sm">Blackwing Lair</td>
-                <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 — See SR for Details.
-                </td>
-              </tr>
-              <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
-                <td className="py-3 pr-4 pl-5 align-middle text-sm">Molten Core</td>
-                <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 — See SR for Details.
-                </td>
-              </tr>
-              <tr className="border-t border-skin-base odd:bg-white/5 hover:bg-white/10 transition-colors">
-                <td className="py-3 pr-4 pl-5 align-middle text-sm">20 Man Content AQ20 + ZG</td>
-                <td className="py-3 pr-5 align-middle text-xs text-skin-muted">
-                  2x SR MS&gt;OS +1 — See SR for Details.
+                  Notes left blank intentionally.
                 </td>
               </tr>
             </tbody>

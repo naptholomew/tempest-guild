@@ -53,23 +53,23 @@ export default function About() {
             </div>*/}
             <div>
               <dt className="text-skin-muted">Leadership Contacts</dt>
-              <dd className="text-skin-base/90">Draxxar · Owlboy · Sneakywurm</dd>
+              <dd className="text-skin-base/90">Drakares · Napsberto</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Raid Lead Contacts</dt>
-              <dd className="text-skin-base/90">Draxxar · Hexus · Tokèn · Owlboy</dd>
+              <dd className="text-skin-base/90">Drakares · Tokèn · Napsberto</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Contacts</dt>
-              <dd className="text-skin-base/90">Owlboy · Holypeach · Draxxar</dd>
+              <dd className="text-skin-base/90">Napsberto · Holypeach · Drakares</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Raid Times</dt>
-              <dd className="text-skin-base/90">⚡ Naxx: Tue/Thu · 7:00–10:00 PM Server<br />⚡ BWL Pug: Sat 8:00 PM Server</dd>
+              <dd className="text-skin-base/90">⚡Tue/Thu · 7:00–10:00 PM Server</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Needs</dt>
-              <dd className="text-skin-base/90">⚡ [Naxx] Open Slots for Healers x1 <br />👉 [TBC] Enhancement Shaman x1 <br /> 👉 [TBC] All Healers<br /> 👉 [TBC] All Ranged DPS</dd>
+              <dd className="text-skin-base/90">👉 Open Recruitment for TBC <br />Highest Priority on Warlocks</dd>
             </div>
           </dl>
         </div>
@@ -85,45 +85,10 @@ export default function About() {
               <th className="py-3 pr-5">Notes</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody>		
             <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-08-04</td>
-              <td className="py-3 pr-4 align-middle">Temple of Ahn'Qiraj Fumigated</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Week one! 5 Pulls on C'thun.</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-05-01</td>
-              <td className="py-3 pr-4 align-middle">Zul'Gurub Cleared</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Edge of Madness was busted, wtf.</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-04-08</td>
-              <td className="py-3 pr-4 align-middle">Geddon Dropped his Binding</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Garr has the other in his DFT pocket.</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-03-24</td>
-              <td className="py-3 pr-4 align-middle">Blackwing Lair Cleared</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Chromaggus was harder than Nef.</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-16</td>
-              <td className="py-3 pr-4 align-middle">Molten Core Cleared</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Got Rag on night one!</td>
-            </tr>			
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-07</td>
-              <td className="py-3 pr-4 align-middle">The First MC Rep Run</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">Wow, so much rep. Many douses.</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2025-01-02</td>
-              <td className="py-3 pr-4 align-middle">First Anniversary Raid Night</td>
-              <td className="py-3 pr-5 align-middle text-xs text-skin-muted">How many UBRS did we even run?</td>
-            </tr>
-            <tr className="border-t border-skin-base">
-              <td className="py-3 pr-4 pl-5 align-middle text-sm">2024-11-24</td>
-              <td className="py-3 pr-4 align-middle">Last Classic Era Raid Night</td>
+              <td className="py-3 pr-4 pl-5 align-middle text-sm">2026-02-05</td>
+              <td className="py-3 pr-4 align-middle">TBC Launch!</td>
               <td className="py-3 pr-5 align-middle text-xs text-skin-muted"></td>
             </tr>				
 
