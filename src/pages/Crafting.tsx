@@ -48,7 +48,7 @@ function Chip({
     "inline-flex items-center rounded-full border px-2.5 py-1 text-sm leading-tight transition transition-shadow duration-200 focus-visible:outline-none";
   const styles =
     tone === "accent"
-      ? "border-amber-300 text-skin-base/90 bg-transparent hover:border-amber-400 hover:bg-amber-50/10 hover:ring-2 hover:ring-amber-300/90 hover:shadow-[0_0_14px_rgba(252,211,77,0.55)] focus-visible:ring-amber-300/90"
+      ? "border-brand-accent/70 text-skin-base/90 bg-transparent hover:border-brand-accent hover:bg-brand-accent/10 hover:ring-2 hover:ring-brand-accent/60 hover:shadow-[0_0_14px_rgba(233,198,148,0.55)] focus-visible:ring-brand-accent/60"
       : "border-skin-base/70 text-skin-base/90 bg-skin-elev hover:bg-skin-elev/80 hover:border-skin-base hover:ring-2 hover:ring-skin-base/90 hover:shadow-[0_0_12px_rgba(255,255,255,0.35)] focus-visible:ring-skin-base/80";
   const Comp: any = onClick ? "button" : "span";
   return (

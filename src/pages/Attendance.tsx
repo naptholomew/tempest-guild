@@ -158,7 +158,7 @@ function Controls({
                 onClick={onRefresh}
                 disabled={loading}
                 aria-busy={loading}
-                className={`px-4 py-2 text-sm rounded-lg bg-brand-accent text-white relative overflow-hidden
+                className={`px-4 py-2 text-sm rounded-lg bg-brand-accent text-brand relative overflow-hidden
                   ${loading ? "animate-pulse font-bold text-lg" : ""}`}
               >
                 {loading ? "Working…" : "Refresh Attendance"}
@@ -262,9 +262,9 @@ const RowItem = memo(function RowItem({
         className="
           w-full h-3 rounded-full bg-white/10 border border-skin-base overflow-hidden
           transition-all focus:outline-none
-          hover:border-amber-400 hover:bg-amber-50/10
-          hover:ring-2 hover:ring-amber-300/90
-          hover:shadow-[0_0_14px_rgba(252,211,77,0.55)]
+          hover:border-brand-accent hover:bg-brand-accent/10
+          hover:ring-2 hover:ring-brand-accent/60
+          hover:shadow-[0_0_14px_rgba(233,198,148,0.55)]
         "
         role="progressbar"
         aria-labelledby={nameId}
@@ -486,8 +486,7 @@ export default function Attendance() {
       <header className="pb-2 border-b border-skin-base">
         <h1 className="text-3xl font-extrabold tracking-tight text-brand-accent">⚡ Tempest Attendance</h1>
         <p className="text-skin-muted mt-2 text-sm">
-          Last 6 weeks {dateRange ? `(${dateRange})` : ""}, pulled from Warcraft Logs.<br />
-		  <b>WARNING:</b> This does not combine alt and main attendance. 
+          Last 6 weeks {dateRange ? `(${dateRange})` : ""}, pulled from Warcraft Logs.
         </p>
       </header>
 

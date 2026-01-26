@@ -5,30 +5,33 @@ export default {
   theme: {
     extend: {
       colors: {
-        brand: '#00274C',         // Michigan Blue
-        'brand-accent': '#FFCB05' // Michigan Maize
+        // Rebrand palette
+        brand: '#024731',          // deep green
+        'brand-accent': '#e9c694', // highlight sand
       },
       backgroundColor: {
         skin: {
-          base: '#0b0e11',
-          elev: '#0f141a'
-        }
+          // dark-green near-black base + elevated surface
+          base: '#00100b',
+          elev: '#011b13',
+        },
       },
       textColor: {
         skin: {
-          base: '#e6edf3',
-          muted: '#94a3b8'
-        }
+          // fog neutral + green-gray muted
+          base: '#c8c8c8',
+          muted: '#839b93',
+        },
       },
       borderColor: {
         skin: {
-          base: '#1f2937'
-        }
+          base: '#152c25',
+        },
       },
       maxWidth: {
-        content: '1100px'
-      }
-    }
+        content: '1100px',
+      },
+    },
   },
   plugins: [],
-}
+};
