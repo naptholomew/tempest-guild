@@ -61,7 +61,7 @@ export default function About() {
             </div>
             <div>
               <dt className="text-skin-muted">Recruitment Contacts</dt>
-              <dd className="text-skin-base/90">Napsberto · Holypeach · Drakares</dd>
+              <dd className="text-skin-base/90">Napsberto · Peachgrove · Drakares</dd>
             </div>
             <div>
               <dt className="text-skin-muted">Raid Times</dt>
